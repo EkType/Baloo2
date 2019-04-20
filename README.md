@@ -16,11 +16,11 @@ To view the copyright and specific terms and conditions please refer to [OFL.txt
 
 ### Downloading font binaries (TTF files)
 
-Find binary releases on <https://github.com/girish-dalvi/Baloo2/releases>
+Find binary releases on <https://github.com/EkType/Baloo2/releases>
 
 ### How do I install the font on my computer?
 
-First download the font binaries (TTF files) from the [Github Releases page](https://github.com/girish-dalvi/Baloo/releases), then follow these instructions:
+First download the font binaries (TTF files) from the [Github Releases page](https://github.com/EkType/Baloo2/releases), then follow these instructions:
 
 - [Windows](http://windows.microsoft.com/en-us/windows-vista/install-or-uninstall-fonts)
 - [GNU/Linux](http://lmgtfy.com/?q=how+to+install+fonts+in+linux)
@@ -37,7 +37,7 @@ Would you like to contribute to the development of this font? Here is how **you*
 
 ### Bug Reports
 
-Send us bug reports, feature enhancements or glyph requests, using the [Github Issue Tracker](https://github.com/girish-dalvi/Baloo/issues/). 
+Send us bug reports, feature enhancements or glyph requests, using the [Github Issue Tracker](https://github.com/EkType/Baloo2/issues). 
 
 Here are a few tips:
 
