@@ -1,0 +1,29 @@
+[Baloo2-Regular]
+	f=Baloo 2
+	s=Regular
+	l=Baloo 2 Regular
+	m=1,Baloo 2 Regular
+
+[Baloo2-Medium]
+	f=Baloo 2
+	s=Medium
+	l=Baloo 2 Medium
+	m=1,Baloo 2 Medium
+
+[Baloo2-SemiBold]
+	f=Baloo 2
+	s=SemiBold
+	l=Baloo 2 SemiBold
+	m=1,Baloo 2 SemiBold
+
+[Baloo2-Bold]
+	f=Baloo 2
+	s=Bold
+	l=Baloo 2 Bold
+	m=1,Baloo 2 Bold
+
+[Baloo2-ExtraBold]
+	f=Baloo 2
+	s=ExtraBold
+	l=Baloo 2 ExtraBold
+	m=1,Baloo 2 ExtraBold

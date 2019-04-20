@@ -1,0 +1,3 @@
+Baloo 2 is Copyright (c) 2019 Ek Type (www.ektype.in)
+
+Licensed under the SIL Open Font License 1.1 (http://scripts.sil.org/OFL).
