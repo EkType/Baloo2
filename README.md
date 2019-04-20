@@ -1,4 +1,4 @@
-![Baloo](http://rawgit.com/girish-dalvi/Baloo2/master/Promotion/Baloo_header.png "Baloo 2")
+![Baloo 2](http://rawgit.com/EkType/Baloo2/blob/master/Promotion/Baloo_header.png "Baloo 2")
 
 A perfect blend of pointy paws in a coat of fur, Baloo is an affable display typeface by Ek Type. 
 
