@@ -4,7 +4,7 @@ A perfect blend of pointy paws in a coat of fur, Baloo is an affable display typ
 
 Baloo is a distinctive heavy spurless design with a subtle tinge of playfulness and all the bare necessities of type. Snuggling several scripts under a single weight, the typeface focuses on giving equal justice to every act of this gentle jungle affair to secure single and multi-script use. Carefree yet confident, warm yet entertaining, sprightly yet intelligible, Baloo infuses life everywhere it goes.
 
-Baloo 2 is an extenstion of the [Baloo Project](https://github.com/EkType/Baloo). The Devanagari and Latin script font from the earlier project has now been extended to five weights. 
+Baloo 2 is an extension of the [Baloo Project](https://github.com/EkType/Baloo). The Devanagari and Latin script font from the earlier project has now been extended to five weights. 
 
 Well fed and thoroughly nourished across every script, it took a team of committed type designers to rear Baloo and raise it to be the typeface we love. Baloo 2 is designed by Sarang Kulkarni and Maithili Shingre. Font engineering and type design assistance by Noopur Datye and Girish Dalvi.
 
