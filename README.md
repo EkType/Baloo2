@@ -1,12 +1,12 @@
 ![Baloo 2](https://raw.githubusercontent.com/EkType/Baloo2/master/Promotion/Baloo_header.png "Baloo 2")
 
-A perfect blend of pointy paws in a coat of fur, Baloo is an affable display typeface by Ek Type. 
+A perfect blend of pointy paws in a coat of fur, Baloo is an affable display typeface by Ek Type. This heavy spurless design has already garnered praise for its distinctive jovial nature and its multi script design. 
 
-Baloo is a distinctive heavy spurless design with a subtle tinge of playfulness and all the bare necessities of type. Snuggling several scripts under a single weight, the typeface focuses on giving equal justice to every act of this gentle jungle affair to secure single and multi-script use. Carefree yet confident, warm yet entertaining, sprightly yet intelligible, Baloo infuses life everywhere it goes.
+The all new Baloo 2 now comes in 5 distinct weights ranging from the light footed Regular to the affable ExtraBold. The lighter weights retain Baloo's characteristic bounce, but they do so slightly, infusing life into each word. This allows Baloo 2 to freely fraternise with texts of all Sizes and temperaments – be it short bursts or copious reams, demanding headlines or whispering bylines. Carefree yet confident, sprightly yet versatile, the renewed family of Baloo promises to bring warmth to every project.
 
 Baloo 2 is an extension of the [Baloo Project](https://github.com/EkType/Baloo). The Devanagari and Latin script font from the earlier project has now been extended to five weights. 
 
-Well fed and thoroughly nourished across every script, it took a team of committed type designers to rear Baloo and raise it to be the typeface we love. Baloo 2 is designed by Sarang Kulkarni and Maithili Shingre. Font engineering and type design assistance by Noopur Datye and Girish Dalvi.
+Baloo 2 (Latin+Devanagari) is designed by Sarang Kulkarni and Maithili Shingre. Font engineering and type design assistance by Noopur Datye and Girish Dalvi.
 
 
 ### License
