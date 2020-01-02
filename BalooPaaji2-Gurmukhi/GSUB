@@ -1,0 +1,412 @@
+languagesystem DFLT dflt;
+languagesystem latn dflt;
+languagesystem latn NLD;
+languagesystem latn AZE;
+languagesystem latn TRK;
+languagesystem latn MOL;
+languagesystem latn ROM;
+languagesystem latn CAT;
+languagesystem latn TAT;
+languagesystem latn CRT;
+languagesystem latn KAZ;
+languagesystem guru dflt;
+languagesystem gur2 dflt;
+
+#--------------------------------------------------------------------
+
+#---------- L A T I N ----------#
+
+#--------------------------------------------------------------------
+
+feature aalt { # Access All Alternates
+feature locl;
+feature subs;
+feature sinf;
+feature sups;
+feature numr;
+feature dnom;
+feature frac;
+feature ordn;
+feature tnum;
+#feature onum;
+} aalt;
+
+#--------------------------------------------------------------------
+
+feature frac { # Fractions
+
+lookup FractionBar {
+        ignore sub slash @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures @figures @figures @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures @figures @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures @figures @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures slash;
+        ignore sub slash @figures @figures slash';
+        ignore sub slash' @figures @figures slash;
+        ignore sub slash @figures slash';
+        ignore sub slash' @figures slash;
+        ignore sub slash slash';
+        ignore sub slash' slash;
+        sub @figures slash' @figures by fraction;
+    } FractionBar;
+    
+    lookup Numerator1 {
+        sub @figures' fraction by @figures_numerator;
+    } Numerator1;
+
+    lookup Numerator2 {
+        sub @figures' @figures_numerator fraction by @figures_numerator;
+    } Numerator2;
+
+    lookup Numerator3 {
+        sub @figures' @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator3;
+
+    lookup Numerator4 {
+        sub @figures' @figures_numerator @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator4;
+
+    lookup Numerator5 {
+        sub @figures' @figures_numerator @figures_numerator @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator5;
+
+    lookup Numerator6 {
+        sub @figures' @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator6;
+
+    lookup Numerator7 {
+        sub @figures' @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator7;
+
+    lookup Numerator8 {
+        sub @figures' @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator8;
+
+    lookup Numerator9 {
+        sub @figures' @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator9;
+
+    lookup Numerator10 {
+        sub @figures' @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator10;
+
+    lookup Denominator {
+        sub [fraction @figures_denominator] @figures' by @figures_denominator;
+    } Denominator;
+
+    sub @figures space' @figures_numerator by uni2009;
+
+} frac;
+
+
+#--------------------------------------------------------------------
+
+feature tnum { # Tabular Figures
+    sub @figures by @figures_tabular;
+} tnum;
+
+#--------------------------------------------------------------------
+
+feature numr { # Numerators
+    sub @figures by @figures_numerator;
+} numr;
+
+#--------------------------------------------------------------------
+
+feature dnom { # Denominators
+    sub @figures by @figures_denominator;
+} dnom;
+
+#--------------------------------------------------------------------
+
+feature sups { # Superscript
+    sub @for_subscript_superscript by @figures_superscript;
+    sub n by n.superior;
+} sups;
+
+#--------------------------------------------------------------------
+
+feature subs { # Subscript
+    sub @for_subscript_superscript by @figures_subscript;
+} subs;
+
+#--------------------------------------------------------------------
+
+feature sinf { # Scientific Inferior
+    sub @for_subscript_superscript by @figures_subscript;
+} sinf;
+
+#--------------------------------------------------------------------
+
+feature ordn { # Ordinals
+  sub @figures [A a]' by ordfeminine;
+  sub @figures [O o]' by ordmasculine;
+  sub N o period by uni2116;
+} ordn;
+
+#--------------------------------------------------------------------
+
+feature liga {
+  sub f f i by f_f_i;
+  sub f f l by f_f_l;
+  sub f f by f_f;
+  sub f i by fi;
+  sub f l by fl;
+} liga;
+
+
+#--------------------------------------------------------------------
+
+
+feature locl {
+script latn;
+
+language NLD;
+  sub iacute j by iacute_j.loclNLD;
+  sub Iacute J by Iacute_J.loclNLD;
+
+language CAT;
+  sub l periodcentered' l by periodcentered.loclCAT;
+  sub L periodcentered' L by periodcentered.loclCAT.case;
+
+language TRK;
+  lookup IDOT {
+      sub i' by i.loclTRK;
+      } IDOT;
+
+language AZE;
+  lookup IDOT;
+language CRT;
+    lookup IDOT;
+language KAZ;
+    lookup IDOT;
+language TAT;
+    lookup IDOT;
+
+language ROM;
+    lookup CEDILLA {
+      sub scedilla by scommaaccent;
+      sub Scedilla by Scommaaccent;
+    sub uni0162 by uni021A;
+    sub uni0163 by uni021B;
+    } CEDILLA;
+language MOL;
+  lookup CEDILLA;
+
+} locl;  
+
+
+
+
+#--------------------------------------------------------------------
+
+#---------- G U R M U K H I ----------#
+
+#--------------------------------------------------------------------
+
+feature nukt { # Nukta consonants
+
+script guru; #Gurmukhi
+lookup lookup1 {
+    sub Kha.gm Nukta.gm by Khha.gm;
+    sub Ga.gm Nukta.gm by Ghha.gm;
+    sub Sa.gm Nukta.gm by Sha.gm;
+    sub La.gm Nukta.gm by Lla.gm;
+    sub Ja.gm Nukta.gm by Za.gm;
+    sub Pha.gm Nukta.gm by Fa.gm;
+    sub Dda.gm Nukta.gm by Rra.gm;
+} lookup1;
+
+script gur2; #Gurmukhi v.2
+lookup lookup1;
+} nukt;
+
+#--------------------------------------------------------------------
+
+feature akhn { #Akhanda Forms
+
+script guru;
+  sub Ka.gm Ra.gm Virama.gm by KaViramaRa.gm;
+  sub Rra.gm Ha.gm Virama.gm by RraViramaHa.gm;
+script gur2;
+  sub Ka.gm Virama.gm Ra.gm by KaViramaRa.gm;
+  sub Rra.gm Virama.gm Ha.gm by RraViramaHa.gm;
+
+} akhn;
+
+#--------------------------------------------------------------------
+
+feature blwf { #Below Base Form 
+
+script gur2;
+lookup lookup2 {
+  sub Virama.gm Ra.gm by RaSmall.gm;
+  sub Virama.gm Ha.gm by HaSmall.gm;
+  sub Virama.gm Va.gm by VaSmall.gm;  
+} lookup2;
+
+script guru; 
+  sub Ra.gm Virama.gm by RaSmall.gm;
+  sub Ha.gm Virama.gm by HaSmall.gm;
+  sub Va.gm Virama.gm by VaSmall.gm;
+
+} blwf;
+
+#--------------------------------------------------------------------
+
+feature pstf { # Post Base Forms
+
+script guru;
+sub Ya.gm Virama.gm by YaHalf.gm;
+
+script gur2;
+sub Virama.gm Ya.gm by YaHalf.gm; 
+  
+} pstf;
+
+#--------------------------------------------------------------------
+
+feature abvs { # Above Base Substitutions
+
+script guru;
+lookup lookup3 {
+    sub MatraEe.gm Bindi.gm by MatraEeBindi.gm;
+    sub MatraAi.gm Bindi.gm by MatraAiBindi.gm;
+    sub MatraOo.gm Bindi.gm by MatraOoBindi.gm;
+    sub MatraAu.gm Bindi.gm by MatraAuBindi.gm;
+    sub MatraEe.gm Addak.gm by MatraEeAddak.gm;
+    sub MatraAi.gm Addak.gm by MatraAiAddak.gm;
+    sub MatraOo.gm Addak.gm by MatraOoAddak.gm;
+    sub MatraAu.gm Addak.gm by MatraAuAddak.gm;
+    sub MatraEe.gm AddakBindi.gm by MatraEeAddakBindi.gm;
+    sub MatraAi.gm AddakBindi.gm by MatraAiAddakBindi.gm;
+    sub MatraOo.gm AddakBindi.gm by MatraOoAddakBindi.gm;
+    sub MatraAu.gm AddakBindi.gm by MatraAuAddakBindi.gm;
+} lookup3;
+
+lookup lookup4 {
+  sub [Na.gm Ttha.gm] [MatraEe.gm MatraAi.gm MatraOo.gm MatraAu.gm]' by [MatraEe.alt.gm MatraAi.alt.gm MatraOo.alt.gm MatraAu.alt.gm];
+  sub [Na.gm Ttha.gm] [MatraEeBindi.gm MatraAiBindi.gm MatraOoBindi.gm MatraAuBindi.gm MatraEeAddak.gm MatraAiAddak.gm MatraOoAddak.gm MatraAuAddak.gm MatraEeAddakBindi.gm MatraAiAddakBindi.gm MatraOoAddakBindi.gm MatraAuAddakBindi.gm]' by [MatraEeBindi.alt.gm MatraAiBindi.alt.gm MatraOoBindi.alt.gm MatraAuBindi.alt.gm MatraEeAddak.alt.gm MatraAiAddak.alt.gm MatraOoAddak.alt.gm MatraAuAddak.alt.gm MatraEeAddakBindi.alt.gm MatraAiAddakBindi.alt.gm MatraOoAddakBindi.alt.gm MatraAuAddakBindi.alt.gm];
+  sub [VowelIi.gm VowelU.gm VowelUu.gm VowelEe.gm VowelAi.gm VowelOo.gm VowelAu.gm MatraIi.gm Ura.gm] [Bindi.gm Addak.gm AddakBindi.gm]' by [Bindi.alt.gm Addak.alt.gm AddakBindi.alt.gm];
+} lookup4;
+
+script gur2;
+lookup lookup3;
+lookup lookup4;
+
+} abvs;
+
+#--------------------------------------------------------------------
+
+feature blws { # Below Base Substitutions
+
+script guru;
+lookup lookup5 { #Half characters 
+  sub RaSmall.gm MatraU.gm by RaSmallMatraU.gm;
+  sub RaSmall.gm MatraUu.gm by RaSmallMatraUu.gm;
+  sub VaSmall.gm MatraU.gm by VaSmallMatraU.gm;
+  sub VaSmall.gm MatraUu.gm by VaSmallMatraUu.gm;  
+  sub HaSmall.gm MatraU.gm by HaSmallMatraU.gm;
+  sub HaSmall.gm MatraUu.gm by HaSmallMatraUu.gm;
+  sub RaSmall.gm Virama.gm by RaSmallVirama.gm;
+  sub VaSmall.gm Virama.gm by VaSmallVirama.gm;
+  sub HaSmall.gm Virama.gm by HaSmallVirama.gm;
+  sub Yakash.gm MatraU.gm by YakashMatraU.gm;
+  sub Yakash.gm MatraUu.gm by YakashMatraUu.gm;
+  sub Yakash.gm Virama.gm by YakashVirama.gm;
+  sub Udaat.gm MatraU.gm by UdaatMatraU.gm;
+  sub Udaat.gm MatraUu.gm by UdaatMatraUu.gm;
+  sub Udaat.gm Virama.gm by UdaatVirama.gm;
+} lookup5;
+
+script gur2;
+lookup lookup5;
+  
+} blws;
+
+#--------------------------------------------------------------------
+
+feature psts { #Post Base Substitutions
+  
+script guru;
+  sub KaViramaRa.gm MatraU.gm by KaViramaRaMatraU.gm;
+  sub KaViramaRa.gm MatraUu.gm by KaViramaRaMatraUu.gm; 
+
+script gur2;
+  sub KaViramaRa.gm MatraU.gm by KaViramaRaMatraU.gm;
+  sub KaViramaRa.gm MatraUu.gm by KaViramaRaMatraUu.gm; 
+
+} psts;
+
+#--------------------------------------------------------------------
+
+feature haln { #Small forms
+
+script guru; 
+lookup lookup6 {
+  sub Ka.gm Virama.gm by KaVirama.gm;
+  sub Kha.gm Virama.gm by KhaVirama.gm;
+  sub Ga.gm Virama.gm by GaVirama.gm;
+  sub Gha.gm Virama.gm by GhaVirama.gm;
+  sub Nga.gm Virama.gm by NgaVirama.gm;
+  sub Ca.gm Virama.gm by CaVirama.gm;
+  sub Cha.gm Virama.gm by ChaVirama.gm;
+  sub Ja.gm Virama.gm by JaVirama.gm;
+  sub Jha.gm Virama.gm by JhaVirama.gm;
+  sub Nya.gm Virama.gm by NyaVirama.gm;
+  sub Tta.gm Virama.gm by TtaVirama.gm;
+  sub Ttha.gm Virama.gm by TthaVirama.gm;
+  sub Dda.gm Virama.gm by DdaVirama.gm;
+  sub Ddha.gm Virama.gm by DdhaVirama.gm;
+  sub Nna.gm Virama.gm by NnaVirama.gm;
+  sub Ta.gm Virama.gm by TaVirama.gm;
+  sub Tha.gm Virama.gm by ThaVirama.gm;
+  sub Da.gm Virama.gm by DaVirama.gm;
+  sub Dha.gm Virama.gm by DhaVirama.gm;
+  sub Na.gm Virama.gm by NaVirama.gm;
+  sub Pa.gm Virama.gm by PaVirama.gm;
+  sub Pha.gm Virama.gm by PhaVirama.gm;
+  sub Ba.gm Virama.gm by BaVirama.gm;
+  sub Bha.gm Virama.gm by BhaVirama.gm;
+  sub Ma.gm Virama.gm by MaVirama.gm;
+  sub Ya.gm Virama.gm by YaVirama.gm;
+  sub Ra.gm Virama.gm by RaVirama.gm;
+  sub La.gm Virama.gm by LaVirama.gm;
+  sub Lla.gm Virama.gm by LlaVirama.gm;
+  sub Va.gm Virama.gm by VaVirama.gm;
+  sub Sha.gm Virama.gm by ShaVirama.gm;
+  sub Sa.gm Virama.gm by SaVirama.gm;
+  sub Ha.gm Virama.gm by HaVirama.gm;
+  sub Khha.gm Virama.gm by KhhaVirama.gm;
+  sub Ghha.gm Virama.gm by GhhaVirama.gm;
+  sub Za.gm Virama.gm by ZaVirama.gm;
+  sub Rra.gm Virama.gm by RraVirama.gm;
+  sub Fa.gm Virama.gm by FaVirama.gm;
+} lookup6;
+
+script gur2;
+lookup lookup6;
+
+} haln;
+
+
+#--------------------------------------------------------------------
+
+
+
+#--------------------------------------------------------------------
+
+
+
+

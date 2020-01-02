@@ -1,0 +1,32 @@
+	FSType 0;
+	
+	UnicodeRange
+	0	# Basic Latin
+	1	# Latin-1 Supplement
+	2	# Latin Extended-A
+	3	# Latin Extended-B
+	4	# IPA Extensions
+	5	# Spacing Modifier Letters
+	6	# Combining Diacritical Marks
+	19 	# Odia
+	29	# Latin Extended Additional
+	31	# General Punctuation
+	32	# Superscripts And Subscripts
+	33	# Currency Symbol
+	35	# Letterlike Symbols
+	36	# Number Forms
+	37	# Arrows, Supplementary Arrows A, Supplementary Arrows B
+	38	# Mathematical Operators
+	45	# Geometric Shapes
+	62	# Alphabetic Presentation Forms
+;
+   	TypoAscender 1185;
+  	TypoDescender -827;
+  	TypoLineGap 0;
+  	winAscent 1185;
+  	winDescent 827;
+
+	WidthClass 5;
+	Vendor "EKTF";
+
+	

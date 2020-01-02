@@ -1,0 +1,79 @@
+
+
+# BalooThambi Tamil
+
+
+table hhea {
+	Ascender 1050;
+	Descender -486;
+	LineGap 0;
+} hhea;
+
+
+#------------------------------------------------------------------
+
+table OS/2 {
+	FSType 0;
+	Panose 3 8 9 2 4 3 2 2 2 0;
+	UnicodeRange
+	0	# Basic Latin
+	1	# Latin-1 Supplement
+	2	# Latin Extended-A
+	3	# Latin Extended-B
+	5	# Spacing Modifier Letters
+	17 	# Tamil
+	31	# General Punctuation
+	33	# Currency Symbol
+	35	# Letterlike Symbols
+	38	# Mathematical Operators
+	45	# Geometric Shapes
+	62	# Alphabetic Presentation Forms
+;
+  	TypoAscender 1050;
+  	TypoDescender -486;
+  	TypoLineGap 0;
+  	winAscent 1050;
+  	winDescent 486;
+
+	WeightClass 400;
+	WidthClass 5;
+	Vendor "EKTF";
+
+} OS/2;
+
+
+#------------------------------------------------------------------
+
+
+table name {
+
+	nameid 0   "Copyright (c) 2018, Ek Type. All rights reserved.";
+	nameid 0 3 "Copyright (c) 2018, Ek Type. All rights reserved.";	
+
+	nameid 8   "Ek Type";
+	nameid 8 3 "Ek Type";
+
+	nameid 9   "Aadarsh Rajan and Ek Type";
+	nameid 9 3 "Aadarsh Rajan and Ek Type";
+
+	nameid 11   "www.ektype.in";
+
+	nameid 12   "www.ektype.in";
+
+	nameid 13 "EK TYPE END USER LICENSE: Ek Type holds sole, exclusive right, title and interest over the font. You are bestowed with a right to use this font on the basis of the terms and conditions of the license issued to you. You shall not have any right to modify copy, reproduce or distribute the font in any form. In case you have any questions as regards to the use of the font, you may refer the license agreement which was sent to you along with the font software or you may log on to our website www.ektype.in for details.";
+
+	nameid 13 3 "EK TYPE END USER LICENSE: Ek Type holds sole, exclusive right, title and interest over the font. You are bestowed with a right to use this font on the basis of the terms and conditions of the license issued to you. You shall not have any right to modify copy, reproduce or distribute the font in any form. In case you have any questions as regards to the use of the font, you may refer the license agreement which was sent to you along with the font software or you may log on to our website www.ektype.in for details.";
+
+	nameid 14   "://ektype.in/EULA-EK-TYPE.pdf";
+	nameid 14 3 "://ektype.in/EULA-EK-TYPE.pdf";
+
+} name
+
+
+
+
+
+
+
+
+

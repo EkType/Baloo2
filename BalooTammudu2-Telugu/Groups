@@ -1,0 +1,345 @@
+
+
+
+#----------------------------------
+# Classes for Latin subsitution
+#----------------------------------
+
+
+@figures=[zero one two three four five six seven eight nine];
+
+#@figures_oldstyle=[zerooldstyle oneoldstyle twooldstyle threeoldstyle fouroldstyle fiveoldstyle sixoldstyle sevenoldstyle eightoldstyle nineoldstyle];
+
+@figures_tabular=[tabularzero tabularone tabulartwo tabularthree tabularfour tabularfive tabularsix tabularseven tabulareight tabularnine];
+
+@figures_denominator=[zero.dnom one.dnom two.dnom three.dnom four.dnom five.dnom six.dnom seven.dnom eight.dnom nine.dnom];
+
+@figures_numerator=[zero.numr one.numr two.numr three.numr four.numr five.numr six.numr seven.numr eight.numr nine.numr];
+
+@for_subscript_superscript=[parenleft parenright zero one two three four five six seven eight nine];
+
+@figures_subscript=[parenleft.inferior parenright.inferior zero.inferior one.inferior two.inferior three.inferior four.inferior five.inferior six.inferior seven.inferior eight.inferior nine.inferior];
+
+@figures_superscript=[parenleft.superior parenright.superior zero.superior onesuperior twosuperior threesuperior four.superior five.superior six.superior seven.superior eight.superior nine.superior];
+
+
+#--------------------------------------------------------------------
+
+
+#----------------------------------
+# Kerning classes for Latin
+#----------------------------------
+
+
+@_A_Left_Right=[A  Agrave Aacute Acircumflex Atilde Adieresis Aring Amacron Abreve Aogonek uni01CD uni1EA0 uni1EA2 uni1EA4 uni1EA6 uni1EA8 uni1EAA uni1EAC uni1EAE uni1EB0 uni1EB2 uni1EB4 uni1EB6 uni0200 uni0202 Aringacute];
+@_C_Right=[C  Ccedilla Cacute Ccaron Ccircumflex Cdotaccent uni1E08];
+@_O_Left=[O  Q Ograve Oacute Ocircumflex Otilde Odieresis Omacron Ohungarumlaut G Gbreve Gcommaaccent Oslash Gcircumflex Gdotaccent Ohorn uni01D1 Gcaron uni1E20 uni1ECC uni1ECE uni1ED0 uni1ED2 uni1ED4 uni1ED6 uni1ED8 uni1EDA uni1EDC uni1EDE uni1EE0 uni1EE2 C Ccedilla Cacute Ccaron Ccircumflex Cdotaccent uni1E08 uni020C uni022A uni0230 uni020E uni1E52 uni1E50 uni01EA uni1E4C uni1E4E uni022C Obreve Oslashacute];
+@_O_Right=[O  Q Ograve Oacute Ocircumflex Otilde Odieresis Omacron Ohungarumlaut D Eth Dcaron Dcroat Oslash uni01D1 uni1E0C uni1ECC uni1ECE uni1ED0 uni1ED2 uni1ED4 uni1ED6 uni1ED8 uni1E0E uni018F uni020C uni022A uni0230 uni020E uni1E52 uni1E50 uni01EA uni1E4C uni1E4E uni022C Obreve Oslashacute];
+@_E_Right=[E  AE Egrave Eacute Ecircumflex Edieresis Emacron Edotaccent Eogonek Ecaron OE Ebreve uni1EB8 uni1EBA uni1EBC uni1EBE uni1EC0 uni1EC2 uni1EC4 uni1EC6 uni1E1C uni0204 uni0206 uni1E16 uni1E14 AEacute];
+@_G_Right=[G  Gbreve Gcommaaccent Gcircumflex Gdotaccent Gcaron uni1E20];
+@_K_Right=[K  Kcommaaccent uni20AD];
+@_L_Right=[L  Lacute Lcommaaccent Lcaron Ldot uni1E36 uni1E38 uni1E3A];
+@_R_Right=[R  Racute Rcommaaccent Rcaron uni1E5A uni1E5C uni1E5E uni0210 uni0212];
+@_S_Left_Right=[S  Sacute Scedilla Scaron Scommaaccent Scircumflex uni1E64 uni1E66 uni1E68];
+@_T_Left_Right=[T  Tcaron uni021A uni1E6C uni1E6E uni0162];
+@_U_Left_Right=[U  Ugrave Uacute Ucircumflex Udieresis Umacron Uring Uhungarumlaut Uogonek Utilde Ubreve uni01D3 uni01D5 uni01D7 uni01D9 uni01DB uni1EE4 uni1EE6 uni0214 uni0216 uni1E7A uni1E78];
+@_Y_Left_Right=[Y  Yacute Ydieresis Ycircumflex Ygrave uni1EF4 uni1EF6 uni1EF8 uni1E8E uni0232];
+@_Z_Left_Right=[Z  Zacute Zdotaccent Zcaron uni1E92];
+@_a_Left=[a  agrave aacute acircumflex atilde adieresis aring ae amacron abreve aogonek uni01CE uni1EA1 uni1EA3 uni1EA5 uni1EA7 uni1EA9 uni1EAB uni1EAD uni1EAF uni1EB1 uni1EB3 uni1EB5 uni1EB7 uni0201 uni0203 aringacute aeacute];
+@_a_Right=[a  agrave aacute acircumflex atilde adieresis aring amacron abreve aogonek uni1EA1 uni1EA3 uni1EA5 uni1EA7 uni1EA9 uni1EAB uni1EAD uni1EAF uni1EB1 uni1EB3 uni1EB5 uni1EB7 uni01CE uni0201 uni0203 aringacute];
+@_c_Right=[c  ccedilla cacute ccaron ccircumflex cdotaccent uni1E09];
+@_e_Right=[e  ae egrave eacute ecircumflex edieresis emacron edotaccent eogonek ecaron oe ebreve uni1EB9 uni1EBB uni1EBD uni1EBF uni1EC1 uni1EC3 uni1EC5 uni1EC7 uni1E1D uni0205 uni0207 uni1E17 uni1E15 aeacute];
+@_f_Left=[f  fi fl f_f f_f_i f_f_l];
+@_h_n_Right=[h  n ntilde nacute ncommaaccent ncaron uni1E25 uni1E2B uni1E45 uni1E47 uni1E49 eng];
+@_i_Left=[i  igrave iacute icircumflex idieresis imacron iogonek dotlessi itilde uni01D0 uni1EC9 uni1ECB uni0209 uni1E2F i.loclTRK uni020B ij iacute_j.loclNLD];
+@_k_Right=[k  kcommaaccent kgreenlandic];
+@_m_Left=[m  n nacute ncommaaccent ncaron r racute rcommaaccent rcaron p uni1E45 uni1E47 uni1E49 uni1E5B uni1E5D uni1E5F uni1E43 uni01CC eng];
+@_o_Right=[o  ograve oacute ocircumflex otilde odieresis omacron ohungarumlaut b p oslash uni01D2 uni1ECD uni1ECF uni1ED1 uni1ED3 uni1ED5 uni1ED7 uni1ED9 uni0259 uni020D uni022B uni0231 uni020F uni1E53 uni1E51 uni01EB uni1E4D uni1E4F uni022D obreve];
+@_o_Left=[o  ograve oacute ocircumflex otilde odieresis omacron ohungarumlaut c ccedilla cacute ccaron ccircumflex e egrave eacute ecircumflex edieresis emacron edotaccent eogonek ecaron d q dcaron dcroat eth oslash uni01D2 uni1ECD uni1ECF uni1ED1 uni1ED3 uni1ED5 uni1ED7 uni1ED9 uni1EDB uni1EDD uni1EDF uni1EE1 uni1EE3 cdotaccent ebreve uni1E0D uni1E0F uni1EB9 uni1EBB uni1EBD uni1EBF uni1EC1 uni1EC3 uni1EC5 uni1EC7 ohorn uni0251 uni1E09 uni1E1D uni0205 uni0207 uni1E17 uni1E15 uni020D uni022B uni0231 uni020F uni1E53 uni1E51 uni01EB uni1E4D uni1E4F uni022D obreve];
+@_r_Right=[r  racute rcommaaccent rcaron uni1E5B uni1E5D uni1E5F uni0211 uni0213];
+@_s_Left_right=[s  sacute scaron scedilla scommaaccent scircumflex uni1E61 uni1E63 uni1E65 uni1E67 uni1E69];
+@_t_Left_Right=[t  uni1E6D uni1E6F uni1E97 uni0163 tbar];
+@_u_Left=[u  ugrave uacute ucircumflex udieresis uhungarumlaut umacron uring uogonek uni01D4 uni01D6 uni01D8 uni01DA uni01DC uni1EE5 uni1EE7 uni1EE9 uni1EEB uni1EED uni1EEF uni1EF1 uhorn uni0215 uni0217 uni1E7B uni1E79];
+@_v_Left_Right=[v  y yacute ydieresis ycircumflex ygrave uni1EF5 uni1EF7 uni1EF9 uni1E8F uni0233];
+@_z_Left=[z  zacute zdotaccent zcaron uni1E93];
+@_period_comma=[period  comma ellipsis];
+@_brackets_Right=[parenleft  bracketleft braceleft];
+@_brackets_Left=[parenright  bracketright braceright];
+@_dashes=[hyphen  endash emdash plus equal multiply divide minus bullet];
+@_percent=[percent ];
+@_colon=[colon  semicolon];
+@_less=[less ];
+@_greater=[greater ];
+@_bar=[bar ];
+@_fractions1=[onequarter  onehalf onethird oneeighth];
+@_fractions4=[onequarter  threequarters];
+@_quoteleft=[quoteleft  quotedblleft];
+@_quoteright_Left=[quoteright  quotedblright];
+@_quoteright_Right=[quoteright  quotedblright];
+@_quote=[quotesingle  quotedbl uni2032 uni2033];
+@_ord=[ordmasculine  ordfeminine];
+@_g_Left=[g  gbreve gcommaaccent uni1E21 gcircumflex gdotaccent gcaron uni0261];
+@_g_Right=[g  gbreve gcommaaccent q uni1E21 gcircumflex gdotaccent gcaron uni0261];
+@_i_Right=[i  igrave iacute icircumflex idieresis imacron iogonek dotlessi fi uni0209 uni1E2F i.loclTRK uni020B f_f_i];
+@_M_Left_Right=[M  uni1E42];
+@_W_Left_Right=[W  Wcircumflex Wgrave Wacute Wdieresis];
+@_w_Left_Right=[w  wcircumflex wgrave wacute wdieresis];
+@_j_Left=[j  jcircumflex uni01C9 uni01C8];
+@_m_Right=[m  uni1E43];
+@_J_Left=[J  Jcircumflex];
+@_fractions3=[onethird  twothirds];
+@_fractions8=[oneeighth  threeeighths fiveeighths seveneighths];
+@_Ohorn_right=[Ohorn  uni1EDA uni1EDC uni1EDE uni1EE0 uni1EE2];
+@_l_Left=[l  lacute lcommaaccent lcaron ldot uni1E37 uni1E39 uni1E3B];
+@_l_Right=[l  lcommaaccent uni1E37 uni1E39 uni1E3B fl f_f_l];
+@_ohorn_right_1=[ohorn  uni1EDB uni1EDD uni1EDF uni1EE1 uni1EE3];
+@_u_Right=[u  ugrave uacute ucircumflex udieresis uhungarumlaut umacron uring uogonek uni01D4 uni01D6 uni01D8 uni01DA uni01DC uni1EE5 uni1EE7 uni0215 uni0217 uni1E7B uni1E79];
+@_TM=[trademark  uni2120];
+@_COPYRIGHT=[copyright  uni2117];
+@_B_Left=[B  D Dcaron];
+@_Uhorn_right=[Uhorn  uni1EE8 uni1EEA uni1EEC uni1EEE uni1EF0];
+@_Uhorn_lc_right=[uhorn  uni1EE9 uni1EEB uni1EED uni1EEF uni1EF1];
+@_0sup=[zero.inferior  zero.superior zero.subs zero.dnom zero.numr];
+@_1sup=[one.inferior  onesuperior one.subs one.dnom one.numr];
+@_2sup=[two.inferior  twosuperior two.subs two.dnom two.numr];
+@_3sup=[three.inferior  threesuperior three.subs three.dnom three.numr];
+@_4sup=[four.inferior  four.superior four.subs four.dnom four.numr];
+@_5sup=[five.inferior  five.superior five.subs five.dnom five.numr];
+@_6sup=[six.inferior  six.superior six.subs six.dnom six.numr];
+@_7sup=[seven.inferior  seven.superior seven.subs seven.dnom seven.numr];
+@_8sup=[eight.inferior  eight.superior eight.subs eight.dnom eight.numr];
+@_9sup=[nine.inferior  nine.superior nine.subs nine.dnom nine.numr];
+@_parenleftsup=[parenleft.inferior  parenleft.superior];
+@_parenrightsup=[parenright.inferior  parenright.superior];
+@_d_Right=[d  uni1E0D uni1E0F];
+@_z_right=[z  zacute zdotaccent zcaron uni1E93 uni01C5 uni01C6];
+@_j_Right=[j  jcircumflex ij iacute_j.loclNLD uni01C9 uni01C8 uni01CC uni01CB];
+@_F_Right=[F  franc];
+@_dcaron_right=[dcaron  lcaron tcaron];
+
+
+#--------------------------------------------------------------------
+
+#------- T E L U G U -------#
+
+#--------------------------------------------------------------------
+
+@side_marks =[matraVocalicR.te matraVocalicRr.te Kasmall1.te Casmall1.te Chasmall1.te Nasmall1.te Pasmall1.te Phasmall1.te Basmall1.te Bhasmall1.te Masmall1.te Yasmall1.te Llasmall1.te Vasmall1.te Shasmall1.te Sasmall1.te Kasmall2.te Casmall2.te Chasmall2.te Nasmall2.te Pasmall2.te Phasmall2.te Basmall2.te Bhasmall2.te Masmall2.te Yasmall2.te Llasmall2.te Vasmall2.te Shasmall2.te matraVocalicR1.te matraVocalicRr1.te Sasmall2.te];
+
+
+
+# Classes for Telugu Below base substitution
+
+@CombuChars = [Kha.te Gha.te Cha.te Jha.te Ddha.te Tha.te Dha.te Pha.te Bha.te PhaHalf2.te KhamatraI.te GhamatraI.te ChamatraI.te JhamatraI.te DdhamatraI.te ThamatraI.te DhamatraI.te PhamatraI.te BhamatraI.te KhamatraE.te GhamatraE.te ChamatraE.te JhamatraE.te DdhamatraE.te ThamatraE.te DhamatraE.te PhamatraE.te BhamatraE.te KhamatraEe.te GhamatraEe.te ChamatraEe.te JhamatraEe.te DdhamatraEe.te ThamatraEe.te DhamatraEe.te PhamatraEe.te BhamatraEe.te KhamatraO.te GhamatraO.te ChamatraO.te JhamatraO.te DdhamatraO.te ThamatraO.te DhamatraO.te PhamatraO.te BhamatraO.te KhamatraOo.te GhamatraOo.te ChamatraOo.te JhamatraOo.te DdhamatraOo.te ThamatraOo.te DhamatraOo.te PhamatraOo.te BhamatraOo.te KhamatraAu.te GhamatraAu.te ChamatraAu.te JhamatraAu.te DdhamatraAu.te ThamatraAu.te DhamatraAu.te PhamatraAu.te BhamatraAu.te KhamatraIi.te GhamatraIi.te ChamatraIi.te JhamatraIi.te DdhamatraIi.te ThamatraIi.te DhamatraIi.te PhamatraIi.te BhamatraIi.te KhamatraAa.te GhamatraAa.te ChamatraAa.te JhamatraAa.te DdhamatraAa.te ThamatraAa.te DhamatraAa.te PhamatraAa.te BhamatraAa.te KhamatraU.te GhamatraU.te ChamatraU.te JhamatraU.te DdhamatraU.te ThamatraU.te DhamatraU.te PhamatraU.te BhamatraU.te KhamatraUu.te GhamatraUu.te ChamatraUu.te JhamatraUu.te DdhamatraUu.te ThamatraUu.te DhamatraUu.te PhamatraUu.te BhamatraUu.te KhaHalant.te GhaHalant.te ChaHalant.te JhaHalant.te DdhaHalant.te ThaHalant.te DhaHalant.te PhaHalant.te BhaHalant.te];
+
+
+@SmallCombuChars = [Kha2.te Gha2.te Cha2.te Jha2.te Ddha2.te Tha2.te Dha2.te Pha2.te Bha2.te PhaHalf3.te KhamatraI2.te GhamatraI2.te ChamatraI2.te JhamatraI2.te DdhamatraI2.te ThamatraI2.te DhamatraI2.te PhamatraI2.te BhamatraI2.te KhamatraE2.te GhamatraE2.te ChamatraE2.te JhamatraE2.te DdhamatraE2.te ThamatraE2.te DhamatraE2.te PhamatraE2.te BhamatraE2.te KhamatraEe2.te GhamatraEe2.te ChamatraEe2.te JhamatraEe2.te DdhamatraEe2.te ThamatraEe2.te DhamatraEe2.te PhamatraEe2.te BhamatraEe2.te KhamatraO2.te GhamatraO2.te ChamatraO2.te JhamatraO2.te DdhamatraO2.te ThamatraO2.te DhamatraO2.te PhamatraO2.te BhamatraO2.te KhamatraOo2.te GhamatraOo2.te ChamatraOo2.te JhamatraOo2.te DdhamatraOo2.te ThamatraOo2.te DhamatraOo2.te PhamatraOo2.te BhamatraOo2.te KhamatraAu2.te GhamatraAu2.te ChamatraAu2.te JhamatraAu2.te DdhamatraAu2.te ThamatraAu2.te DhamatraAu2.te PhamatraAu2.te BhamatraAu2.te KhamatraIi2.te GhamatraIi2.te ChamatraIi2.te JhamatraIi2.te DdhamatraIi2.te ThamatraIi2.te DhamatraIi2.te PhamatraIi2.te BhamatraIi2.te KhamatraAa2.te GhamatraAa2.te ChamatraAa2.te JhamatraAa2.te DdhamatraAa2.te ThamatraAa2.te DhamatraAa2.te PhamatraAa2.te BhamatraAa2.te KhamatraU2.te GhamatraU2.te ChamatraU2.te JhamatraU2.te DdhamatraU2.te ThamatraU2.te DhamatraU2.te PhamatraU2.te BhamatraU2.te KhamatraUu2.te GhamatraUu2.te ChamatraUu2.te JhamatraUu2.te DdhamatraUu2.te ThamatraUu2.te DhamatraUu2.te PhamatraUu2.te BhamatraUu2.te KhaHalant2.te GhaHalant2.te ChaHalant2.te JhaHalant2.te DdhaHalant2.te ThaHalant2.te DhaHalant2.te PhaHalant2.te BhaHalant2.te];
+
+@AiFor1 = [KamatraE.te];
+
+@AiFor2 = [KhamatraE.te NgamatraE.te JamatraE.te TtamatraE.te DdamatraE.te DdhamatraE.te NnamatraE.te ThamatraE.te DamatraE.te DhamatraE.te NamatraE.te PamatraE.te PhamatraE.te BamatraE.te BhamatraE.te LamatraE.te VamatraE.te SsamatraE.te SamatraE.te KhamatraE2.te DdhamatraE2.te ThamatraE2.te DhamatraE2.te PhamatraE2.te BhamatraE2.te NyamatraE.te
+
+GhamatraE.te MamatraE.te HamatraE.te GhamatraE2.te 
+CamatraE.te ChamatraE.te RramatraE.te ChamatraE2.te];
+
+@AiFor3 = [GamatraE.te TthamatraE.te RamatraE.te ShamatraE.te TamatraE.te LlamatraE.te];
+
+@AiFor4 = [JhamatraE.te JhamatraE2.te YamatraE.te];
+
+@ForJha = [Ka.te Ga.te Ttha.te Ra.te Sha.te KamatraI.te GamatraI.te TthamatraI.te RamatraI.te ShamatraI.te KamatraIi.te GamatraIi.te TthamatraIi.te RamatraIi.te ShamatraIi.te KamatraE.te GamatraE.te TthamatraE.te RamatraE.te ShamatraE.te KamatraEe.te GamatraEe.te TthamatraEe.te RamatraEe.te ShamatraEe.te matraAiLengthmarkKa.te];
+
+
+@allsmall1 = [Kasmall1.te Khasmall1.te Gasmall1.te Ghasmall1.te Ngasmall1.te Casmall1.te Chasmall1.te Jasmall1.te Jhasmall1.te Nyasmall1.te Ttasmall1.te Tthasmall1.te Ddasmall1.te Ddhasmall1.te Nnasmall1.te Tasmall1.te Thasmall1.te Dasmall1.te Dhasmall1.te Nasmall1.te Pasmall1.te Phasmall1.te Basmall1.te Bhasmall1.te Masmall1.te Yasmall1.te Rasmall1.te RasmallAlt1.te RasmallAlt2.te Rrasmall1.te Lasmall1.te Llasmall1.te Vasmall1.te Shasmall1.te Ssasmall1.te SsasmallAlt1.te Sasmall1.te Hasmall1.te Jhasmall3.te KaSsasmall1.te TtRasmall1.te TRasmall1.te GRasmall1.te];
+
+
+@small1 = [Kasmall1.te Khasmall1.te Gasmall1.te Ghasmall1.te Ngasmall1.te Casmall1.te Chasmall1.te Jasmall1.te Jhasmall1.te Nyasmall1.te Ttasmall1.te Tthasmall1.te Ddasmall1.te Ddhasmall1.te Nnasmall1.te Tasmall1.te Thasmall1.te Dasmall1.te Dhasmall1.te Nasmall1.te Pasmall1.te Phasmall1.te Basmall1.te Bhasmall1.te Masmall1.te Yasmall1.te Rasmall1.te Rrasmall1.te Lasmall1.te Llasmall1.te Vasmall1.te Shasmall1.te Ssasmall1.te Sasmall1.te Hasmall1.te Jhasmall3.te TtRasmall1.te TRasmall1.te GRasmall1.te KaSsasmall1.te];
+
+@small2 = [Kasmall2.te Casmall2.te Chasmall2.te Nasmall2.te Pasmall2.te Phasmall2.te Basmall2.te Bhasmall2.te Masmall2.te Yasmall2.te Llasmall2.te Vasmall2.te Shasmall2.te Sasmall2.te];
+
+@small3 = [Kasmall2.te Khasmall2.te Gasmall2.te Ghasmall2.te Ngasmall2.te Casmall2.te Chasmall2.te Jasmall2.te Jhasmall2.te Nyasmall2.te Ttasmall2.te Tthasmall2.te Ddasmall2.te Ddhasmall2.te Nnasmall2.te Tasmall2.te Thasmall2.te Dasmall2.te Dhasmall2.te Nasmall2.te Pasmall2.te Phasmall2.te Basmall2.te Bhasmall2.te Masmall2.te Yasmall2.te Rasmall2.te Rrasmall2.te Lasmall2.te Llasmall2.te Vasmall2.te Shasmall2.te Ssasmall2.te Sasmall2.te Hasmall2.te Jhasmall2.te TtRasmall2.te TRasmall2.te GRasmall2.te KaSsasmall2.te];
+
+@smallbelow1_withoutRa = [Khasmall1.te Gasmall1.te Ghasmall1.te Ngasmall1.te Jasmall1.te Jhasmall1.te Nyasmall1.te Ttasmall1.te Tthasmall1.te Ddasmall1.te Ddhasmall1.te Nnasmall1.te Tasmall1.te Thasmall1.te Dasmall1.te Dhasmall1.te Rrasmall1.te Lasmall1.te Ssasmall1.te Hasmall1.te Jhasmall3.te TtRasmall1.te TRasmall1.te GRasmall1.te KaSsasmall1.te];
+
+@smallbelow1 = [Khasmall1.te Gasmall1.te Ghasmall1.te Ngasmall1.te Jasmall1.te Jhasmall1.te Nyasmall1.te Ttasmall1.te Tthasmall1.te Ddasmall1.te Ddhasmall1.te Nnasmall1.te Tasmall1.te Thasmall1.te Dasmall1.te Dhasmall1.te Rasmall1.te RasmallAlt1.te RasmallAlt2.te Rrasmall1.te Lasmall1.te Ssasmall1.te SsasmallAlt1.te Hasmall1.te Jhasmall3.te];
+
+@smallbelow2 = [Khasmall2.te Gasmall2.te Ghasmall2.te Ngasmall2.te Jasmall2.te Jhasmall2.te Nyasmall2.te Ttasmall2.te Tthasmall2.te Ddasmall2.te Ddhasmall2.te Nnasmall2.te Tasmall2.te Thasmall2.te Dasmall2.te Dhasmall2.te Rasmall2.te RasmallAlt3.te RasmallAlt4.te RasmallAlt5.te RasmallAlt6.te RasmallAlt7.te Rrasmall2.te Lasmall2.te Ssasmall2.te Hasmall2.te Jhasmall2.te TtRasmall2.te TRasmall2.te GRasmall2.te KaSsasmall2.te];
+
+@smallbelow3 = [TtRasmall1.te TRasmall1.te GRasmall1.te KaSsasmall1.te];
+
+@Aimatra = [matraAiLengthmarkKa.te matraAiLengthmarkKha.te matraAiLengthmarkGa.te matraAiLengthmarkYa.te];
+
+@Aimatra1 = [matraAiLengthmarkKa1.te matraAiLengthmarkKha1.te matraAiLengthmarkGa1.te  matraAiLengthmarkYa1.te];
+
+
+#--------------------------------------------------------------------
+
+
+@forRasmallAlt2 = [Ka.te KaHalf.te KamatraAa.te KamatraI.te KamatraIi.te KamatraU.te KamatraUu.te KamatraE.te KamatraEe.te KamatraO.te KamatraOo.te KamatraAu.te KaHalant.te Ga.te GaHalf.te GamatraAa.te GamatraI.te GamatraIi.te GamatraU.te GamatraUu.te GamatraE.te GamatraEe.te GamatraO.te GamatraOo.te GamatraAu.te GaHalant.te Ttha.te TthaHalf.te TthamatraAa.te TthamatraI.te TthamatraIi.te TthamatraU.te TthamatraUu.te TthamatraE.te TthamatraEe.te TthamatraO.te TthamatraOo.te TthamatraAu.te TthaHalant.te Ra.te RaHalf.te RamatraAa.te RamatraI.te RamatraIi.te RamatraU.te RamatraUu.te RamatraE.te RamatraEe.te RamatraO.te RamatraOo.te RamatraAu.te RaHalant.te Lla.te LlaHalf.te LlamatraAa.te LlamatraI.te LlamatraIi.te LlamatraU.te LlamatraUu.te LlamatraE.te LlamatraEe.te LlamatraO.te LlamatraOo.te LlamatraAu.te LlaHalant.te Sha.te ShaHalf.te ShamatraAa.te ShamatraI.te ShamatraIi.te ShamatraU.te ShamatraUu.te ShamatraE.te ShamatraEe.te ShamatraO.te ShamatraOo.te ShamatraAu.te ShaHalant.te];
+ 
+
+@forRasmallAlt1 = [Gha.te GhaHalf.te GhamatraAa.te GhamatraI.te GhamatraIi.te GhamatraU.te GhamatraUu.te GhamatraE.te GhamatraEe.te GhamatraO.te GhamatraOo.te GhamatraAu.te GhaHalant.te Gha2.te GhamatraAa2.te GhamatraI2.te GhamatraIi2.te GhamatraE2.te GhamatraEe2.te GhamatraO2.te GhamatraOo2.te GhamatraAu2.te GhamatraU2.te GhamatraUu2.te GhaHalant2.te Jha.te JhaHalf.te JhamatraAa.te JhamatraI.te JhamatraIi.te JhamatraU.te JhamatraUu.te JhamatraE.te JhamatraEe.te JhamatraO.te JhamatraOo.te JhamatraAu.te JhaHalant.te Jha2.te JhamatraAa2.te JhamatraI2.te JhamatraIi2.te JhamatraE2.te JhamatraEe2.te JhamatraO2.te JhamatraOo2.te JhamatraAu2.te JhamatraU2.te JhamatraUu2.te JhaHalant2.te Ma.te MaHalf.te MamatraAa.te MamatraI.te MamatraIi.te MamatraU.te MamatraUu.te MamatraE.te MamatraEe.te MamatraO.te MamatraOo.te MamatraAu.te MaHalant.te Ya.te YaHalf.te YamatraAa.te YamatraI.te YamatraIi.te YamatraU.te YamatraUu.te YamatraE.te YamatraEe.te YamatraO.te YamatraOo.te YamatraAu.te YaHalant.te];
+
+
+#--------------------------------------------------------------------
+
+
+#--------------------------------------------------------------------
+
+
+# Classes for Telugu Below base mark positioning
+
+markClass [Khasmall1.te Gasmall1.te Ghasmall1.te Ngasmall1.te Jasmall1.te Jhasmall1.te Nyasmall1.te Ttasmall1.te Tthasmall1.te Ddasmall1.te Ddhasmall1.te Nnasmall1.te Tasmall1.te Thasmall1.te Dasmall1.te Dhasmall1.te Rasmall1.te RasmallAlt1.te RasmallAlt2.te Rrasmall1.te Lasmall1.te Ssasmall1.te SsasmallAlt1.te Hasmall1.te VocalicLsmall2.te VocalicLlsmall2.te TtRasmall1.te TRasmall1.te GRasmall1.te KaSsasmall1.te 
+matraAiLengthmarkKa1.te matraAiLengthmarkKha1.te matraAiLengthmarkGa1.te  matraAiLengthmarkKa2.te matraAiLengthmarkKha2.te matraAiLengthmarkGa2.te matraAiLengthmarkYa1.te matraAiLengthmarkYa2.te
+] <anchor 0 0> @bottom;
+
+
+markClass [ matraAiLengthmarkKa.te matraAiLengthmarkKha.te matraAiLengthmarkGa.te matraAiLengthmarkYa.te] <anchor 0 0> @bottom2;
+
+
+@Ka = [Ka.te KaHalant.te KamatraAa.te KamatraI.te KamatraIi.te KamatraU.te KamatraUu.te KamatraE.te KamatraEe.te KamatraO.te KamatraOo.te KamatraAu.te];
+
+@Kha = [Kha.te KhaHalant.te KhaHalant2.te KhamatraAa.te KhamatraI.te KhamatraIi.te KhamatraU.te KhamatraUu.te KhamatraE.te KhamatraEe.te KhamatraO.te KhamatraOo.te KhamatraAu.te Kha2.te KhamatraAa2.te KhamatraI2.te KhamatraIi2.te KhamatraU2.te KhamatraUu2.te KhamatraE2.te KhamatraEe2.te KhamatraO2.te KhamatraOo2.te KhamatraAu2.te];
+
+@Ga = [Ga.te GaHalant.te GamatraAa.te GamatraI.te GamatraIi.te GamatraU.te GamatraUu.te GamatraE.te GamatraEe.te GamatraO.te GamatraOo.te GamatraAu.te];
+
+@Gha = [Gha.te GhaHalant.te GhaHalant2.te GhamatraAa.te GhamatraI.te GhamatraIi.te GhamatraU.te GhamatraUu.te GhamatraE.te GhamatraEe.te GhamatraO.te GhamatraOo.te GhamatraAu.te Gha2.te GhamatraAa2.te GhamatraI2.te GhamatraIi2.te GhamatraU2.te GhamatraUu2.te GhamatraE2.te GhamatraEe2.te GhamatraO2.te GhamatraOo2.te GhamatraAu2.te];
+
+@Nga = [Nga.te NgaHalant.te NgamatraAa.te NgamatraI.te NgamatraIi.te NgamatraU.te NgamatraUu.te NgamatraE.te NgamatraEe.te NgamatraO.te NgamatraOo.te NgamatraAu.te];
+
+@Ca = [Ca.te CaHalant.te CamatraAa.te CamatraI.te CamatraIi.te CamatraU.te CamatraUu.te CamatraE.te CamatraEe.te CamatraO.te CamatraOo.te CamatraAu.te];
+
+@Cha = [Cha.te ChaHalant.te ChaHalant2.te ChamatraAa.te ChamatraI.te ChamatraIi.te ChamatraU.te ChamatraUu.te ChamatraE.te ChamatraEe.te ChamatraO.te ChamatraOo.te ChamatraAu.te Cha2.te ChamatraAa2.te ChamatraI2.te ChamatraIi2.te ChamatraU2.te ChamatraUu2.te ChamatraE2.te ChamatraEe2.te ChamatraO2.te ChamatraOo2.te ChamatraAu2.te];
+
+@Ja = [Ja.te JaHalant.te JamatraAa.te JamatraI.te JamatraIi.te JamatraU.te JamatraUu.te JamatraE.te JamatraEe.te JamatraO.te JamatraOo.te JamatraAu.te];
+
+@Jha = [Jha.te JhaHalant.te JhaHalant2.te JhamatraAa.te JhamatraI.te JhamatraIi.te JhamatraU.te JhamatraUu.te JhamatraE.te JhamatraEe.te JhamatraO.te JhamatraOo.te JhamatraAu.te Jha2.te JhamatraAa2.te JhamatraI2.te JhamatraIi2.te JhamatraU2.te JhamatraUu2.te JhamatraE2.te JhamatraEe2.te JhamatraO2.te JhamatraOo2.te JhamatraAu2.te];
+
+@Nya = [Nya.te NyaHalant.te NyamatraAa.te NyamatraI.te NyamatraIi.te NyamatraU.te NyamatraUu.te NyamatraE.te NyamatraEe.te NyamatraO.te NyamatraOo.te NyamatraAu.te];
+
+@Tta = [Tta.te TtaHalant.te TtamatraAa.te TtamatraI.te TtamatraIi.te TtamatraU.te TtamatraUu.te TtamatraE.te TtamatraEe.te TtamatraO.te TtamatraOo.te TtamatraAu.te];
+
+@Ttha = [Ttha.te TthaHalant.te TthamatraAa.te TthamatraI.te TthamatraIi.te TthamatraU.te TthamatraUu.te TthamatraE.te TthamatraEe.te TthamatraO.te TthamatraOo.te TthamatraAu.te];
+
+@Dda = [Dda.te DdaHalant.te DdamatraAa.te DdamatraI.te DdamatraIi.te DdamatraU.te DdamatraUu.te DdamatraE.te DdamatraEe.te DdamatraO.te DdamatraOo.te DdamatraAu.te];
+
+@Ddha = [Ddha.te DdhaHalant.te DdhaHalant2.te DdhamatraAa.te DdhamatraI.te DdhamatraIi.te DdhamatraU.te DdhamatraUu.te DdhamatraE.te DdhamatraEe.te DdhamatraO.te DdhamatraOo.te DdhamatraAu.te Ddha2.te DdhamatraAa2.te DdhamatraI2.te DdhamatraIi2.te DdhamatraU2.te DdhamatraUu2.te DdhamatraE2.te DdhamatraEe2.te DdhamatraO2.te DdhamatraOo2.te DdhamatraAu2.te];
+
+@Nna = [Nna.te NnaHalant.te NnamatraAa.te NnamatraI.te NnamatraIi.te NnamatraU.te NnamatraUu.te NnamatraE.te NnamatraEe.te NnamatraO.te NnamatraOo.te NnamatraAu.te];
+
+@Ta = [Ta.te TaHalant.te TamatraAa.te TamatraI.te TamatraIi.te TamatraU.te TamatraUu.te TamatraE.te TamatraEe.te TamatraO.te TamatraOo.te TamatraAu.te];
+
+@Tha = [Tha.te ThaHalant.te ThaHalant2.te ThamatraAa.te ThamatraI.te ThamatraIi.te ThamatraU.te ThamatraUu.te ThamatraE.te ThamatraEe.te ThamatraO.te ThamatraOo.te ThamatraAu.te Tha2.te ThamatraAa2.te ThamatraI2.te ThamatraIi2.te ThamatraU2.te ThamatraUu2.te ThamatraE2.te ThamatraEe2.te ThamatraO2.te ThamatraOo2.te ThamatraAu2.te];
+
+@Da = [Da.te DaHalant.te DamatraAa.te DamatraI.te DamatraIi.te DamatraU.te DamatraUu.te DamatraE.te DamatraEe.te DamatraO.te DamatraOo.te DamatraAu.te];
+
+@Dha = [Dha.te DhaHalant.te DhaHalant2.te DhamatraAa.te DhamatraI.te DhamatraIi.te DhamatraU.te DhamatraUu.te DhamatraE.te DhamatraEe.te DhamatraO.te DhamatraOo.te DhamatraAu.te Dha2.te DhamatraAa2.te DhamatraI2.te DhamatraIi2.te DhamatraU2.te DhamatraUu2.te DhamatraE2.te DhamatraEe2.te DhamatraO2.te DhamatraAu2.te];
+
+@Na = [Na.te NaHalant.te NamatraAa.te NamatraI.te NamatraIi.te NamatraU.te NamatraUu.te NamatraE.te NamatraEe.te NamatraO.te NamatraOo.te NamatraAu.te];
+
+@Pa = [Pa.te PaHalant.te PamatraAa.te PamatraI.te PamatraIi.te PamatraU.te PamatraUu.te PamatraE.te PamatraEe.te PamatraO.te PamatraOo.te PamatraAu.te];
+
+@Pha = [Pha.te PhaHalant.te PhaHalant2.te PhamatraAa.te PhamatraI.te PhamatraIi.te PhamatraU.te PhamatraUu.te PhamatraE.te PhamatraEe.te PhamatraO.te PhamatraOo.te PhamatraAu.te Pha2.te PhamatraAa2.te PhamatraI2.te PhamatraIi2.te PhamatraU2.te PhamatraUu2.te PhamatraE2.te PhamatraEe2.te PhamatraO2.te PhamatraOo2.te PhamatraAu2.te];
+
+@Ba = [Ba.te BaHalant.te BamatraAa.te BamatraI.te BamatraIi.te BamatraU.te BamatraUu.te BamatraE.te BamatraEe.te BamatraO.te BamatraOo.te BamatraAu.te];
+
+@Bha = [Bha.te BhaHalant.te BhaHalant2.te BhamatraAa.te BhamatraI.te BhamatraIi.te BhamatraU.te BhamatraUu.te BhamatraE.te BhamatraEe.te BhamatraO.te BhamatraOo.te BhamatraAu.te Bha2.te BhamatraAa2.te BhamatraI2.te BhamatraIi2.te BhamatraU2.te BhamatraUu2.te BhamatraE2.te BhamatraEe2.te BhamatraO2.te BhamatraOo2.te BhamatraAu2.te];
+
+@Ma = [Ma.te MaHalant.te MamatraAa.te MamatraI.te MamatraIi.te MamatraU.te MamatraUu.te MamatraE.te MamatraEe.te MamatraO.te MamatraOo.te MamatraAu.te];
+
+@Ya = [Ya.te YaHalant.te YamatraAa.te YamatraI.te YamatraIi.te YamatraU.te YamatraUu.te YamatraE.te YamatraEe.te YamatraO.te YamatraOo.te YamatraAu.te];
+
+@Ra = [Ra.te RaHalant.te RamatraAa.te RamatraI.te RamatraIi.te RamatraU.te RamatraUu.te RamatraE.te RamatraEe.te RamatraO.te RamatraOo.te RamatraAu.te];
+
+@Rra = [Rra.te RraHalant.te RramatraAa.te RramatraI.te RramatraIi.te RramatraU.te RramatraUu.te RramatraE.te RramatraEe.te RramatraO.te RramatraOo.te RramatraAu.te];
+
+@La = [La.te LaHalant.te LamatraAa.te LamatraI.te LamatraIi.te LamatraU.te LamatraUu.te LamatraE.te LamatraEe.te LamatraO.te LamatraOo.te LamatraAu.te];
+
+@Lla = [Lla.te LlaHalant.te LlamatraAa.te LlamatraI.te LlamatraIi.te LlamatraU.te LlamatraUu.te LlamatraE.te LlamatraEe.te LlamatraO.te LlamatraOo.te LlamatraAu.te];
+
+@Llla = [Llla.te];
+
+@Va = [Va.te VaHalant.te VamatraAa.te VamatraI.te VamatraIi.te VamatraU.te VamatraUu.te VamatraE.te VamatraEe.te VamatraO.te VamatraOo.te VamatraAu.te];
+
+@Sha = [Sha.te ShaHalant.te ShamatraAa.te ShamatraI.te ShamatraIi.te ShamatraU.te ShamatraUu.te ShamatraE.te ShamatraEe.te ShamatraO.te ShamatraOo.te ShamatraAu.te];
+
+@Ssa = [Ssa.te SsaHalant.te SsamatraAa.te SsamatraI.te SsamatraIi.te SsamatraU.te SsamatraUu.te SsamatraE.te SsamatraEe.te SsamatraO.te SsamatraOo.te SsamatraAu.te];
+
+@Sa = [Sa.te SaHalant.te SamatraAa.te SamatraI.te SamatraIi.te SamatraU.te SamatraUu.te SamatraE.te SamatraEe.te SamatraO.te SamatraOo.te SamatraAu.te];
+
+@Ha = [ Ha.te HaHalant.te HamatraAa.te HamatraI.te HamatraIi.te HamatraU.te HamatraUu.te HamatraE.te HamatraEe.te HamatraO.te HamatraOo.te HamatraAu.te];
+
+
+#--------------------------------------------------------------------
+
+#------- K E R N I N G -------#
+
+#-------------------------------------------------------------------- 
+
+
+@_Ka_right=[Ka.te  KaHalant.te KaHalf.te KamatraE.te KamatraEe.te KamatraI.te KamatraIi.te KaSsamatraAi.te];
+@_vowelA=[vowelA.te  vowelAa.te];
+@_vowelAi=[vowelI.te  Nya.te vowelVocalicL.te vowelVocalicLl.te NyamatraI.te NyamatraU.te NyamatraUu.te NyamatraE.te NyamatraEe.te NyaHalant.te NyamatraIi.te NyamatraOo.te NyamatraAu.te NyamatraO.te NyamatraAa.te];
+@_Ta=[Ta.te  TaHalf.te TamatraI.te TamatraU.te TamatraUu.te TamatraE.te TamatraEe.te TaHalant.te TamatraIi.te TamatraOo.te TamatraO.te TamatraAa.te TamatraAu.te];
+@_vowelO=[Ba.te BaHalant.te BamatraAa.te BamatraAu.te BamatraE.te BamatraEe.te BamatraI.te BamatraIi.te BamatraO.te BamatraOo.te BamatraU.te BamatraUu.te Bha.te Bha2.te BhaHalant.te BhaHalf.te BhamatraAa.te BhamatraAa2.te BhamatraAu.te BhamatraAu2.te BhamatraE.te BhamatraE2.te BhamatraEe.te BhamatraEe2.te BhamatraI.te BhamatraI2.te BhamatraIi.te BhamatraIi2.te BhamatraO.te BhamatraO2.te BhamatraOo.te BhamatraOo2.te BhamatraU.te BhamatraU2.te BhamatraUu.te BhamatraUu2.te Dza.te Ja.te JaHalant.te JaHalf.te JamatraAa.te JamatraAu.te JamatraE.te JamatraEe.te JamatraI.te JamatraIi.te JamatraO.te JamatraOo.te JamatraU.te JamatraUu.te Nga.te NgaHalant.te NgamatraAa.te NgamatraAu.te NgamatraE.te NgamatraEe.te NgamatraI.te NgamatraIi.te NgamatraO.te NgamatraOo.te NgamatraU.te NgamatraUu.te vowelAu.te vowelOo.te vowelVocalicR.te vowelVocalicRr.te vowelO.te  BhaHalant2.te];
+@_Ka=[KaHalant.te KaHalf.te KamatraAu.te KamatraE.te KamatraEe.te KamatraI.te KamatraIi.te KamatraU.te KamatraUu.te Ka.te  KamatraO.te KamatraOo.te KaSsamatraAi.te];
+@_Kha=[Kha.te  KhaHalant.te KhamatraAa.te KhamatraAu.te KhamatraE.te KhamatraEe.te KhamatraI.te KhamatraIi.te KhamatraO.te KhamatraOo.te KhamatraU.te KhamatraUu.te Kha2.te KhamatraAa2.te KhamatraI2.te KhamatraIi2.te KhamatraE2.te KhamatraEe2.te KhamatraO2.te KhamatraOo2.te KhamatraAu2.te KhamatraU2.te KhamatraUu2.te KhaHalant2.te];
+@_Ga=[Ga.te  GaHalf.te GamatraI.te GamatraU.te GamatraUu.te GamatraE.te GamatraEe.te GaHalant.te GamatraIi.te GamatraAu.te GamatraO.te GamatraOo.te];
+@_Ca=[CaHalant.te CaHalf.te CamatraAu.te CamatraE.te CamatraEe.te CamatraI.te CamatraIi.te CamatraO.te CamatraOo.te CamatraU.te CamatraUu.te Cha.te Cha2.te ChaHalant.te ChaHalf.te ChamatraAu.te ChamatraAu2.te ChamatraE.te ChamatraE2.te ChamatraEe.te ChamatraEe2.te ChamatraI.te ChamatraI2.te ChamatraIi.te ChamatraIi2.te ChamatraO.te ChamatraO2.te ChamatraOo.te ChamatraOo2.te ChamatraU.te ChamatraU2.te ChamatraUu.te ChamatraUu2.te Tsa.te Ca.te  ChaHalant2.te];
+@_Nna=[Nna.te  NnamatraI.te NnamatraU.te NnamatraUu.te NnamatraE.te NnamatraEe.te NnaHalant.te NnamatraIi.te NnamatraAu.te NnamatraOo.te NnamatraO.te];
+@_Sha=[Sha.te  ShaHalant.te ShaHalf.te ShamatraAu.te ShamatraE.te ShamatraEe.te ShamatraI.te ShamatraIi.te ShamatraO.te ShamatraOo.te ShamatraU.te ShamatraUu.te];
+@_Lla=[Lla.te  LlaHalf.te LlamatraI.te LlamatraU.te LlamatraUu.te LlamatraE.te LlamatraEe.te LlaHalant.te LlamatraIi.te LlamatraOo.te LlamatraAu.te LlamatraO.te LlamatraAa.te];
+@_Dda=[DaHalant.te DaHalf.te DamatraAu.te DamatraE.te DamatraEe.te DamatraI.te DamatraIi.te DamatraO.te DamatraOo.te DamatraU.te DamatraUu.te Dda.te DdaHalant.te DdaHalf.te DdamatraAu.te DdamatraE.te DdamatraEe.te DdamatraI.te DdamatraIi.te DdamatraO.te DdamatraOo.te DdamatraU.te DdamatraUu.te Ddha.te Ddha2.te DdhaHalant.te DdhaHalf.te DdhamatraAu.te DdhamatraAu2.te DdhamatraE.te DdhamatraE2.te DdhamatraEe2.te DdhamatraI.te DdhamatraI2.te DdhamatraIi.te DdhamatraIi2.te DdhamatraO.te DdhamatraO2.te DdhamatraOo.te DdhamatraOo2.te DdhamatraU.te DdhamatraU2.te DdhamatraUu.te DdhamatraUu2.te Dha.te Dha2.te DhaHalant.te DhaHalf.te DhamatraAu.te DhamatraAu2.te DhamatraE.te DhamatraE2.te DhamatraEe.te DhamatraEe2.te DhamatraI.te DhamatraI2.te DhamatraIi.te DhamatraIi2.te DhamatraO.te DhamatraO2.te DhamatraOo.te DhamatraOo2.te DhamatraU.te DhamatraU2.te DhamatraUu.te DhamatraUu2.te Rrr.te Tha.te Tha2.te ThaHalant.te ThaHalf.te ThamatraAu.te ThamatraAu2.te ThamatraE.te ThamatraE2.te ThamatraEe.te ThamatraEe2.te ThamatraI.te ThamatraI2.te ThamatraIi.te ThamatraIi2.te ThamatraO.te ThamatraO2.te ThamatraOo.te ThamatraOo2.te ThamatraU.te ThamatraU2.te ThamatraUu.te ThamatraUu2.te Da.te  DdhaHalant2.te ThaHalant2.te DhaHalant2.te DdhamatraEe.te];
+@_Tta=[Tta.te  TtaHalant.te TtamatraAa.te TtamatraAu.te TtamatraE.te TtamatraEe.te TtamatraI.te TtamatraIi.te TtamatraO.te TtamatraOo.te TtamatraU.te TtamatraUu.te];
+@_La=[La.te  LamatraAa.te LamatraI.te LamatraIi.te LamatraU.te LamatraUu.te LamatraE.te LamatraEe.te LamatraO.te LamatraOo.te LamatraAu.te LaHalant.te];
+@_Ha_right=[Ha.te  matraAa.te KamatraAa.te KhamatraAa.te GamatraAa.te GhamatraAa.te NgamatraAa.te CamatraAa.te ChamatraAa.te JamatraAa.te JhamatraAa.te NyamatraAa.te TtamatraAa.te TthamatraAa.te DdamatraAa.te DdhamatraAa.te NnamatraAa.te TamatraAa.te ThamatraAa.te DamatraAa.te DhamatraAa.te NamatraAa.te PamatraAa.te PhamatraAa.te BamatraAa.te BhamatraAa.te MamatraAa.te YamatraAa.te RamatraAa.te RramatraAa.te LamatraAa.te LlamatraAa.te VamatraAa.te ShamatraAa.te SsamatraAa.te SamatraAa.te HamatraAa.te KhamatraAa2.te ChamatraAa2.te JhamatraAa2.te GhamatraAa2.te DdhamatraAa2.te ThamatraAa2.te DhamatraAa2.te PhamatraAa2.te BhamatraAa2.te matraUu.te KamatraUu.te KhamatraUu.te GamatraUu.te GhamatraUu.te NgamatraUu.te CamatraUu.te ChamatraUu.te JamatraUu.te JhamatraUu.te NyamatraUu.te TtamatraUu.te TthamatraUu.te DdamatraUu.te DdhamatraUu.te NnamatraUu.te TamatraUu.te ThamatraUu.te DamatraUu.te DhamatraUu.te NamatraUu.te PamatraUu.te PhamatraUu.te BamatraUu.te BhamatraUu.te MamatraUu.te YamatraUu.te RamatraUu.te RramatraUu.te LamatraUu.te LlamatraUu.te VamatraUu.te ShamatraUu.te SsamatraUu.te SamatraUu.te HamatraUu.te KhamatraUu2.te GhamatraUu2.te ChamatraUu2.te JhamatraUu2.te DdhamatraUu2.te ThamatraUu2.te DhamatraUu2.te PhamatraUu2.te BhamatraUu2.te matraVocalicRr.te GhamatraOo.te GhamatraOo2.te JhamatraOo.te JhamatraOo2.te HamatraI.te HamatraIi.te YamatraIi.te HaHalant.te MamatraOo.te YamatraOo.te HamatraEe.te HamatraE.te];
+@_Ta_right=[Ta.te  TaHalf.te TamatraE.te TamatraEe.te TaHalant.te TamatraI.te TamatraIi.te];
+@_matraAu_right=[KamatraAu.te  KhamatraAu.te BamatraAu.te BhamatraAu.te CamatraAu.te ChamatraAu.te DamatraAu.te DdamatraAu.te DdhamatraAu.te DhamatraAu.te GamatraAu.te GhamatraAu.te HamatraAu.te JamatraAu.te JhamatraAu.te LamatraAu.te LlamatraAu.te MamatraAu.te NamatraAu.te NgamatraAu.te NnamatraAu.te NyamatraAu.te RamatraAu.te RramatraAu.te ShamatraAu.te TamatraAu.te ThamatraAu.te TtamatraAu.te TthamatraAu.te VamatraAu.te YamatraAu.te KhamatraAu2.te GhamatraAu2.te ChamatraAu2.te JhamatraAu2.te DdhamatraAu2.te ThamatraAu2.te DhamatraAu2.te BhamatraAu2.te KamatraO.te KhamatraO.te GamatraO.te NgamatraO.te CamatraO.te ChamatraO.te JamatraO.te NyamatraO.te TtamatraO.te TthamatraO.te DdamatraO.te DdhamatraO.te NnamatraO.te TamatraO.te ThamatraO.te DamatraO.te DhamatraO.te NamatraO.te BamatraO.te BhamatraO.te RamatraO.te RramatraO.te LamatraO.te LlamatraO.te VamatraO.te ShamatraO.te HamatraO.te KamatraOo.te KhamatraOo.te GamatraOo.te NgamatraOo.te CamatraOo.te ChamatraOo.te JamatraOo.te NyamatraOo.te TtamatraOo.te TthamatraOo.te DdamatraOo.te DdhamatraOo.te NnamatraOo.te TamatraOo.te ThamatraOo.te DamatraOo.te DhamatraOo.te NamatraOo.te BamatraOo.te BhamatraOo.te RamatraOo.te RramatraOo.te LamatraOo.te LlamatraOo.te VamatraOo.te ShamatraOo.te HamatraOo.te KhamatraO2.te ChamatraO2.te DdhamatraO2.te ThamatraO2.te DhamatraO2.te BhamatraO2.te KhamatraOo2.te ChamatraOo2.te DdhamatraOo2.te ThamatraOo2.te DhamatraOo2.te BhamatraOo2.te];
+@_matraI_right=[KhamatraI.te  CamatraI.te ChamatraI.te NamatraI.te BamatraI.te BhamatraI.te VamatraI.te CamatraIi.te ChamatraIi.te NamatraIi.te BamatraIi.te BhamatraIi.te VamatraIi.te vowelE.te vowelEe.te KhamatraIi.te KhamatraI2.te BhamatraI2.te KhamatraIi2.te ChamatraIi2.te BhamatraIi2.te];
+@_vowelO_right=[vowelO.te  vowelOo.te];
+@_Ja_right=[Ja.te  JaHalf.te JamatraI.te Dza.te JaHalant.te JamatraIi.te];
+@_Ga_right=[Ga.te  GaHalf.te GamatraI.te GamatraE.te GamatraEe.te GaHalant.te GamatraIi.te];
+@_Nna_right=[Nna.te  NnamatraI.te NnamatraE.te NnamatraEe.te NnamatraIi.te Rra.te Llla.te];
+@_Sha_right=[Sha.te  ShaHalant.te ShaHalf.te ShamatraE.te ShamatraEe.te ShamatraI.te ShamatraIi.te];
+@_LlamatraI_right=[LlamatraI.te  LlamatraIi.te];
+@_Da_right=[Da.te  DaHalant.te DaHalf.te DamatraE.te DamatraEe.te DamatraI.te DamatraIi.te Dha.te Dha2.te DhaHalant.te DhaHalf.te DhamatraE.te DhamatraE2.te DhamatraEe.te DhamatraEe2.te DhamatraI.te DhamatraI2.te DhamatraIi.te DhamatraIi2.te Tha.te Tha2.te ThaHalant.te ThaHalf.te ThamatraE.te ThamatraE2.te ThamatraEe.te ThamatraEe2.te ThamatraI.te ThamatraI2.te ThamatraIi.te ThamatraIi2.te Rrr.te Ca.te Cha.te Cha2.te Tsa.te Na.te Va.te ThaHalant2.te DhaHalant2.te NamatraE.te VamatraE.te NamatraEe.te VamatraEe.te CaHalant.te ChaHalant.te NaHalant.te VaHalant.te ChaHalant2.te];
+@_Dda_right=[Dda.te  DdaHalant.te DdaHalf.te DdamatraE.te DdamatraEe.te DdamatraI.te DdamatraIi.te Ddha.te Ddha2.te DdhaHalant.te DdhaHalf.te DdhamatraE.te DdhamatraE2.te DdhamatraI.te DdhamatraI2.te DdhamatraIi.te DdhamatraEe.te DdhamatraEe2.te DdhamatraIi2.te DdhaHalant2.te];
+@_small2=[Casmall2.te  Chasmall2.te Pasmall2.te Phasmall2.te Basmall2.te Bhasmall2.te Sasmall2.te];
+@_small2_2=[Llasmall2.te  Shasmall2.te];
+@_KhamatraE=[KhamatraE.te  CamatraE.te ChamatraE.te BamatraE.te BhamatraE.te KhamatraEe.te CamatraEe.te ChamatraEe.te BamatraEe.te BhamatraEe.te KhamatraE2.te ChamatraE2.te BhamatraE2.te KhamatraEe2.te ChamatraEe2.te BhamatraEe2.te];
+@_JamatraE=[JamatraE.te  NgamatraE.te JamatraEe.te NgamatraEe.te];
+@_NyaRight=[Nya.te  NyamatraI.te NyamatraIi.te NyamatraE.te NyamatraEe.te NyaHalant.te];
+@_small3=[Casmall1.te  Chasmall1.te Basmall1.te Bhasmall1.te Pasmall1.te Phasmall1.te Sasmall1.te];
+@_small4=[Pasmall1.te  Phasmall1.te Sasmall1.te];
+@_Yasmall1=[Yasmall1.te  Vasmall1.te];
+@_Yasmall2=[Yasmall2.te  Vasmall2.te];
+@_vowelU_Left=[vowelU.te  vowelUu.te];
+@_small5=[matraVocalicR1.te  matraVocalicRr1.te];
+@_small1_2=[Llasmall1.te  Shasmall1.te];
+@_matraAa=[KamatraAa.te  GamatraAa.te CamatraAa.te ChamatraAa.te TthamatraAa.te DdamatraAa.te DdhamatraAa.te NnamatraAa.te ThamatraAa.te DamatraAa.te DhamatraAa.te RamatraAa.te ShamatraAa.te ChamatraAa2.te ThamatraAa2.te DhamatraAa2.te DdhamatraAa2.te];
+@_matraAa2=[NamatraAa.te  PamatraAa.te PhamatraAa.te VamatraAa.te SsamatraAa.te SamatraAa.te PhamatraAa2.te];
+@_small1=[Casmall1.te  Chasmall1.te Pasmall1.te Phasmall1.te Basmall1.te Bhasmall1.te matraVocalicR.te matraVocalicRr.te Sasmall1.te];
+@_Pa=[Pa.te  Gha.te Pha.te Ssa.te Sa.te Ha.te PamatraI.te PamatraIi.te PamatraU.te PamatraUu.te PaHalant.te GhamatraAa.te GhamatraI.te GhamatraIi.te GhamatraU.te GhamatraUu.te GhamatraAu.te GhaHalant.te Gha2.te GhamatraAa2.te GhamatraI2.te GhamatraIi2.te GhamatraAu2.te GhamatraU2.te GhamatraUu2.te GhaHalant2.te PhamatraI.te PhamatraIi.te PhamatraU.te PhamatraUu.te PhaHalant.te Pha2.te PhamatraI2.te PhamatraIi2.te PhamatraU2.te PhamatraUu2.te PhaHalant2.te SsamatraI.te SsamatraIi.te SsamatraU.te SsamatraUu.te SsaHalant.te SamatraI.te SamatraIi.te SamatraU.te SamatraUu.te SaHalant.te HamatraAa.te HamatraI.te HamatraIi.te HamatraU.te HamatraUu.te HamatraO.te HamatraOo.te HamatraAu.te HaHalant.te Hasmall2.te];
+@_PamatraE=[PamatraE.te  PamatraEe.te GhamatraE.te GhamatraEe.te GhamatraO.te GhamatraOo.te GhamatraEe2.te GhamatraO2.te GhamatraE2.te GhamatraOo2.te PhamatraE2.te PhamatraEe2.te PhamatraE.te PhamatraEe.te SsamatraE.te SsamatraEe.te SamatraE.te SamatraEe.te HamatraE.te HamatraEe.te];
+@_Rra=[Llla.te  Rra.te RraHalant.te RramatraAa.te RramatraAu.te RramatraE.te RramatraEe.te RramatraI.te RramatraIi.te RramatraO.te RramatraOo.te RramatraU.te RramatraUu.te];
+@_Va=[Va.te  VamatraI.te VamatraIi.te VamatraU.te VamatraUu.te VamatraE.te VamatraEe.te VamatraO.te VamatraOo.te VamatraAu.te VaHalant.te Na.te NamatraI.te NamatraIi.te NamatraU.te NamatraUu.te NamatraE.te NamatraEe.te NamatraO.te NamatraOo.te NamatraAu.te NaHalant.te Ma.te MamatraAa.te MamatraI.te MamatraIi.te MamatraU.te MamatraUu.te MamatraE.te MamatraEe.te MamatraO.te MamatraOo.te MamatraAu.te MaHalant.te];
+@_Ttha=[Ttha.te  TthamatraI.te TthamatraIi.te TthamatraU.te TthamatraUu.te TthamatraE.te TthamatraEe.te TthamatraO.te TthamatraOo.te TthamatraAu.te TthaHalant.te];
+@_BhaRight=[Bha.te  Bha2.te];
+@_NgamatraI=[NgamatraI.te  NgamatraIi.te NgaHalant.te];
+@_SsaRight=[Ssa.te  SsaHalf.te SsamatraI.te SsamatraIi.te SsamatraE.te SsamatraEe.te SsaHalant.te];
+@_TthamatraE=[TthamatraE.te  RamatraE.te TthamatraEe.te RamatraEe.te];
+@_KhaHalant=[KhaHalant.te  TtaHalant.te BaHalant.te BhaHalant.te BhaHalant2.te KhaHalant2.te];
+@_PamatraU=[PamatraU.te  PhamatraU.te PhamatraU2.te];
+@_PamatraAu=[PhamatraAu.te PhamatraAu2.te SamatraAu.te SsamatraAu.te PamatraAu.te ];
+@_LaRight=[La.te  LamatraI.te LamatraIi.te LamatraE.te LamatraEe.te];
+@_TtamatraI=[TtamatraI.te  TtamatraIi.te TtamatraE.te TtamatraEe.te RramatraI.te RramatraE.te RramatraIi.te RramatraEe.te];
+@_LlamatraE=[LlamatraE.te  LlamatraEe.te];
+@_PamatraO=[PamatraO.te  PamatraOo.te PhamatraO.te PhamatraO2.te PhamatraOo.te SamatraO.te SamatraOo.te SsamatraO.te SsamatraOo.te PhamatraOo2.te];
+
+
+
+
+
+
+# FOR KERNING WITH SPACE
+
+@forspace =[ Candrabindu.te Anuswara.te vowelA.te vowelAa.te vowelI.te vowelIi.te vowelU.te vowelUu.te vowelVocalicR.te vowelVocalicL.te vowelE.te vowelEe.te vowelAi.te vowelO.te vowelOo.te vowelAu.te Ka.te Kha.te Ga.te Gha.te Nga.te Ca.te Cha.te Ja.te Jha.te Nya.te Tta.te Ttha.te Dda.te Ddha.te Nna.te Ta.te Tha.te Da.te Dha.te Na.te Pa.te Pha.te Ba.te Bha.te Ma.te Ya.te Ra.te Rra.te La.te Lla.te Llla.te Va.te Sha.te Ssa.te Sa.te Ha.te Avagraha.te zero.te one.te two.te three.te four.te five.te six.te seven.te eight.te nine.te vowelVocalicRr.te vowelVocalicLl.te Tsa.te Dza.te Kasmall1.te Casmall1.te Chasmall1.te Nasmall1.te Pasmall1.te Phasmall1.te Basmall1.te Bhasmall1.te Masmall1.te Yasmall1.te Llasmall1.te Vasmall1.te Shasmall1.te Sasmall1.te SaHalf2.te PaHalf2.te PhaHalf2.te KamatraAa.te KhamatraAa.te GamatraAa.te GhamatraAa.te NgamatraAa.te CamatraAa.te ChamatraAa.te JamatraAa.te JhamatraAa.te NyamatraAa.te TtamatraAa.te TthamatraAa.te DdamatraAa.te DdhamatraAa.te NnamatraAa.te TamatraAa.te ThamatraAa.te DamatraAa.te DhamatraAa.te NamatraAa.te PamatraAa.te PhamatraAa.te BamatraAa.te BhamatraAa.te MamatraAa.te YamatraAa.te RamatraAa.te RramatraAa.te LamatraAa.te LlamatraAa.te VamatraAa.te ShamatraAa.te SsamatraAa.te SamatraAa.te HamatraAa.te KamatraI.te KhamatraI.te GamatraI.te GhamatraI.te NgamatraI.te CamatraI.te ChamatraI.te JamatraI.te JhamatraI.te NyamatraI.te TtamatraI.te TthamatraI.te DdamatraI.te DdhamatraI.te NnamatraI.te TamatraI.te ThamatraI.te DamatraI.te DhamatraI.te NamatraI.te PamatraI.te PhamatraI.te BamatraI.te BhamatraI.te MamatraI.te YamatraI.te RamatraI.te RramatraI.te LamatraI.te LlamatraI.te VamatraI.te ShamatraI.te SsamatraI.te SamatraI.te HamatraI.te KamatraIi.te KhamatraIi.te GamatraIi.te GhamatraIi.te NgamatraIi.te CamatraIi.te ChamatraIi.te JamatraIi.te JhamatraIi.te NyamatraIi.te TtamatraIi.te TthamatraIi.te DdamatraIi.te DdhamatraIi.te NnamatraIi.te TamatraIi.te ThamatraIi.te DamatraIi.te DhamatraIi.te NamatraIi.te PamatraIi.te PhamatraIi.te BamatraIi.te BhamatraIi.te MamatraIi.te YamatraIi.te RamatraIi.te RramatraIi.te LamatraIi.te LlamatraIi.te VamatraIi.te ShamatraIi.te SsamatraIi.te SamatraIi.te HamatraIi.te KamatraU.te KhamatraU.te GamatraU.te GhamatraU.te NgamatraU.te CamatraU.te ChamatraU.te JamatraU.te JhamatraU.te NyamatraU.te TtamatraU.te TthamatraU.te DdamatraU.te DdhamatraU.te NnamatraU.te TamatraU.te ThamatraU.te DamatraU.te DhamatraU.te NamatraU.te PamatraU.te PhamatraU.te BamatraU.te BhamatraU.te MamatraU.te YamatraU.te RamatraU.te RramatraU.te LamatraU.te LlamatraU.te VamatraU.te ShamatraU.te SsamatraU.te SamatraU.te HamatraU.te KamatraUu.te KhamatraUu.te GamatraUu.te GhamatraUu.te NgamatraUu.te CamatraUu.te ChamatraUu.te JamatraUu.te JhamatraUu.te NyamatraUu.te TtamatraUu.te TthamatraUu.te DdamatraUu.te DdhamatraUu.te NnamatraUu.te TamatraUu.te ThamatraUu.te DamatraUu.te DhamatraUu.te NamatraUu.te PamatraUu.te PhamatraUu.te BamatraUu.te BhamatraUu.te MamatraUu.te YamatraUu.te RamatraUu.te RramatraUu.te LamatraUu.te LlamatraUu.te VamatraUu.te ShamatraUu.te SsamatraUu.te SamatraUu.te HamatraUu.te KamatraE.te KhamatraE.te GamatraE.te GhamatraE.te NgamatraE.te CamatraE.te ChamatraE.te JamatraE.te JhamatraE.te NyamatraE.te TtamatraE.te TthamatraE.te DdamatraE.te DdhamatraE.te NnamatraE.te TamatraE.te ThamatraE.te DamatraE.te DhamatraE.te NamatraE.te PamatraE.te PhamatraE.te BamatraE.te BhamatraE.te MamatraE.te YamatraE.te RamatraE.te RramatraE.te LamatraE.te LlamatraE.te VamatraE.te ShamatraE.te SsamatraE.te SamatraE.te HamatraE.te KamatraEe.te KhamatraEe.te GamatraEe.te GhamatraEe.te NgamatraEe.te CamatraEe.te ChamatraEe.te JamatraEe.te JhamatraEe.te NyamatraEe.te TtamatraEe.te TthamatraEe.te DdamatraEe.te DdhamatraEe.te NnamatraEe.te TamatraEe.te ThamatraEe.te DamatraEe.te DhamatraEe.te NamatraEe.te PamatraEe.te PhamatraEe.te BamatraEe.te BhamatraEe.te MamatraEe.te YamatraEe.te RamatraEe.te RramatraEe.te LamatraEe.te LlamatraEe.te VamatraEe.te ShamatraEe.te SsamatraEe.te SamatraEe.te HamatraEe.te KamatraO.te KhamatraO.te GamatraO.te GhamatraO.te NgamatraO.te CamatraO.te ChamatraO.te JamatraO.te JhamatraO.te NyamatraO.te TtamatraO.te TthamatraO.te DdamatraO.te DdhamatraO.te NnamatraO.te TamatraO.te ThamatraO.te DamatraO.te DhamatraO.te NamatraO.te PamatraO.te PhamatraO.te BamatraO.te BhamatraO.te MamatraO.te YamatraO.te RamatraO.te RramatraO.te LamatraO.te LlamatraO.te VamatraO.te ShamatraO.te SsamatraO.te SamatraO.te HamatraO.te KamatraOo.te KhamatraOo.te GamatraOo.te GhamatraOo.te NgamatraOo.te CamatraOo.te ChamatraOo.te JamatraOo.te JhamatraOo.te NyamatraOo.te TtamatraOo.te TthamatraOo.te DdamatraOo.te DdhamatraOo.te NnamatraOo.te TamatraOo.te ThamatraOo.te DamatraOo.te DhamatraOo.te NamatraOo.te PamatraOo.te PhamatraOo.te BamatraOo.te BhamatraOo.te MamatraOo.te YamatraOo.te RamatraOo.te RramatraOo.te LamatraOo.te LlamatraOo.te VamatraOo.te ShamatraOo.te SsamatraOo.te SamatraOo.te HamatraOo.te KamatraAu.te KhamatraAu.te GamatraAu.te GhamatraAu.te NgamatraAu.te CamatraAu.te ChamatraAu.te JamatraAu.te JhamatraAu.te NyamatraAu.te TtamatraAu.te TthamatraAu.te DdamatraAu.te DdhamatraAu.te NnamatraAu.te TamatraAu.te ThamatraAu.te DamatraAu.te DhamatraAu.te NamatraAu.te PamatraAu.te PhamatraAu.te BamatraAu.te BhamatraAu.te MamatraAu.te YamatraAu.te RamatraAu.te RramatraAu.te LamatraAu.te LlamatraAu.te VamatraAu.te ShamatraAu.te SsamatraAu.te SamatraAu.te HamatraAu.te KaHalant.te KhaHalant.te GaHalant.te GhaHalant.te NgaHalant.te CaHalant.te ChaHalant.te JaHalant.te JhaHalant.te NyaHalant.te TtaHalant.te TthaHalant.te DdaHalant.te DdhaHalant.te NnaHalant.te TaHalant.te ThaHalant.te DaHalant.te DhaHalant.te NaHalant.te PaHalant.te PhaHalant.te BaHalant.te BhaHalant.te MaHalant.te YaHalant.te RaHalant.te RraHalant.te LaHalant.te LlaHalant.te VaHalant.te ShaHalant.te SsaHalant.te SaHalant.te HaHalant.te Kasmall2.te Casmall2.te Chasmall2.te Nasmall2.te Pasmall2.te Phasmall2.te Basmall2.te Bhasmall2.te Masmall2.te Yasmall2.te Llasmall2.te Vasmall2.te Shasmall2.te Sasmall2.te matraVocalicR1.te Kha2.te Gha2.te Cha2.te Jha2.te Ddha2.te Tha2.te Dha2.te Pha2.te Bha2.te PhaHalf3.te KhamatraAa2.te ChamatraAa2.te JhamatraAa2.te GhamatraAa2.te DdhamatraAa2.te ThamatraAa2.te DhamatraAa2.te PhamatraAa2.te BhamatraAa2.te KhamatraI2.te GhamatraI2.te ChamatraI2.te JhamatraI2.te DdhamatraI2.te ThamatraI2.te DhamatraI2.te PhamatraI2.te BhamatraI2.te KhamatraIi2.te GhamatraIi2.te ChamatraIi2.te JhamatraIi2.te DdhamatraIi2.te ThamatraIi2.te DhamatraIi2.te PhamatraIi2.te BhamatraIi2.te KhamatraE2.te GhamatraE2.te ChamatraE2.te JhamatraE2.te DdhamatraE2.te ThamatraE2.te DhamatraE2.te PhamatraE2.te BhamatraE2.te KhamatraEe2.te GhamatraEe2.te ChamatraEe2.te JhamatraEe2.te DdhamatraEe2.te ThamatraEe2.te DhamatraEe2.te PhamatraEe2.te BhamatraEe2.te KhamatraO2.te GhamatraO2.te ChamatraO2.te JhamatraO2.te DdhamatraO2.te ThamatraO2.te DhamatraO2.te PhamatraO2.te BhamatraO2.te KhamatraOo2.te GhamatraOo2.te ChamatraOo2.te JhamatraOo2.te DdhamatraOo2.te ThamatraOo2.te DhamatraOo2.te PhamatraOo2.te BhamatraOo2.te KhamatraAu2.te GhamatraAu2.te ChamatraAu2.te JhamatraAu2.te DdhamatraAu2.te ThamatraAu2.te DhamatraAu2.te PhamatraAu2.te BhamatraAu2.te KhamatraU2.te GhamatraU2.te ChamatraU2.te JhamatraU2.te DdhamatraU2.te ThamatraU2.te DhamatraU2.te PhamatraU2.te BhamatraU2.te KhamatraUu2.te GhamatraUu2.te ChamatraUu2.te JhamatraUu2.te DdhamatraUu2.te ThamatraUu2.te DhamatraUu2.te PhamatraUu2.te BhamatraUu2.te KhaHalant2.te GhaHalant2.te ChaHalant2.te JhaHalant2.te DdhaHalant2.te ThaHalant2.te DhaHalant2.te PhaHalant2.te BhaHalant2.te KaSsamatraAi.te];

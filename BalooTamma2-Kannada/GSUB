@@ -1,0 +1,929 @@
+
+languagesystem DFLT dflt;
+languagesystem latn dflt;
+languagesystem latn NLD;
+languagesystem latn AZE;
+languagesystem latn TRK;
+languagesystem latn MOL;
+languagesystem latn ROM;
+languagesystem latn CAT;
+languagesystem latn TAT;
+languagesystem latn CRT;
+languagesystem latn KAZ;
+languagesystem knd2 dflt;
+languagesystem knda dflt;
+
+
+
+#--------------------------------------------------------------------
+
+#---------- L A T I N ----------#
+
+#--------------------------------------------------------------------
+
+feature aalt { # Access All Alternates
+feature locl;
+feature subs;
+feature sinf;
+feature sups;
+feature numr;
+feature dnom;
+feature frac;
+feature ordn;
+feature tnum;
+#feature onum;
+} aalt;
+
+#--------------------------------------------------------------------
+
+feature frac { # Fractions
+
+lookup FractionBar {
+        ignore sub slash @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures @figures @figures @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures @figures @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures @figures @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures slash;
+        ignore sub slash @figures @figures slash';
+        ignore sub slash' @figures @figures slash;
+        ignore sub slash @figures slash';
+        ignore sub slash' @figures slash;
+        ignore sub slash slash';
+        ignore sub slash' slash;
+        sub @figures slash' @figures by fraction;
+    } FractionBar;
+    
+    lookup Numerator1 {
+        sub @figures' fraction by @figures_numerator;
+    } Numerator1;
+
+    lookup Numerator2 {
+        sub @figures' @figures_numerator fraction by @figures_numerator;
+    } Numerator2;
+
+    lookup Numerator3 {
+        sub @figures' @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator3;
+
+    lookup Numerator4 {
+        sub @figures' @figures_numerator @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator4;
+
+    lookup Numerator5 {
+        sub @figures' @figures_numerator @figures_numerator @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator5;
+
+    lookup Numerator6 {
+        sub @figures' @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator6;
+
+    lookup Numerator7 {
+        sub @figures' @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator7;
+
+    lookup Numerator8 {
+        sub @figures' @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator8;
+
+    lookup Numerator9 {
+        sub @figures' @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator9;
+
+    lookup Numerator10 {
+        sub @figures' @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator10;
+
+    lookup Denominator {
+        sub [fraction @figures_denominator] @figures' by @figures_denominator;
+    } Denominator;
+
+    sub @figures space' @figures_numerator by uni2009;
+
+} frac;
+
+
+#--------------------------------------------------------------------
+
+feature tnum { # Tabular Figures
+    sub @figures by @figures_tabular;
+} tnum;
+
+#--------------------------------------------------------------------
+
+feature numr { # Numerators
+    sub @figures by @figures_numerator;
+} numr;
+
+#--------------------------------------------------------------------
+
+feature dnom { # Denominators
+    sub @figures by @figures_denominator;
+} dnom;
+
+#--------------------------------------------------------------------
+
+feature sups { # Superscript
+    sub @for_subscript_superscript by @figures_superscript;
+    sub n by n.superior;
+} sups;
+
+#--------------------------------------------------------------------
+
+feature subs { # Subscript
+    sub @for_subscript_superscript by @figures_subscript;
+} subs;
+
+#--------------------------------------------------------------------
+
+feature sinf { # Scientific Inferior
+    sub @for_subscript_superscript by @figures_subscript;
+} sinf;
+
+#--------------------------------------------------------------------
+
+feature ordn { # Ordinals
+  sub @figures [A a]' by ordfeminine;
+  sub @figures [O o]' by ordmasculine;
+  sub N o period by uni2116;
+} ordn;
+
+#--------------------------------------------------------------------
+
+feature liga {
+  sub f f i by f_f_i;
+  sub f f l by f_f_l;
+  sub f f by f_f;
+  sub f i by fi;
+  sub f l by fl;
+} liga;
+
+
+#--------------------------------------------------------------------
+
+
+feature locl {
+script latn;
+
+language NLD;
+  sub iacute j by iacute_j.loclNLD;
+  sub Iacute J by Iacute_J.loclNLD;
+
+language CAT;
+  sub l periodcentered' l by periodcentered.loclCAT;
+  sub L periodcentered' L by periodcentered.loclCAT.case;
+
+language TRK;
+  lookup IDOT {
+      sub i' by i.loclTRK;
+      } IDOT;
+
+language AZE;
+  lookup IDOT;
+language CRT;
+    lookup IDOT;
+language KAZ;
+    lookup IDOT;
+language TAT;
+    lookup IDOT;
+
+language ROM;
+    lookup CEDILLA {
+      sub scedilla by scommaaccent;
+      sub Scedilla by Scommaaccent;
+    sub uni0162 by uni021A;
+    sub uni0163 by uni021B;
+    } CEDILLA;
+language MOL;
+  lookup CEDILLA;
+
+} locl;  
+
+
+
+#--------------------------------------------------------------------
+
+#---------- K A N N A D A ----------#
+
+#--------------------------------------------------------------------
+
+
+
+#--------------------------------------------------------------------
+
+feature rphf { # Reph forms
+
+	sub Ra.kn Halant.kn by Reph.kn;
+
+} rphf;
+
+#--------------------------------------------------------------------
+
+feature blwf { # Below-base
+
+script knd2;
+lookup blwf_small1 { # Below-base small1
+
+		sub Halant.kn Ka.kn by Kasmall1.kn;
+		sub Halant.kn Kha.kn by Khasmall1.kn;
+		sub Halant.kn Ga.kn by Gasmall1.kn;
+		sub Halant.kn Gha.kn by Ghasmall1.kn;
+		sub Halant.kn Nga.kn by Ngasmall1.kn;
+		sub Halant.kn Ca.kn by Casmall1.kn;
+		sub Halant.kn Cha.kn by Chasmall1.kn;
+		sub Halant.kn Ja.kn by Jasmall1.kn;
+		sub Halant.kn Jha.kn by Jhasmall1.kn;
+		sub Halant.kn Nya.kn by Nyasmall1.kn;
+		sub Halant.kn Tta.kn by Ttasmall1.kn;
+		sub Halant.kn Ttha.kn by Tthasmall1.kn;
+		sub Halant.kn Dda.kn by Ddasmall1.kn;
+		sub Halant.kn Ddha.kn by Ddhasmall1.kn;
+		sub Halant.kn Nna.kn by Nnasmall1.kn;
+		sub Halant.kn Ta.kn by Tasmall1.kn;
+		sub Halant.kn Tha.kn by Thasmall1.kn;
+		sub Halant.kn Da.kn by Dasmall1.kn;
+		sub Halant.kn Dha.kn by Dhasmall1.kn;
+		sub Halant.kn Na.kn by Nasmall1.kn;
+		sub Halant.kn Pa.kn by Pasmall1.kn;
+		sub Halant.kn Pha.kn by Phasmall1.kn;
+		sub Halant.kn Ba.kn by Basmall1.kn;
+		sub Halant.kn Bha.kn by Bhasmall1.kn;
+		sub Halant.kn Ma.kn by Masmall1.kn;
+		sub Halant.kn Ya.kn by Yasmall1.kn;
+		sub Halant.kn Ra.kn by Rasmall1.kn;
+		sub Halant.kn RaObsolete.kn by RaObsoletesmall1.kn;
+		sub Halant.kn La.kn by Lasmall1.kn;
+		sub Halant.kn Lla.kn by Llasmall1.kn;
+		sub Halant.kn Va.kn by Vasmall1.kn;
+		sub Halant.kn Sha.kn by Shasmall1.kn;
+		sub Halant.kn Ssa.kn by Ssasmall1.kn;
+		sub Halant.kn Sa.kn by Sasmall1.kn;
+		sub Halant.kn Ha.kn by Hasmall1.kn;
+		sub Halant.kn vowelLaObsolete.kn by vowelLaObsoletesmall1.kn;
+
+
+		sub Halant.kn Ra.kn Halant.kn Ya.kn by RaYasmall.kn;
+		sub Halant.kn Ka.kn Halant.kn Ra.kn by KaRasmall.kn;
+		sub Halant.kn Ga.kn Halant.kn Ra.kn by GaRasmall.kn;
+		sub Halant.kn Tta.kn Halant.kn Ra.kn by TtaRasmall.kn;
+		sub Halant.kn Dda.kn Halant.kn Ra.kn by DdaRasmall.kn;
+		sub Halant.kn Ddha.kn Halant.kn Ra.kn by DdhaRasmall.kn;
+		sub Halant.kn Ta.kn Halant.kn Ra.kn by TaRasmall.kn;
+		sub Halant.kn Da.kn Halant.kn Ra.kn by DaRasmall.kn;
+		sub Halant.kn Pa.kn Halant.kn Ra.kn by PaRasmall.kn;
+		sub Halant.kn Pha.kn Halant.kn Ra.kn by PhaRasmall.kn;
+		sub Halant.kn Ba.kn Halant.kn Ra.kn by BaRasmall.kn;
+		sub Halant.kn Bha.kn Halant.kn Ra.kn by BhaRasmall.kn;
+		sub Halant.kn Ma.kn Halant.kn Ya.kn by MaYasmall.kn;
+		sub Halant.kn Ta.kn Halant.kn Ya.kn by TaYasmall.kn;
+
+} blwf_small1;
+
+
+#--------------------------
+
+
+
+lookup blwf_Rasmall.alt {
+	sub [Gha.kn Cha.kn Jha.kn Ddha.kn Tha.kn Dha.kn Pha.kn Bha.kn] Rasmall1.kn' by Rasmall1alt.kn;
+	sub Gha.kn matraI.kn Rasmall1.kn' by Rasmall1alt.kn;
+	sub Gha.kn matraE.kn Rasmall1.kn' by Rasmall1alt.kn;
+	sub Cha.kn matraI.kn Rasmall1.kn' by Rasmall1alt.kn;
+	sub Cha.kn matraE.kn Rasmall1.kn' by Rasmall1alt.kn;
+	sub Jha.kn matraI.kn Rasmall1.kn' by Rasmall1alt.kn;
+	sub Jha.kn matraE.kn Rasmall1.kn' by Rasmall1alt.kn;
+	sub Ddha.kn matraI.kn Rasmall1.kn' by Rasmall1alt.kn;
+	sub Ddha.kn matraE.kn Rasmall1.kn' by Rasmall1alt.kn;
+	sub Tha.kn matraI.kn Rasmall1.kn' by Rasmall1alt.kn;
+	sub Tha.kn matraE.kn Rasmall1.kn' by Rasmall1alt.kn;
+	sub Dha.kn matraI.kn Rasmall1.kn' by Rasmall1alt.kn;
+	sub Dha.kn matraE.kn Rasmall1.kn' by Rasmall1alt.kn;
+	sub Pha.kn matraI.kn Rasmall1.kn' by Rasmall1alt.kn;
+	sub Pha.kn matraE.kn Rasmall1.kn' by Rasmall1alt.kn;
+	sub Bha.kn matraI.kn Rasmall1.kn' by Rasmall1alt.kn;
+	sub Bha.kn matraE.kn Rasmall1.kn' by Rasmall1alt.kn;
+
+} blwf_Rasmall.alt;
+
+
+#--------------------------
+
+
+lookup blwf_RaYasmall.alt {
+	sub [Gha.kn Cha.kn Jha.kn Ddha.kn Tha.kn Dha.kn Pha.kn Bha.kn] RaYasmall.kn' by RaYasmallalt.kn;
+	sub Gha.kn matraI.kn RaYasmall.kn' by RaYasmallalt.kn;
+	sub Gha.kn matraE.kn RaYasmall.kn' by RaYasmallalt.kn;
+	sub Cha.kn matraI.kn RaYasmall.kn' by RaYasmallalt.kn;
+	sub Cha.kn matraE.kn RaYasmall.kn' by RaYasmallalt.kn;
+	sub Jha.kn matraI.kn RaYasmall.kn' by RaYasmallalt.kn;
+	sub Jha.kn matraE.kn RaYasmall.kn' by RaYasmallalt.kn;
+	sub Ddha.kn matraI.kn RaYasmall.kn' by RaYasmallalt.kn;
+	sub Ddha.kn matraE.kn RaYasmall.kn' by RaYasmallalt.kn;
+	sub Tha.kn matraI.kn RaYasmall.kn' by RaYasmallalt.kn;
+	sub Tha.kn matraE.kn RaYasmall.kn' by RaYasmallalt.kn;
+	sub Dha.kn matraI.kn RaYasmall.kn' by RaYasmallalt.kn;
+	sub Dha.kn matraE.kn RaYasmall.kn' by RaYasmallalt.kn;
+	sub Pha.kn matraI.kn RaYasmall.kn' by RaYasmallalt.kn;
+	sub Pha.kn matraE.kn RaYasmall.kn' by RaYasmallalt.kn;
+	sub Bha.kn matraI.kn RaYasmall.kn' by RaYasmallalt.kn;
+	sub Bha.kn matraE.kn RaYasmall.kn' by RaYasmallalt.kn;
+
+} blwf_RaYasmall.alt;
+
+
+#--------------------------
+
+script knda;
+lookup blwf_small1_1 { # Below-base small1
+
+	sub Ka.kn Halant.kn by Kasmall1.kn;
+	sub Kha.kn Halant.kn by Khasmall1.kn;
+	sub Ga.kn Halant.kn by Gasmall1.kn;
+	sub Gha.kn Halant.kn by Ghasmall1.kn;
+	sub Nga.kn Halant.kn by Ngasmall1.kn;
+	sub Ca.kn Halant.kn by Casmall1.kn;
+	sub Cha.kn Halant.kn by Chasmall1.kn;
+	sub Ja.kn Halant.kn by Jasmall1.kn;
+	sub Jha.kn Halant.kn by Jhasmall1.kn;
+	sub Nya.kn Halant.kn by Nyasmall1.kn;
+	sub Tta.kn Halant.kn by Ttasmall1.kn;
+	sub Ttha.kn Halant.kn by Tthasmall1.kn;
+	sub Dda.kn Halant.kn by Ddasmall1.kn;
+	sub Ddha.kn Halant.kn by Ddhasmall1.kn;
+	sub Nna.kn Halant.kn by Nnasmall1.kn;
+	sub Ta.kn Halant.kn by Tasmall1.kn;
+	sub Tha.kn Halant.kn by Thasmall1.kn;
+	sub Da.kn Halant.kn by Dasmall1.kn;
+	sub Dha.kn Halant.kn by Dhasmall1.kn;
+	sub Na.kn Halant.kn by Nasmall1.kn;
+	sub Pa.kn Halant.kn by Pasmall1.kn;
+	sub Pha.kn Halant.kn by Phasmall1.kn;
+	sub Ba.kn Halant.kn by Basmall1.kn;
+	sub Bha.kn Halant.kn by Bhasmall1.kn;
+	sub Ma.kn Halant.kn by Masmall1.kn;
+	sub Ya.kn Halant.kn by Yasmall1.kn;
+	sub Ra.kn Halant.kn by Rasmall1.kn;
+	sub RaObsolete.kn Halant.kn by RaObsoletesmall1.kn;
+	sub La.kn Halant.kn by Lasmall1.kn;
+	sub Lla.kn Halant.kn by Llasmall1.kn;
+	sub Va.kn Halant.kn by Vasmall1.kn;
+	sub Sha.kn Halant.kn by Shasmall1.kn;
+	sub Ssa.kn Halant.kn by Ssasmall1.kn;
+	sub Sa.kn Halant.kn by Sasmall1.kn;
+	sub Ha.kn Halant.kn by Hasmall1.kn;
+	sub vowelLaObsolete.kn Halant.kn by vowelLaObsoletesmall1.kn;
+	sub Ra.kn Halant.kn Ya.kn Halant.kn by RaYasmall.kn;
+
+
+	sub Ka.kn Halant.kn Ra.kn Halant.kn by KaRasmall.kn;
+	sub Ga.kn Halant.kn Ra.kn Halant.kn by GaRasmall.kn;
+	sub Tta.kn Halant.kn Ra.kn Halant.kn by TtaRasmall.kn;
+	sub Dda.kn Halant.kn Ra.kn Halant.kn by DdaRasmall.kn;
+	sub Ddha.kn Halant.kn Ra.kn Halant.kn by DdhaRasmall.kn;
+	sub Ta.kn Halant.kn Ra.kn Halant.kn by TaRasmall.kn;
+	sub Da.kn Halant.kn Ra.kn Halant.kn by DaRasmall.kn;
+	sub Pa.kn Halant.kn Ra.kn Halant.kn by PaRasmall.kn;
+	sub Pha.kn Halant.kn Ra.kn Halant.kn by PhaRasmall.kn;
+	sub Ba.kn Halant.kn Ra.kn Halant.kn by BaRasmall.kn;
+	sub Bha.kn Halant.kn Ra.kn Halant.kn by BhaRasmall.kn;
+	sub Ma.kn Halant.kn Ya.kn Halant.kn by MaYasmall.kn;
+	sub Ta.kn Halant.kn Ya.kn Halant.kn by TaYasmall.kn;
+
+} blwf_small1_1;
+
+lookup blwf_Rasmall.alt;
+lookup blwf_RaYasmall.alt;
+
+
+} blwf;
+
+
+#--------------------------------------------------------------------
+
+
+lookup RaYasmall {
+	sub RaYasmall.kn by Rasmall2.kn Yasmall2.kn;
+} RaYasmall;
+
+lookup RaYasmallalt {
+	sub RaYasmallalt.kn by Rasmall2.kn Yasmall2.kn;
+} RaYasmallalt;
+
+lookup KaRasmall {
+	sub KaRasmall.kn by Kasmall2.kn Rasmall2.kn;
+} KaRasmall;
+
+lookup GaRasmall {
+	sub GaRasmall.kn by Gasmall2.kn Rasmall2.kn;
+} GaRasmall;
+
+lookup TtaRasmall {
+	sub TtaRasmall.kn by Ttasmall2.kn Rasmall2.kn;
+} TtaRasmall;
+
+lookup TaRasmall {
+	sub TaRasmall.kn by Tasmall2.kn Rasmall2.kn;
+} TaRasmall;
+
+lookup DdaRasmall {
+	sub DdaRasmall.kn by Ddasmall2.kn Rasmall2.kn;
+} DdaRasmall;
+
+lookup DdhaRasmall {
+	sub DdhaRasmall.kn by Ddhasmall2.kn Rasmall2.kn;
+} DdhaRasmall;
+
+lookup DaRasmall {
+	sub DaRasmall.kn by Dasmall2.kn Rasmall2.kn;
+} DaRasmall;
+
+lookup PaRasmall {
+	sub PaRasmall.kn by Pasmall2.kn Rasmall2.kn;
+} PaRasmall;
+
+lookup PhaRasmall {
+	sub PhaRasmall.kn by Phasmall2.kn Rasmall2.kn;
+} PhaRasmall;
+
+lookup BaRasmall {
+	sub BaRasmall.kn by Basmall2.kn Rasmall2.kn;
+} BaRasmall;
+
+lookup BhaRasmall {
+	sub BhaRasmall.kn by Bhasmall2.kn Rasmall2.kn;
+} BhaRasmall;
+
+lookup MaYasmall {
+	sub MaYasmall.kn by Masmall2.kn Yasmall2.kn;
+} MaYasmall;
+
+lookup TaYasmall {
+	sub TaYasmall.kn by Tasmall2.kn Yasmall2.kn;
+} TaYasmall;
+
+
+feature blws{
+
+lookup blws_small3 {
+	sub [@allsmall] RaYasmall.kn' lookup RaYasmall;
+	sub [@allsmall] RaYasmallalt.kn' lookup RaYasmallalt;
+	sub [@allsmall] KaRasmall.kn' lookup KaRasmall;
+	sub [@allsmall] GaRasmall.kn' lookup GaRasmall;
+	sub [@allsmall] TtaRasmall.kn' lookup TtaRasmall;
+	sub [@allsmall] TaRasmall.kn' lookup TaRasmall;
+	sub [@allsmall] DdaRasmall.kn' lookup DdaRasmall;
+	sub [@allsmall] DdhaRasmall.kn' lookup DdhaRasmall;
+	sub [@allsmall] DaRasmall.kn' lookup DaRasmall;
+	sub [@allsmall] PaRasmall.kn' lookup PaRasmall;
+	sub [@allsmall] BaRasmall.kn' lookup BaRasmall;
+	sub [@allsmall] PhaRasmall.kn' lookup PhaRasmall;
+	sub [@allsmall] BhaRasmall.kn' lookup BhaRasmall;
+	sub [@allsmall] TaYasmall.kn' lookup TaYasmall;
+	sub [@allsmall] MaYasmall.kn' lookup MaYasmall;
+} blws_small3;
+
+
+
+lookup blwf_matrasmall1 {
+	sub [@allsmall] @matrasmall' by @matrasmall1;
+} blwf_matrasmall1;
+
+} blws;
+
+#--------------------------------------------------------------------
+
+
+feature psts { 
+
+lookup halant1{ #part1
+	sub @Allconsonants' @allsmall Halant.kn by @AllHalant;
+	sub @Allconsonants' @allsmall @allsmall Halant.kn by @AllHalant;
+	sub @Allconsonants' @allsmall @allsmall @allsmall Halant.kn by @AllHalant;
+	sub @Allconsonants' @allsmall @allsmall @allsmall @allsmall Halant.kn by @AllHalant;
+
+	sub @Allconsonants' @nukta @allsmall Halant.kn by @AllHalant;
+	sub @Allconsonants' @allsmall @nukta Halant.kn by @AllHalant;
+	sub @Allconsonants' @nukta @allsmall @nukta Halant.kn by @AllHalant;
+
+}halant1;
+
+lookup halant2{ #part2
+	sub @AllHalant @allsmall Halant.kn' by dummy;
+	sub @AllHalant @allsmall @allsmall Halant.kn' by dummy;
+	sub @AllHalant @allsmall @allsmall @allsmall Halant.kn' by dummy;
+	sub @AllHalant @allsmall @allsmall @allsmall @allsmall Halant.kn' by dummy;
+
+	sub @AllHalant @nukta @allsmall Halant.kn' by dummy;
+	sub @AllHalant @allsmall @nukta Halant.kn' by dummy;
+	sub @AllHalant @nukta @allsmall @nukta Halant.kn' by dummy;
+	
+}halant2;
+
+
+lookup rephtorakar {
+	sub Ra.kn Reph.kn' by Rasmall1.kn;
+}rephtorakar;
+
+
+sub Ka.kn matraAa.kn Ssasmall1.kn by KaSsamatraAa.kn;
+sub Ka.kn matraU.kn Ssasmall1.kn by KaSsamatraU.kn;
+sub Ka.kn matraUu.kn Ssasmall1.kn by KaSsamatraUu.kn;
+sub Ka.kn matraAu.kn Ssasmall1.kn by KaSsamatraAu.kn;
+sub Ka.kn matraE.kn matraUu.kn Ssasmall1.kn by KaSsamatraShortO.kn;
+
+
+lookupflag IgnoreMarks; 
+
+lookup abvs_matraAa { # matraAa replacement
+
+	
+		sub Ka.kn matraAa.kn by KamatraAa.kn;
+		sub Kha.kn matraAa.kn by KhamatraAa.kn;
+		sub Ga.kn matraAa.kn by GamatraAa.kn;
+		sub Gha.kn matraAa.kn by GhamatraAa.kn;
+		sub Nga.kn matraAa.kn by NgamatraAa.kn;
+		sub Ca.kn matraAa.kn by CamatraAa.kn;
+		sub Cha.kn matraAa.kn by ChamatraAa.kn;
+		sub Ja.kn matraAa.kn by JamatraAa.kn;
+		sub Jha.kn matraAa.kn by JhamatraAa.kn;
+		sub Nya.kn matraAa.kn by NyamatraAa.kn;
+		sub Tta.kn matraAa.kn by TtamatraAa.kn;
+		sub Ttha.kn matraAa.kn by TthamatraAa.kn;
+		sub Dda.kn matraAa.kn by DdamatraAa.kn;
+		sub Ddha.kn matraAa.kn by DdhamatraAa.kn;
+		sub Nna.kn matraAa.kn by NnamatraAa.kn;
+		sub Ta.kn matraAa.kn by TamatraAa.kn;
+		sub Tha.kn matraAa.kn by ThamatraAa.kn;
+		sub Da.kn matraAa.kn by DamatraAa.kn;
+		sub Dha.kn matraAa.kn by DhamatraAa.kn;
+		sub Na.kn matraAa.kn by NamatraAa.kn;
+		sub Pa.kn matraAa.kn by PamatraAa.kn;
+		sub Pha.kn matraAa.kn by PhamatraAa.kn;
+		sub Ba.kn matraAa.kn by BamatraAa.kn;
+		sub Bha.kn matraAa.kn by BhamatraAa.kn;
+		sub Ma.kn matraAa.kn by MamatraAa.kn;
+		sub Ya.kn matraAa.kn by YamatraAa.kn;
+		sub Ra.kn matraAa.kn by RamatraAa.kn;
+		sub La.kn matraAa.kn by LamatraAa.kn;
+		sub Lla.kn matraAa.kn by LlamatraAa.kn;
+		sub Va.kn matraAa.kn by VamatraAa.kn;
+		sub Sha.kn matraAa.kn by ShamatraAa.kn;
+		sub Ssa.kn matraAa.kn by SsamatraAa.kn;
+		sub Sa.kn matraAa.kn by SamatraAa.kn;
+		sub Ha.kn matraAa.kn by HamatraAa.kn;
+		sub RaObsolete.kn matraAa.kn by RaObsoletematraAa.kn;
+		sub vowelLaObsolete.kn matraAa.kn by vowelLaObsoletematraAa.kn;
+
+
+
+} abvs_matraAa;
+
+
+lookup abvs_Ikar { # Short Ikar replacement
+
+		sub Ka.kn matraI.kn by KamatraI.kn;
+		sub Kha.kn matraI.kn by KhamatraI.kn;
+		sub Ga.kn matraI.kn by GamatraI.kn;
+		sub Gha.kn matraI.kn by GhamatraI.kn;
+		sub Nga.kn matraI.kn by NgamatraI.kn;
+		sub Ca.kn matraI.kn by CamatraI.kn;
+		sub Cha.kn matraI.kn by ChamatraI.kn;
+		sub Ja.kn matraI.kn by JamatraI.kn;
+		sub Jha.kn matraI.kn by JhamatraI.kn;
+		sub Nya.kn matraI.kn by NyamatraI.kn;
+		sub Tta.kn matraI.kn by TtamatraI.kn;
+		sub Ttha.kn matraI.kn by TthamatraI.kn;
+		sub Dda.kn matraI.kn by DdamatraI.kn;
+		sub Ddha.kn matraI.kn by DdhamatraI.kn;
+		sub Nna.kn matraI.kn by NnamatraI.kn;
+		sub Ta.kn matraI.kn by TamatraI.kn;
+		sub Tha.kn matraI.kn by ThamatraI.kn;
+		sub Da.kn matraI.kn by DamatraI.kn;
+		sub Dha.kn matraI.kn by DhamatraI.kn;
+		sub Na.kn matraI.kn by NamatraI.kn;
+		sub Pa.kn matraI.kn by PamatraI.kn;
+		sub Pha.kn matraI.kn by PhamatraI.kn;
+		sub Ba.kn matraI.kn by BamatraI.kn;
+		sub Bha.kn matraI.kn by BhamatraI.kn;
+		sub Ma.kn matraI.kn by MamatraI.kn;
+		sub Ya.kn matraI.kn by YamatraI.kn;
+		sub Ra.kn matraI.kn by RamatraI.kn;
+		sub RaObsolete.kn matraI.kn by RaObsoletematraI.kn;
+		sub La.kn matraI.kn by LamatraI.kn;
+		sub Lla.kn matraI.kn by LlamatraI.kn;
+		sub Va.kn matraI.kn by VamatraI.kn;
+		sub Sha.kn matraI.kn by ShamatraI.kn;
+		sub Ssa.kn matraI.kn by SsamatraI.kn;
+		sub Sa.kn matraI.kn by SamatraI.kn;
+		sub Ha.kn matraI.kn by HamatraI.kn;
+		sub vowelLaObsolete.kn matraI.kn by vowelLaObsoletematraI.kn;
+
+} abvs_Ikar;
+
+
+lookup abvs_matraE { # matraE replacement
+
+		sub Ka.kn matraE.kn by KamatraE.kn;
+		sub Kha.kn matraE.kn by KhamatraE.kn;
+		sub Ga.kn matraE.kn by GamatraE.kn;
+		sub Gha.kn matraE.kn by GhamatraE.kn;
+		sub Nga.kn matraE.kn by NgamatraE.kn;
+		sub Ca.kn matraE.kn by CamatraE.kn;
+		sub Cha.kn matraE.kn by ChamatraE.kn;
+		sub Ja.kn matraE.kn by JamatraE.kn;
+		sub Jha.kn matraE.kn by JhamatraE.kn;
+		sub Nya.kn matraE.kn by NyamatraE.kn;
+		sub Tta.kn matraE.kn by TtamatraE.kn;
+		sub Ttha.kn matraE.kn by TthamatraE.kn;
+		sub Dda.kn matraE.kn by DdamatraE.kn;
+		sub Ddha.kn matraE.kn by DdhamatraE.kn;
+		sub Nna.kn matraE.kn by NnamatraE.kn;
+		sub Ta.kn matraE.kn by TamatraE.kn;
+		sub Tha.kn matraE.kn by ThamatraE.kn;
+		sub Da.kn matraE.kn by DamatraE.kn;
+		sub Dha.kn matraE.kn by DhamatraE.kn;
+		sub Na.kn matraE.kn by NamatraE.kn;
+		sub Pa.kn matraE.kn by PamatraE.kn;
+		sub Pha.kn matraE.kn by PhamatraE.kn;
+		sub Ba.kn matraE.kn by BamatraE.kn;
+		sub Bha.kn matraE.kn by BhamatraE.kn;
+		sub Ma.kn matraE.kn by MamatraE.kn;
+		sub Ya.kn matraE.kn by YamatraE.kn;
+		sub Ra.kn matraE.kn by RamatraE.kn;
+		sub La.kn matraE.kn by LamatraE.kn;
+		sub Lla.kn matraE.kn by LlamatraE.kn;
+		sub Va.kn matraE.kn by VamatraE.kn;
+		sub Sha.kn matraE.kn by ShamatraE.kn;
+		sub Ssa.kn matraE.kn by SsamatraE.kn;
+		sub Sa.kn matraE.kn by SamatraE.kn;
+		sub Ha.kn matraE.kn by HamatraE.kn;
+		sub RaObsolete.kn matraE.kn by RaObsoletematraE.kn;
+		sub vowelLaObsolete.kn matraE.kn by vowelLaObsoletematraE.kn;
+
+} abvs_matraE;
+
+
+
+lookup abvs_matraU { # matraU replacement
+
+		sub Ka.kn matraU.kn by KamatraU.kn;
+		sub Kha.kn matraU.kn by KhamatraU.kn;
+		sub Ja.kn matraU.kn by JamatraU.kn;
+		sub Pa.kn matraU.kn by PamatraU.kn;
+		sub Pha.kn matraU.kn by PhamatraU.kn;
+		sub Va.kn matraU.kn by VamatraU.kn;
+		sub Ga.kn matraU.kn by GamatraU.kn;
+		sub Gha.kn matraU.kn by GhamatraU.kn;
+		sub Nya.kn matraU.kn by NyamatraU.kn;
+		sub Lla.kn matraU.kn by LlamatraU.kn;
+		sub Ssa.kn matraU.kn by SsamatraU.kn;
+
+} abvs_matraU;
+
+
+
+
+lookup abvs_matraUu { # matraUu replacement
+
+		sub Ka.kn matraUu.kn by KamatraUu.kn;
+		sub Ja.kn matraUu.kn by JamatraUu.kn;
+		sub Pa.kn matraUu.kn by PamatraUu.kn;
+		sub Pha.kn matraUu.kn by PhamatraUu.kn;
+		sub Va.kn matraUu.kn by VamatraUu.kn;
+		sub Gha.kn matraUu.kn by GhamatraUu.kn;
+		sub Nya.kn matraUu.kn by NyamatraUu.kn;
+		sub Lla.kn matraUu.kn by LlamatraUu.kn;
+		sub Ssa.kn matraUu.kn by SsamatraUu.kn;
+
+} abvs_matraUu;
+
+
+
+
+lookup abvs_matraAu { # matraAu replacement
+
+		sub Ka.kn matraAu.kn by KamatraAu.kn;
+		sub Kha.kn matraAu.kn by KhamatraAu.kn;
+		sub Ga.kn matraAu.kn by GamatraAu.kn;
+		sub Gha.kn matraAu.kn by GhamatraAu.kn;
+		sub Nga.kn matraAu.kn by NgamatraAu.kn;
+		sub Ca.kn matraAu.kn by CamatraAu.kn;
+		sub Cha.kn matraAu.kn by ChamatraAu.kn;
+		sub Ja.kn matraAu.kn by JamatraAu.kn;
+		sub Jha.kn matraAu.kn by JhamatraAu.kn;
+		sub Nya.kn matraAu.kn by NyamatraAu.kn;
+		sub Tta.kn matraAu.kn by TtamatraAu.kn;
+		sub Ttha.kn matraAu.kn by TthamatraAu.kn;
+		sub Dda.kn matraAu.kn by DdamatraAu.kn;
+		sub Ddha.kn matraAu.kn by DdhamatraAu.kn;
+		sub Nna.kn matraAu.kn by NnamatraAu.kn;
+		sub Ta.kn matraAu.kn by TamatraAu.kn;
+		sub Tha.kn matraAu.kn by ThamatraAu.kn;
+		sub Da.kn matraAu.kn by DamatraAu.kn;
+		sub Dha.kn matraAu.kn by DhamatraAu.kn;
+		sub Na.kn matraAu.kn by NamatraAu.kn;
+		sub Pa.kn matraAu.kn by PamatraAu.kn;
+		sub Pha.kn matraAu.kn by PhamatraAu.kn;
+		sub Ba.kn matraAu.kn by BamatraAu.kn;
+		sub Bha.kn matraAu.kn by BhamatraAu.kn;
+		sub Ma.kn matraAu.kn by MamatraAu.kn;
+		sub Ya.kn matraAu.kn by YamatraAu.kn;
+		sub Ra.kn matraAu.kn by RamatraAu.kn;
+		sub La.kn matraAu.kn by LamatraAu.kn;
+		sub Lla.kn matraAu.kn by LlamatraAu.kn;
+		sub Va.kn matraAu.kn by VamatraAu.kn;
+		sub Sha.kn matraAu.kn by ShamatraAu.kn;
+		sub Ssa.kn matraAu.kn by SsamatraAu.kn;
+		sub Sa.kn matraAu.kn by SamatraAu.kn;
+		sub Ha.kn matraAu.kn by HamatraAu.kn;
+		sub RaObsolete.kn matraAu.kn by RaObsoletematraAu.kn;
+		sub vowelLaObsolete.kn matraAu.kn by vowelLaObsoletematraAu.kn;
+		
+} abvs_matraAu;
+
+
+
+lookup psts_matraShortO { # matraShortO replacement
+
+		sub KamatraE.kn matraUu.kn by KamatraShortO.kn;
+		sub KhamatraE.kn matraUu.kn by KhamatraShortO.kn;
+		sub GamatraE.kn matraUu.kn by GamatraShortO.kn;
+		sub GhamatraE.kn matraUu.kn by GhamatraShortO.kn;
+		sub NgamatraE.kn matraUu.kn by NgamatraShortO.kn;
+		sub CamatraE.kn matraUu.kn by CamatraShortO.kn;
+		sub ChamatraE.kn matraUu.kn by ChamatraShortO.kn;
+		sub JamatraE.kn matraUu.kn by JamatraShortO.kn;
+		sub JhamatraE.kn matraUu.kn by JhamatraShortO.kn;
+		sub NyamatraE.kn matraUu.kn by NyamatraShortO.kn;
+		sub TtamatraE.kn matraUu.kn by TtamatraShortO.kn;
+		sub TthamatraE.kn matraUu.kn by TthamatraShortO.kn;
+		sub DdamatraE.kn matraUu.kn by DdamatraShortO.kn;
+		sub DdhamatraE.kn matraUu.kn by DdhamatraShortO.kn;
+		sub NnamatraE.kn matraUu.kn by NnamatraShortO.kn;
+		sub TamatraE.kn matraUu.kn by TamatraShortO.kn;
+		sub ThamatraE.kn matraUu.kn by ThamatraShortO.kn;
+		sub DamatraE.kn matraUu.kn by DamatraShortO.kn;
+		sub DhamatraE.kn matraUu.kn by DhamatraShortO.kn;
+		sub NamatraE.kn matraUu.kn by NamatraShortO.kn;
+		sub PamatraE.kn matraUu.kn by PamatraShortO.kn;
+		sub PhamatraE.kn matraUu.kn by PhamatraShortO.kn;
+		sub BamatraE.kn matraUu.kn by BamatraShortO.kn;
+		sub BhamatraE.kn matraUu.kn by BhamatraShortO.kn;
+		sub MamatraE.kn matraUu.kn by MamatraShortO.kn;
+		sub YamatraE.kn matraUu.kn by YamatraShortO.kn;
+		sub RamatraE.kn matraUu.kn by RamatraShortO.kn;
+		sub LamatraE.kn matraUu.kn by LamatraShortO.kn;
+		sub LlamatraE.kn matraUu.kn by LlamatraShortO.kn;
+		sub VamatraE.kn matraUu.kn by VamatraShortO.kn;
+		sub ShamatraE.kn matraUu.kn by ShamatraShortO.kn;
+		sub SsamatraE.kn matraUu.kn by SsamatraShortO.kn;
+		sub SamatraE.kn matraUu.kn by SamatraShortO.kn;
+		sub HamatraE.kn matraUu.kn by HamatraShortO.kn;
+		sub RaObsoletematraE.kn matraUu.kn by RaObsoletematraShortO.kn;
+		sub vowelLaObsoletematraE.kn matraUu.kn by vowelLaObsoletematraShortO.kn;
+
+		sub matraE.kn matraUu.kn by matraShortO.kn;
+
+} psts_matraShortO;
+
+
+} psts;
+
+
+#--------------------------------------------------------------------
+
+
+feature pres{
+
+lookup Shri{
+	sub ShamatraI.kn Rasmall1.kn by Shri.kn;
+}Shri;
+
+lookup smallformNukta{
+	sub Jasmall1.kn Nukta.kn by JaNuktasmall1.kn;
+	sub Phasmall1.kn Nukta.kn by PhaNuktasmall1.kn;
+}smallformNukta;
+
+lookup NuktaAlt{
+	sub @Pha Nukta.kn' by NuktaAlt.kn;
+}NuktaAlt;
+
+lookup blwf_small2 {
+	sub [@allsmall] @small1' by @small2;
+} blwf_small2;
+
+sub [KaSsaHalant.kn KaSsamatraAa.kn KaSsamatraAu.kn KaSsamatraU.kn KaSsamatraUu.kn KaSsamatraShortO.kn] @small2' by @small1;
+
+lookup presRasmall1 {
+sub [PamatraU.kn PhamatraU.kn VamatraU.kn] Rasmall1.kn' by Rasmall1alt.kn;
+sub [PamatraU.kn PhamatraU.kn VamatraU.kn] RaYasmall.kn' by RaYasmallalt.kn;
+} presRasmall1;
+
+}pres;
+
+#--------------------------------------------------------------------
+
+
+feature haln { # Halant replacement
+
+ sub KaHalant.kn Ssasmall1.kn by KaSsaHalant.kn;
+
+lookup halant{
+lookupflag IgnoreMarks;
+
+		sub Ka.kn Halant.kn by KaHalant.kn;
+		sub Kha.kn Halant.kn by KhaHalant.kn;
+		sub Ga.kn Halant.kn by GaHalant.kn;
+		sub Gha.kn Halant.kn by GhaHalant.kn;
+		sub Nga.kn Halant.kn by NgaHalant.kn;
+		sub Ca.kn Halant.kn by CaHalant.kn;
+		sub Cha.kn Halant.kn by ChaHalant.kn;
+		sub Ja.kn Halant.kn by JaHalant.kn;
+		sub Jha.kn Halant.kn by JhaHalant.kn;
+		sub Nya.kn Halant.kn by NyaHalant.kn;
+		sub Tta.kn Halant.kn by TtaHalant.kn;
+		sub Ttha.kn Halant.kn by TthaHalant.kn;
+		sub Dda.kn Halant.kn by DdaHalant.kn;
+		sub Ddha.kn Halant.kn by DdhaHalant.kn;
+		sub Nna.kn Halant.kn by NnaHalant.kn;
+		sub Ta.kn Halant.kn by TaHalant.kn;
+		sub Tha.kn Halant.kn by ThaHalant.kn;
+		sub Da.kn Halant.kn by DaHalant.kn;
+		sub Dha.kn Halant.kn by DhaHalant.kn;
+		sub Na.kn Halant.kn by NaHalant.kn;
+		sub Pa.kn Halant.kn by PaHalant.kn;
+		sub Pha.kn Halant.kn by PhaHalant.kn;
+		sub Ba.kn Halant.kn by BaHalant.kn;
+		sub Bha.kn Halant.kn by BhaHalant.kn;
+		sub Ma.kn Halant.kn by MaHalant.kn;
+		sub Ya.kn Halant.kn by YaHalant.kn;
+		sub Ra.kn Halant.kn by RaHalant.kn;
+		sub La.kn Halant.kn by LaHalant.kn;
+		sub Lla.kn Halant.kn by LlaHalant.kn;
+		sub Va.kn Halant.kn by VaHalant.kn;
+		sub Sha.kn Halant.kn by ShaHalant.kn;
+		sub Ssa.kn Halant.kn by SsaHalant.kn;
+		sub Sa.kn Halant.kn by SaHalant.kn;
+		sub Ha.kn Halant.kn by HaHalant.kn;
+		sub RaObsolete.kn Halant.kn by RaObsoleteHalant.kn;
+		sub vowelLaObsolete.kn Halant.kn by vowelLaObsoleteHalant.kn;
+} halant;
+
+sub KaSsaHalant.kn @small2' by @small1;
+
+
+} haln;
+
+
+#--------------------------------------------------------------------
+
+
+
+#--------------------------------------------------------------------
+
+
+feature ss01 { # Stylistic set
+
+lookup ss01_1  {
+
+		sub Shri.kn by ShriAlt.kn;
+		sub NaHalant.kn by NaHalantAlt.kn;
+} ss01_1;
+		
+lookup ss01_2  {	
+		sub PamatraShortO.kn by PamatraE.kn matraUu.kn;
+		sub PhamatraShortO.kn by PhamatraE.kn matraUu.kn;
+		sub VamatraShortO.kn by VamatraE.kn matraUu.kn;
+
+		sub PamatraU.kn by Pa.kn matraU.kn;
+		sub PhamatraU.kn by Pha.kn matraU.kn;
+		sub VamatraU.kn by Va.kn matraU.kn;
+		sub PamatraUu.kn by Pa.kn matraUu.kn;
+		sub PhamatraUu.kn by Pha.kn matraUu.kn;
+		sub VamatraUu.kn by Va.kn matraUu.kn;
+
+} ss01_2;
+} ss01;
+
+#--------------------------------------------------------------------
+
+feature salt { 
+lookup ss01_1;
+lookup ss01_2;
+}salt;
+ 
+#--------------------------------------------------------------------
+
+
+
+

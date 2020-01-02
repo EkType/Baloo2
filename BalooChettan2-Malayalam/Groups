@@ -1,0 +1,163 @@
+
+
+#----------------------------------
+# Classes for Latin subsitution
+#----------------------------------
+
+
+@figures=[zero one two three four five six seven eight nine];
+
+#@figures_oldstyle=[zerooldstyle oneoldstyle twooldstyle threeoldstyle fouroldstyle fiveoldstyle sixoldstyle sevenoldstyle eightoldstyle nineoldstyle];
+
+@figures_tabular=[tabularzero tabularone tabulartwo tabularthree tabularfour tabularfive tabularsix tabularseven tabulareight tabularnine];
+
+@figures_denominator=[zero.dnom one.dnom two.dnom three.dnom four.dnom five.dnom six.dnom seven.dnom eight.dnom nine.dnom];
+
+@figures_numerator=[zero.numr one.numr two.numr three.numr four.numr five.numr six.numr seven.numr eight.numr nine.numr];
+
+@for_subscript_superscript=[parenleft parenright zero one two three four five six seven eight nine];
+
+@figures_subscript=[parenleft.inferior parenright.inferior zero.inferior one.inferior two.inferior three.inferior four.inferior five.inferior six.inferior seven.inferior eight.inferior nine.inferior];
+
+@figures_superscript=[parenleft.superior parenright.superior zero.superior onesuperior twosuperior threesuperior four.superior five.superior six.superior seven.superior eight.superior nine.superior];
+
+
+#--------------------------------------------------------------------
+
+
+#----------------------------------
+# Kerning classes for Both
+#----------------------------------
+
+
+@_A_Left_Right=[A  Agrave Aacute Acircumflex Atilde Adieresis Aring Amacron Abreve Aogonek uni01CD uni1EA0 uni1EA2 uni1EA4 uni1EA6 uni1EA8 uni1EAA uni1EAC uni1EAE uni1EB0 uni1EB2 uni1EB4 uni1EB6 uni0200 uni0202 Aringacute];
+@_C_Right=[C  Ccedilla Cacute Ccaron Ccircumflex Cdotaccent uni1E08];
+@_O_Left=[O  Q Ograve Oacute Ocircumflex Otilde Odieresis Omacron Ohungarumlaut G Gbreve Gcommaaccent Oslash Gcircumflex Gdotaccent Ohorn uni01D1 Gcaron uni1E20 uni1ECC uni1ECE uni1ED0 uni1ED2 uni1ED4 uni1ED6 uni1ED8 uni1EDA uni1EDC uni1EDE uni1EE0 uni1EE2 C Ccedilla Cacute Ccaron Ccircumflex Cdotaccent uni1E08 uni020C uni022A uni0230 uni020E uni1E52 uni1E50 uni01EA uni1E4C uni1E4E uni022C Obreve Oslashacute];
+@_O_Right=[O  Q Ograve Oacute Ocircumflex Otilde Odieresis Omacron Ohungarumlaut D Eth Dcaron Dcroat Oslash uni01D1 uni1E0C uni1ECC uni1ECE uni1ED0 uni1ED2 uni1ED4 uni1ED6 uni1ED8 uni1E0E uni018F uni020C uni022A uni0230 uni020E uni1E52 uni1E50 uni01EA uni1E4C uni1E4E uni022C Obreve Oslashacute];
+@_E_Right=[E  AE Egrave Eacute Ecircumflex Edieresis Emacron Edotaccent Eogonek Ecaron OE Ebreve uni1EB8 uni1EBA uni1EBC uni1EBE uni1EC0 uni1EC2 uni1EC4 uni1EC6 uni1E1C uni0204 uni0206 uni1E16 uni1E14 AEacute];
+@_G_Right=[G  Gbreve Gcommaaccent Gcircumflex Gdotaccent Gcaron uni1E20];
+@_K_Right=[K  Kcommaaccent uni20AD];
+@_L_Right=[L  Lacute Lcommaaccent Lcaron Ldot uni1E36 uni1E38 uni1E3A];
+@_R_Right=[R  Racute Rcommaaccent Rcaron uni1E5A uni1E5C uni1E5E uni0210 uni0212];
+@_S_Left_Right=[S  Sacute Scedilla Scaron Scommaaccent Scircumflex uni1E64 uni1E66 uni1E68];
+@_T_Left_Right=[T  Tcaron uni021A uni1E6C uni1E6E uni0162];
+@_U_Left_Right=[U  Ugrave Uacute Ucircumflex Udieresis Umacron Uring Uhungarumlaut Uogonek Utilde Ubreve uni01D3 uni01D5 uni01D7 uni01D9 uni01DB uni1EE4 uni1EE6 uni0214 uni0216 uni1E7A uni1E78];
+@_Y_Left_Right=[Y  Yacute Ydieresis Ycircumflex Ygrave uni1EF4 uni1EF6 uni1EF8 uni1E8E uni0232];
+@_Z_Left_Right=[Z  Zacute Zdotaccent Zcaron uni1E92];
+@_a_Left=[a  agrave aacute acircumflex atilde adieresis aring ae amacron abreve aogonek uni01CE uni1EA1 uni1EA3 uni1EA5 uni1EA7 uni1EA9 uni1EAB uni1EAD uni1EAF uni1EB1 uni1EB3 uni1EB5 uni1EB7 uni0201 uni0203 aringacute aeacute];
+@_a_Right=[a  agrave aacute acircumflex atilde adieresis aring amacron abreve aogonek uni1EA1 uni1EA3 uni1EA5 uni1EA7 uni1EA9 uni1EAB uni1EAD uni1EAF uni1EB1 uni1EB3 uni1EB5 uni1EB7 uni01CE uni0201 uni0203 aringacute];
+@_c_Right=[c  ccedilla cacute ccaron ccircumflex cdotaccent uni1E09];
+@_e_Right=[e  ae egrave eacute ecircumflex edieresis emacron edotaccent eogonek ecaron oe ebreve uni1EB9 uni1EBB uni1EBD uni1EBF uni1EC1 uni1EC3 uni1EC5 uni1EC7 uni1E1D uni0205 uni0207 uni1E17 uni1E15 aeacute];
+@_f_Left=[f  fi fl f_f f_f_i f_f_l];
+@_h_n_Right=[h  n ntilde nacute ncommaaccent ncaron uni1E25 uni1E2B uni1E45 uni1E47 uni1E49 eng];
+@_i_Left=[i  igrave iacute icircumflex idieresis imacron iogonek dotlessi itilde uni01D0 uni1EC9 uni1ECB uni0209 uni1E2F i.loclTRK uni020B ij iacute_j.loclNLD];
+@_k_Right=[k  kcommaaccent kgreenlandic];
+@_m_Left=[m  n nacute ncommaaccent ncaron r racute rcommaaccent rcaron p uni1E45 uni1E47 uni1E49 uni1E5B uni1E5D uni1E5F uni1E43 uni01CC eng];
+@_o_Right=[o  ograve oacute ocircumflex otilde odieresis omacron ohungarumlaut b p oslash uni01D2 uni1ECD uni1ECF uni1ED1 uni1ED3 uni1ED5 uni1ED7 uni1ED9 uni0259 uni020D uni022B uni0231 uni020F uni1E53 uni1E51 uni01EB uni1E4D uni1E4F uni022D obreve];
+@_o_Left=[o  ograve oacute ocircumflex otilde odieresis omacron ohungarumlaut c ccedilla cacute ccaron ccircumflex e egrave eacute ecircumflex edieresis emacron edotaccent eogonek ecaron d q dcaron dcroat eth oslash uni01D2 uni1ECD uni1ECF uni1ED1 uni1ED3 uni1ED5 uni1ED7 uni1ED9 uni1EDB uni1EDD uni1EDF uni1EE1 uni1EE3 cdotaccent ebreve uni1E0D uni1E0F uni1EB9 uni1EBB uni1EBD uni1EBF uni1EC1 uni1EC3 uni1EC5 uni1EC7 ohorn uni0251 uni1E09 uni1E1D uni0205 uni0207 uni1E17 uni1E15 uni020D uni022B uni0231 uni020F uni1E53 uni1E51 uni01EB uni1E4D uni1E4F uni022D obreve];
+@_r_Right=[r  racute rcommaaccent rcaron uni1E5B uni1E5D uni1E5F uni0211 uni0213];
+@_s_Left_right=[s  sacute scaron scedilla scommaaccent scircumflex uni1E61 uni1E63 uni1E65 uni1E67 uni1E69];
+@_t_Left_Right=[t  uni1E6D uni1E6F uni1E97 uni0163 tbar];
+@_u_Left=[u  ugrave uacute ucircumflex udieresis uhungarumlaut umacron uring uogonek uni01D4 uni01D6 uni01D8 uni01DA uni01DC uni1EE5 uni1EE7 uni1EE9 uni1EEB uni1EED uni1EEF uni1EF1 uhorn uni0215 uni0217 uni1E7B uni1E79];
+@_v_Left_Right=[v  y yacute ydieresis ycircumflex ygrave uni1EF5 uni1EF7 uni1EF9 uni1E8F uni0233];
+@_z_Left=[z  zacute zdotaccent zcaron uni1E93];
+@_period_comma=[period  comma ellipsis];
+@_brackets_Right=[parenleft  bracketleft braceleft];
+@_brackets_Left=[parenright  bracketright braceright];
+@_dashes=[hyphen  endash emdash plus equal multiply divide minus bullet];
+@_percent=[percent ];
+@_colon=[colon  semicolon];
+@_less=[less ];
+@_greater=[greater ];
+@_bar=[bar ];
+@_fractions1=[onequarter  onehalf onethird oneeighth];
+@_fractions4=[onequarter  threequarters];
+@_quoteleft=[quoteleft  quotedblleft];
+@_quoteright_Left=[quoteright  quotedblright];
+@_quoteright_Right=[quoteright  quotedblright];
+@_quote=[quotesingle  quotedbl uni2032 uni2033];
+@_ord=[ordmasculine  ordfeminine];
+@_g_Left=[g  gbreve gcommaaccent uni1E21 gcircumflex gdotaccent gcaron uni0261];
+@_g_Right=[g  gbreve gcommaaccent q uni1E21 gcircumflex gdotaccent gcaron uni0261];
+@_i_Right=[i  igrave iacute icircumflex idieresis imacron iogonek dotlessi fi uni0209 uni1E2F i.loclTRK uni020B f_f_i];
+@_M_Left_Right=[M  uni1E42];
+@_W_Left_Right=[W  Wcircumflex Wgrave Wacute Wdieresis];
+@_w_Left_Right=[w  wcircumflex wgrave wacute wdieresis];
+@_j_Left=[j  jcircumflex uni01C9 uni01C8];
+@_m_Right=[m  uni1E43];
+@_J_Left=[J  Jcircumflex];
+@_fractions3=[onethird  twothirds];
+@_fractions8=[oneeighth  threeeighths fiveeighths seveneighths];
+@_Ohorn_right=[Ohorn  uni1EDA uni1EDC uni1EDE uni1EE0 uni1EE2];
+@_l_Left=[l  lacute lcommaaccent lcaron ldot uni1E37 uni1E39 uni1E3B];
+@_l_Right=[l  lcommaaccent uni1E37 uni1E39 uni1E3B fl f_f_l];
+@_ohorn_right_1=[ohorn  uni1EDB uni1EDD uni1EDF uni1EE1 uni1EE3];
+@_u_Right=[u  ugrave uacute ucircumflex udieresis uhungarumlaut umacron uring uogonek uni01D4 uni01D6 uni01D8 uni01DA uni01DC uni1EE5 uni1EE7 uni0215 uni0217 uni1E7B uni1E79];
+@_TM=[trademark  uni2120];
+@_COPYRIGHT=[copyright  uni2117];
+@_B_Left=[B  D Dcaron];
+@_Uhorn_right=[Uhorn  uni1EE8 uni1EEA uni1EEC uni1EEE uni1EF0];
+@_Uhorn_lc_right=[uhorn  uni1EE9 uni1EEB uni1EED uni1EEF uni1EF1];
+@_0sup=[zero.inferior  zero.superior zero.subs zero.dnom zero.numr];
+@_1sup=[one.inferior  onesuperior one.subs one.dnom one.numr];
+@_2sup=[two.inferior  twosuperior two.subs two.dnom two.numr];
+@_3sup=[three.inferior  threesuperior three.subs three.dnom three.numr];
+@_4sup=[four.inferior  four.superior four.subs four.dnom four.numr];
+@_5sup=[five.inferior  five.superior five.subs five.dnom five.numr];
+@_6sup=[six.inferior  six.superior six.subs six.dnom six.numr];
+@_7sup=[seven.inferior  seven.superior seven.subs seven.dnom seven.numr];
+@_8sup=[eight.inferior  eight.superior eight.subs eight.dnom eight.numr];
+@_9sup=[nine.inferior  nine.superior nine.subs nine.dnom nine.numr];
+@_parenleftsup=[parenleft.inferior  parenleft.superior];
+@_parenrightsup=[parenright.inferior  parenright.superior];
+@_d_Right=[d  uni1E0D uni1E0F];
+@_z_right=[z  zacute zdotaccent zcaron uni1E93 uni01C5 uni01C6];
+@_j_Right=[j  jcircumflex ij iacute_j.loclNLD uni01C9 uni01C8 uni01CC uni01CB];
+@_F_Right=[F  franc];
+@_dcaron_right=[dcaron  lcaron tcaron];
+
+
+
+# kern classes for Malayalam
+
+@_RaTaLeft=[Jha.mlm Kha.mlm Nga.mlm NgaNga.mlm chilluL.mlm chilluNn.mlm chilluRr.mlm matraAi.mlm matraAu.mlm matrashortE.mlm matrashortO.mlm uni0D29 uni0D6A uni0D6D uni0D74 uni0D75 vowelA.mlm vowelAa.mlm vowelAi.mlm vowelAu.mlm vowelLru.mlm vowelLruu.mlm vowelO.mlm vowelshortO.mlm Ra.mlm  Ba.mlm BaKa.mlm BaDa.mlm BaDha.mlm BaBa.mlm BaLa.mlm Nna.mlm Nya.mlm NyaJa.mlm NyaNya.mlm NyaCa.mlm NyaCha.mlm Ta.mlm TaTa.mlm TaSa.mlm TaTha.mlm TaMa.mlm TaBha.mlm TaNa.mlm TaLa.mlm NnaMa.mlm NnaDda.mlm NnaTta.mlm NnaNna.mlm NnaTtha.mlm uni0D73];
+@_DhaLeft=[Dha.mlm  Ga.mlm Sha.mlm GaDa.mlm GaMa.mlm GaDaDha.mlm GaNa.mlm GaGa.mlm GaLa.mlm ShaCa.mlm ShaCha.mlm ShaNa.mlm ShaMa.mlm ShaLa.mlm ShaSha.mlm chilluLl.mlm];
+@_NaLeft=[Na.mlm  Sa.mlm uni0D69 uni0D6C uni0D6F uni0D71 uni0D72 uni0D79 chilluN.mlm NaNa.mlm NaDa.mlm NaTa.mlm NaDha.mlm NnaDdha.mlm NaMa.mlm NaTha.mlm MaPa.mlm SaTha.mlm DdaDda.mlm DdaDdha.mlm SaSa.mlm SaLa.mlm SaRraRra.mlm SaPa.mlm SaTa.mlm SaKa.mlm SaNa.mlm SaMa.mlm NaRra.mlm Ddha.mlm Dda.mlm NaRraVirama.mlm SaPha.mlm];
+@_PaLeft=[Pa.mlm  vowelshortE.mlm vowelE.mlm Pha.mlm Ssa.mlm Ha.mlm PaPa.mlm PaNa.mlm PaLa.mlm PaSa.mlm PaTa.mlm SsaPa.mlm SsaKa.mlm SsaTta.mlm SsaMa.mlm SsaRraRra.mlm SsaTtha.mlm SsaTa.mlm PhaLa.mlm PhaKa.mlm PhaTa.mlm HaNa.mlm HaMa.mlm SsaNna.mlm SsaPha.mlm HaLa.mlm];
+@_KaLeft=[Ka.mlm  chilluK.mlm KaSsa.mlm KaKa.mlm KaLa.mlm KaSa.mlm KaTta.mlm KaSsaMa.mlm KaTa.mlm];
+@_RraLeft=[Rra.mlm  Va.mlm uni0D68 uni0D6E VaVa.mlm VaLa.mlm RraRra.mlm];
+@_CaLeft=[Ca.mlm  Cha.mlm CaCa.mlm CaCha.mlm];
+@_GhaLeft=[Gha.mlm  GhaNa.mlm];
+@_VowelULeft=[vowelU.mlm  vowelI.mlm vowelIi.mlm vowelUu.mlm Ja.mlm JaJa.mlm JaNya.mlm Lla.mlm LlaLla.mlm];
+@_NaRight=[Ga.mlm GaGa.mlm GaLa.mlm GaNa.mlm HaNa.mlm Na.mlm  NaNa.mlm Nna.mlm NnaNna.mlm NnaTtha.mlm TaNa.mlm uni0D29];
+@_DhaRight=[DaDha.mlm Dda.mlm DdaDda.mlm DdaDdha.mlm GaDaDha.mlm Jha.mlm NaDha.mlm NnaDda.mlm Sa.mlm SaKa.mlm SaLa.mlm SaMa.mlm SaNa.mlm SaPa.mlm SaRraRra.mlm SaSa.mlm SaTa.mlm TaSa.mlm Dha.mlm ];
+@_RaTaRight=[Cha.mlm JaNya.mlm KaTa.mlm NaRra.mlm NaRraVirama.mlm NaTa.mlm Nya.mlm NyaCha.mlm NyaNya.mlm Ta.mlm TaTa.mlm chilluL.mlm chilluLl.mlm chilluN.mlm chilluNn.mlm chilluRr.mlm matraAi.mlm matrashortE.mlm uni0D6A uni0D6F uni0D74 uni0D75 vowelA.mlm vowelLru.mlm Ra.mlm  Sha.mlm ShaCha.mlm ShaNa.mlm ShaMa.mlm ShaLa.mlm ShaSha.mlm KaKa.mlm];
+@_KaRight=[KaLa.mlm KaSa.mlm KaTta.mlm NgaKa.mlm chilluK.mlm Ka.mlm ];
+@_RraRight=[Rra.mlm  Ha.mlm RraRra.mlm HaLa.mlm];
+@_AumatraRight=[lengthAu.mlm  vowelIi.mlm vowelUu.mlm vowelAu.mlm matraAu.mlm];
+@_VowelRuBoth=[vowelRu.mlm  vowelRuu.mlm];
+@_MaRight=[Ma.mlm  GaMa.mlm NnaMa.mlm TaMa.mlm NaMa.mlm MaMa.mlm HaMa.mlm MaLa.mlm MaNa.mlm];
+@_VowelAaRight=[vowelAa.mlm  vowelLruu.mlm];
+@_ZhaBoth=[Zha.mlm  ZhaKa.mlm ZhaCa.mlm ZhaTa.mlm ZhaMa.mlm];
+@_DaRight=[Da.mlm  Nga.mlm Bha.mlm DaDa.mlm NgaNga.mlm GaDa.mlm NnaTta.mlm TaBha.mlm NaDa.mlm vowelshortO.mlm];
+@_YaBoth=[YaKa.mlm YaMa.mlm YaPa.mlm YaTa.mlm YaYa.mlm Ya.mlm ];
+@_DdhaRight=[Ddha.mlm  NnaDdha.mlm];
+@_TtaBoth=[Tta.mlm  TtaTta.mlm];
+@_VowelshortERight=[vowelshortE.mlm  vowelAi.mlm];
+@_TthaRight=[Ttha.mlm  matraA.mlm vowelO.mlm matrashortO.mlm matraO.mlm];
+@_LlaRight=[Lla.mlm  LlaLla.mlm];
+@_JaRight=[Ja.mlm  JaJa.mlm NyaJa.mlm];
+@_DaLeft=[Da.mlm  Bha.mlm La.mlm DaDa.mlm LaLa.mlm LaPa.mlm LaKa.mlm LaMa.mlm DaDha.mlm];
+@_ThaRight=[Tha.mlm  Pha.mlm uni0D67 NaTha.mlm PhaLa.mlm PhaKa.mlm PhaTa.mlm];
+@_matraURight=[matraU.mlm  matraU1.mlm matraU2.mlm matraUu.mlm matraUu1.mlm matraUu2.mlm matraUalt.mlm matraUualt.mlm];
+@_matraRuRight=[matraRu.mlm  uni0D44 ViramaYa.mlm matraRu1.mlm matraRu2.mlm ViramaYa1.mlm];
+@_ViramaRaLeft=[ViramaRa.mlm  ViramaRa1.mlm];
+@_matraU_Left=[matraU.mlm  matraUu.mlm matraUalt.mlm matraUualt.mlm];
+@_malnumeral=[uni0D68  uni0D69];
+@_MaLeft=[Ma.mlm  MaMa.mlm MaNa.mlm MaLa.mlm];
+@_DandaRight=[Kha.mlm  Ca.mlm Pa.mlm Ba.mlm La.mlm Va.mlm Ssa.mlm matraI.mlm matraIi.mlm uni0D6E KaSsa.mlm NyaCa.mlm MaPa.mlm ShaCa.mlm GhaNa.mlm CaCa.mlm CaCha.mlm PaTa.mlm PaNa.mlm PaPa.mlm PaLa.mlm PaSa.mlm BaKa.mlm BaDa.mlm BaDha.mlm BaBa.mlm BaLa.mlm LaKa.mlm LaPa.mlm LaMa.mlm LaLa.mlm VaLa.mlm VaVa.mlm SsaKa.mlm SsaTta.mlm SsaTtha.mlm SsaNna.mlm SsaTa.mlm SsaPa.mlm SsaPha.mlm SsaMa.mlm SsaRraRra.mlm ViramaVa.mlm ViramaVa1.mlm matraI1.mlm matraIi1.mlm];
+
+
+
+#--------------------------------------------------------------------
+

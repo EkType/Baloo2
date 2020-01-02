@@ -1,0 +1,197 @@
+
+
+#----------------------------------
+# Classes for Latin subsitution
+#----------------------------------
+
+@figures=[zero one two three four five six seven eight nine];
+
+#@figures_oldstyle=[zerooldstyle oneoldstyle twooldstyle threeoldstyle fouroldstyle fiveoldstyle sixoldstyle sevenoldstyle eightoldstyle nineoldstyle];
+
+@figures_tabular=[tabularzero tabularone tabulartwo tabularthree tabularfour tabularfive tabularsix tabularseven tabulareight tabularnine];
+
+@figures_denominator=[zero.dnom one.dnom two.dnom three.dnom four.dnom five.dnom six.dnom seven.dnom eight.dnom nine.dnom];
+
+@figures_numerator=[zero.numr one.numr two.numr three.numr four.numr five.numr six.numr seven.numr eight.numr nine.numr];
+
+@for_subscript_superscript=[parenleft parenright zero one two three four five six seven eight nine];
+
+@figures_subscript=[parenleft.inferior parenright.inferior zero.inferior one.inferior two.inferior three.inferior four.inferior five.inferior six.inferior seven.inferior eight.inferior nine.inferior];
+
+@figures_superscript=[parenleft.superior parenright.superior zero.superior onesuperior twosuperior threesuperior four.superior five.superior six.superior seven.superior eight.superior nine.superior];
+
+
+
+
+#----------------------------------
+# Kerning classes for Latin
+#----------------------------------
+
+@_A_Left_Right=[A  Agrave Aacute Acircumflex Atilde Adieresis Aring Amacron Abreve Aogonek uni01CD uni1EA0 uni1EA2 uni1EA4 uni1EA6 uni1EA8 uni1EAA uni1EAC uni1EAE uni1EB0 uni1EB2 uni1EB4 uni1EB6 uni0200 uni0202 Aringacute];
+@_C_Right=[C  Ccedilla Cacute Ccaron Ccircumflex Cdotaccent uni1E08];
+@_O_Left=[O  Q Ograve Oacute Ocircumflex Otilde Odieresis Omacron Ohungarumlaut G Gbreve Gcommaaccent Oslash Gcircumflex Gdotaccent Ohorn uni01D1 Gcaron uni1E20 uni1ECC uni1ECE uni1ED0 uni1ED2 uni1ED4 uni1ED6 uni1ED8 uni1EDA uni1EDC uni1EDE uni1EE0 uni1EE2 C Ccedilla Cacute Ccaron Ccircumflex Cdotaccent uni1E08 uni020C uni022A uni0230 uni020E uni1E52 uni1E50 uni01EA uni1E4C uni1E4E uni022C Obreve Oslashacute];
+@_O_Right=[O  Q Ograve Oacute Ocircumflex Otilde Odieresis Omacron Ohungarumlaut D Eth Dcaron Dcroat Oslash uni01D1 uni1E0C uni1ECC uni1ECE uni1ED0 uni1ED2 uni1ED4 uni1ED6 uni1ED8 uni1E0E uni018F uni020C uni022A uni0230 uni020E uni1E52 uni1E50 uni01EA uni1E4C uni1E4E uni022C Obreve Oslashacute];
+@_E_Right=[E  AE Egrave Eacute Ecircumflex Edieresis Emacron Edotaccent Eogonek Ecaron OE Ebreve uni1EB8 uni1EBA uni1EBC uni1EBE uni1EC0 uni1EC2 uni1EC4 uni1EC6 uni1E1C uni0204 uni0206 uni1E16 uni1E14 AEacute];
+@_G_Right=[G  Gbreve Gcommaaccent Gcircumflex Gdotaccent Gcaron uni1E20];
+@_K_Right=[K  Kcommaaccent uni20AD];
+@_L_Right=[L  Lacute Lcommaaccent Lcaron Ldot uni1E36 uni1E38 uni1E3A];
+@_R_Right=[R  Racute Rcommaaccent Rcaron uni1E5A uni1E5C uni1E5E uni0210 uni0212];
+@_S_Left_Right=[S  Sacute Scedilla Scaron Scommaaccent Scircumflex uni1E64 uni1E66 uni1E68];
+@_T_Left_Right=[T  Tcaron uni021A uni1E6C uni1E6E uni0162];
+@_U_Left_Right=[U  Ugrave Uacute Ucircumflex Udieresis Umacron Uring Uhungarumlaut Uogonek Utilde Ubreve uni01D3 uni01D5 uni01D7 uni01D9 uni01DB uni1EE4 uni1EE6 uni0214 uni0216 uni1E7A uni1E78];
+@_Y_Left_Right=[Y  Yacute Ydieresis Ycircumflex Ygrave uni1EF4 uni1EF6 uni1EF8 uni1E8E uni0232];
+@_Z_Left_Right=[Z  Zacute Zdotaccent Zcaron uni1E92];
+@_a_Left=[a  agrave aacute acircumflex atilde adieresis aring ae amacron abreve aogonek uni01CE uni1EA1 uni1EA3 uni1EA5 uni1EA7 uni1EA9 uni1EAB uni1EAD uni1EAF uni1EB1 uni1EB3 uni1EB5 uni1EB7 uni0201 uni0203 aringacute aeacute];
+@_a_Right=[a  agrave aacute acircumflex atilde adieresis aring amacron abreve aogonek uni1EA1 uni1EA3 uni1EA5 uni1EA7 uni1EA9 uni1EAB uni1EAD uni1EAF uni1EB1 uni1EB3 uni1EB5 uni1EB7 uni01CE uni0201 uni0203 aringacute];
+@_c_Right=[c  ccedilla cacute ccaron ccircumflex cdotaccent uni1E09];
+@_e_Right=[e  ae egrave eacute ecircumflex edieresis emacron edotaccent eogonek ecaron oe ebreve uni1EB9 uni1EBB uni1EBD uni1EBF uni1EC1 uni1EC3 uni1EC5 uni1EC7 uni1E1D uni0205 uni0207 uni1E17 uni1E15 aeacute];
+@_f_Left=[f  fi fl f_f f_f_i f_f_l];
+@_h_n_Right=[h  n ntilde nacute ncommaaccent ncaron uni1E25 uni1E2B uni1E45 uni1E47 uni1E49 eng];
+@_i_Left=[i  igrave iacute icircumflex idieresis imacron iogonek dotlessi itilde uni01D0 uni1EC9 uni1ECB uni0209 uni1E2F i.loclTRK uni020B ij iacute_j.loclNLD];
+@_k_Right=[k  kcommaaccent kgreenlandic];
+@_m_Left=[m  n nacute ncommaaccent ncaron r racute rcommaaccent rcaron p uni1E45 uni1E47 uni1E49 uni1E5B uni1E5D uni1E5F uni1E43 uni01CC eng];
+@_o_Right=[o  ograve oacute ocircumflex otilde odieresis omacron ohungarumlaut b p oslash uni01D2 uni1ECD uni1ECF uni1ED1 uni1ED3 uni1ED5 uni1ED7 uni1ED9 uni0259 uni020D uni022B uni0231 uni020F uni1E53 uni1E51 uni01EB uni1E4D uni1E4F uni022D obreve];
+@_o_Left=[o  ograve oacute ocircumflex otilde odieresis omacron ohungarumlaut c ccedilla cacute ccaron ccircumflex e egrave eacute ecircumflex edieresis emacron edotaccent eogonek ecaron d q dcaron dcroat eth oslash uni01D2 uni1ECD uni1ECF uni1ED1 uni1ED3 uni1ED5 uni1ED7 uni1ED9 uni1EDB uni1EDD uni1EDF uni1EE1 uni1EE3 cdotaccent ebreve uni1E0D uni1E0F uni1EB9 uni1EBB uni1EBD uni1EBF uni1EC1 uni1EC3 uni1EC5 uni1EC7 ohorn uni0251 uni1E09 uni1E1D uni0205 uni0207 uni1E17 uni1E15 uni020D uni022B uni0231 uni020F uni1E53 uni1E51 uni01EB uni1E4D uni1E4F uni022D obreve];
+@_r_Right=[r  racute rcommaaccent rcaron uni1E5B uni1E5D uni1E5F uni0211 uni0213];
+@_s_Left_right=[s  sacute scaron scedilla scommaaccent scircumflex uni1E61 uni1E63 uni1E65 uni1E67 uni1E69];
+@_t_Left_Right=[t  uni1E6D uni1E6F uni1E97 uni0163 tbar];
+@_u_Left=[u  ugrave uacute ucircumflex udieresis uhungarumlaut umacron uring uogonek uni01D4 uni01D6 uni01D8 uni01DA uni01DC uni1EE5 uni1EE7 uni1EE9 uni1EEB uni1EED uni1EEF uni1EF1 uhorn uni0215 uni0217 uni1E7B uni1E79];
+@_v_Left_Right=[v  y yacute ydieresis ycircumflex ygrave uni1EF5 uni1EF7 uni1EF9 uni1E8F uni0233];
+@_z_Left=[z  zacute zdotaccent zcaron uni1E93];
+@_period_comma=[period  comma ellipsis];
+@_brackets_Right=[parenleft  bracketleft braceleft];
+@_brackets_Left=[parenright  bracketright braceright];
+@_dashes=[hyphen  endash emdash plus equal multiply divide minus bullet];
+@_percent=[percent ];
+@_colon=[colon  semicolon];
+@_less=[less ];
+@_greater=[greater ];
+@_bar=[bar ];
+@_fractions1=[onequarter  onehalf onethird oneeighth];
+@_fractions4=[onequarter  threequarters];
+@_quoteleft=[quoteleft  quotedblleft];
+@_quoteright_Left=[quoteright  quotedblright];
+@_quoteright_Right=[quoteright  quotedblright];
+@_quote=[quotesingle  quotedbl uni2032 uni2033];
+@_ord=[ordmasculine  ordfeminine];
+@_g_Left=[g  gbreve gcommaaccent uni1E21 gcircumflex gdotaccent gcaron uni0261];
+@_g_Right=[g  gbreve gcommaaccent q uni1E21 gcircumflex gdotaccent gcaron uni0261];
+@_i_Right=[i  igrave iacute icircumflex idieresis imacron iogonek dotlessi fi uni0209 uni1E2F i.loclTRK uni020B f_f_i];
+@_M_Left_Right=[M  uni1E42];
+@_W_Left_Right=[W  Wcircumflex Wgrave Wacute Wdieresis];
+@_w_Left_Right=[w  wcircumflex wgrave wacute wdieresis];
+@_j_Left=[j  jcircumflex uni01C9 uni01C8];
+@_m_Right=[m  uni1E43];
+@_J_Left=[J  Jcircumflex];
+@_fractions3=[onethird  twothirds];
+@_fractions8=[oneeighth  threeeighths fiveeighths seveneighths];
+@_Ohorn_right=[Ohorn  uni1EDA uni1EDC uni1EDE uni1EE0 uni1EE2];
+@_l_Left=[l  lacute lcommaaccent lcaron ldot uni1E37 uni1E39 uni1E3B];
+@_l_Right=[l  lcommaaccent uni1E37 uni1E39 uni1E3B fl f_f_l];
+@_ohorn_right_1=[ohorn  uni1EDB uni1EDD uni1EDF uni1EE1 uni1EE3];
+@_u_Right=[u  ugrave uacute ucircumflex udieresis uhungarumlaut umacron uring uogonek uni01D4 uni01D6 uni01D8 uni01DA uni01DC uni1EE5 uni1EE7 uni0215 uni0217 uni1E7B uni1E79];
+@_TM=[trademark  uni2120];
+@_COPYRIGHT=[copyright  uni2117];
+@_B_Left=[B  D Dcaron];
+@_Uhorn_right=[Uhorn  uni1EE8 uni1EEA uni1EEC uni1EEE uni1EF0];
+@_Uhorn_lc_right=[uhorn  uni1EE9 uni1EEB uni1EED uni1EEF uni1EF1];
+@_0sup=[zero.inferior  zero.superior zero.subs zero.dnom zero.numr];
+@_1sup=[one.inferior  onesuperior one.subs one.dnom one.numr];
+@_2sup=[two.inferior  twosuperior two.subs two.dnom two.numr];
+@_3sup=[three.inferior  threesuperior three.subs three.dnom three.numr];
+@_4sup=[four.inferior  four.superior four.subs four.dnom four.numr];
+@_5sup=[five.inferior  five.superior five.subs five.dnom five.numr];
+@_6sup=[six.inferior  six.superior six.subs six.dnom six.numr];
+@_7sup=[seven.inferior  seven.superior seven.subs seven.dnom seven.numr];
+@_8sup=[eight.inferior  eight.superior eight.subs eight.dnom eight.numr];
+@_9sup=[nine.inferior  nine.superior nine.subs nine.dnom nine.numr];
+@_parenleftsup=[parenleft.inferior  parenleft.superior];
+@_parenrightsup=[parenright.inferior  parenright.superior];
+@_d_Right=[d  uni1E0D uni1E0F];
+@_z_right=[z  zacute zdotaccent zcaron uni1E93 uni01C5 uni01C6];
+@_j_Right=[j  jcircumflex ij iacute_j.loclNLD uni01C9 uni01C8 uni01CC uni01CB];
+@_F_Right=[F  franc];
+@_dcaron_right=[dcaron  lcaron tcaron];
+
+
+#----------------------------------
+# kerning classes for Bangla
+#----------------------------------
+
+@_VowelA_left=[VowelA.bn  VowelAa.bn];
+@_VowelAu_left=[VowelO.bn  VowelAu.bn GaSignU.bn NnaDda.bn NnaDdaRa.bn];
+@_VowelE_left=[VowelE.bn  VowelAi.bn Nya.bn];
+@_Ka_left=[Ka.bn  KaHasant.bn Jha.bn Ba.bn Ra.bn JhaHasant.bn BaHasant.bn RaHasant.bn Ra.as Wa.as WaHasant.as RaHasant.as];
+@_Ga_left=[Ga.bn  GaNna.bn GaDa.bn GaMa.bn GaHasant.bn GaHalf.bn];
+@_Nga_left=[Nga.bn ];
+@_Tta_left=[Tta.bn  Ca.bn Ddha.bn Rha.bn CaNa.bn CaBa.bn TtaTta.bn TtaTtaRa.bn TtaMa.bn TtaBa.bn];
+@_Dda_left=[Dda.bn  VowelU.bn VowelUu.bn Rra.bn KaTa.bn KaTaRa.bn KaTaBa.bn DdaGa.bn DdaDda.bn TaTaBa.bn TaTa.bn NaDda.bn NaDdaRa.bn ShaSignU.bn RraGa.bn DdaHasant.bn RraHasant.bn];
+@_Nna_left=[Nna.bn  NnaTta.bn NnaTtaRa.bn NnaTtha.bn NnaTthaRa.bn NnaDdha.bn NnaDdhaRa.bn NnaMa.bn NnaHasant.bn NnaHalf.bn];
+@_Ta_left=[Ta.bn  TaHasant.bn];
+@_Tha_left=[Tha.bn  ThaHasant.bn];
+@_Dha_left=[Dha.bn  DhaHasant.bn DhaBa.bn];
+@_Pa_left=[Pa.bn  PaTta.bn PaNa.bn PaMa.bn PaHasant.bn];
+@_Bha_left=[Bha.bn  BhaHasant.bn];
+@_Ya_left=[Ya.bn  Ssa.bn Pha.bn Yya.bn PhaHasant.bn YaHasant.bn SsaHasant.bn YyaHasant.bn SsaNna.bn];
+@_La_left=[La.bn  LaGha.bn LaTta.bn LaTtaRa.bn LaDda.bn LaDdaRa.bn LaDdha.bn LaDa.bn LaPha.bn LaPhaRa.bn LaMa.bn LaHasant.bn];
+@_Sha_left=[Sha.bn  ShaCa.bn ShaCha.bn ShaNa.bn ShaMa.bn ShaBa.bn ShaLa.bn];
+@_Ha_left=[Ha.bn  VowelI.bn HaSignRu.bn HaNa.bn HaHasant.bn HaBa.bn];
+@_Ka_right=[Ka.bn  Pha.bn KaTa.bn KaTaRa.bn KaTaBa.bn KaRa.bn HaNa.bn KaHasant.bn PhaHasant.bn];
+@_Nga_right=[Nga.bn  NgaHasant.bn];
+@_Ca_right=[Ca.bn  CaCa.bn CaHasant.bn];
+@_Cha_right=[Cha.bn  ChaRa.bn ChaBa.bn CaCha.bn CaChaRa.bn CaChaBa.bn ChaHasant.bn];
+@_Nya_right=[Nya.bn  NyaCa.bn NyaCaBa.bn NyaHasant.bn SsaNna.bn JaNya.bn];
+@_Dda_right=[Dda.bn  VowelU.bn VowelUu.bn Rra.bn DdaDda.bn NaDda.bn NaDdaRa.bn BaDda.bn LaDda.bn LaDdaRa.bn DdaHasant.bn RraHasant.bn];
+@_Ttha_right=[Ttha.bn  NnaTtha.bn NnaTthaRa.bn NaTtha.bn SsaTtha.bn TthaHasant.bn  TthaSignI.bn TthaSignIReph.bn];
+@_Ddha_right=[Ddha.bn  Tta.bn Rha.bn TtaSignI.bn TtaSignIReph.bn NaTta.bn NaSaTta.bn PaTta.bn LaTta.bn SaTta.bn TtaHasant.bn DdhaHasant.bn RhaHasant.bn NnaTta.bn];
+@_Ta_right=[Ta.bn  TaHasant.bn];
+@_Bha_right=[Bha.bn  BhaHasant.bn];
+@_Da_right=[Da.bn  GaDa.bn NaDa.bn NaDaRa.bn DaRa.bn DaBa.bn DaNa.bn NaDaBa.bn BaDa.bn BaDaRa.bn LaDa.bn DaHasant.bn];
+@_Ha_right=[Ha.bn  VowelI.bn HaNna.bn HaRa.bn HaLa.bn HaHasant.bn];
+
+
+#----------------------------------
+# kerning classes for Bangla with Latin Punctuations
+#----------------------------------
+
+@_shiro_left= [SignAa.bn VowelA.bn VowelAa.bn VowelI.bn VowelIi.bn VowelU.bn VowelUu.bn Ka.bn Gha.bn Ca.bn Cha.bn Ja.bn Jha.bn Tta.bn Ttha.bn Dda.bn Ddha.bn Ta.bn Da.bn Na.bn Pha.bn Ba.bn Bha.bn Ma.bn Ya.bn Ra.bn La.bn Ssa.bn Sa.bn Ha.bn SignE.bn SignAi.bn SignO.bn SignAu.bn SignAuMark.bn Rra.bn Rha.bn Yya.bn Ra.as Wa.as Yaphala.bn KaKa.bn KaTta.bn KaTtaRa.bn KaTa.bn KaTaRa.bn KaTaBa.bn KaNa.bn KaMa.bn KaRa.bn KaLa.bn KaBa.bn KaSsa.bn KaSsaNna.bn KaSsaMa.bn KaSsaRa.bn KaSsaBa.bn KaSa.bn GhaNa.bn GhaRa.bn GhaBa.bn NgaKa.bn NgaKaRa.bn NgaKaSsa.bn NgaKaSsaRa.bn NgaKha.bn NgaGa.bn NgaGha.bn NgaGhaRa.bn NgaMa.bn CaCa.bn CaCha.bn CaChaRa.bn CaChaBa.bn CaNya.bn CaNa.bn CaRa.bn TtaTta.bn TtaTtaRa.bn TtaMa.bn TtaRa.bn TtaBa.bn TthaRa.bn DdaGa.bn DdaDda.bn DdaMa.bn DdaRa.bn DdaBa.bn DdhaRa.bn TaTa.bn TaTaRa.bn TaTaBa.bn TaNa.bn TaMa.bn TaRa.bn TaLa.bn TaBa.bn DaGa.bn DaGha.bn DaDa.bn DaDaRa.bn DaDaBa.bn DaDha.bn DaDhaBa.bn DaNa.bn DaBha.bn DaBhaRa.bn DaMa.bn DaRa.bn DaBa.bn NaTta.bn NaTtaRa.bn NaTtha.bn NaDda.bn NaDdaRa.bn NaTa.bn NaTaSignU.bn NaTaRa.bn NaTaBa.bn NaTha.bn NaThaRa.bn NaDa.bn NaDaRa.bn NaDaBa.bn NaDha.bn NaDhaBa.bn NaDhaRa.bn NaNa.bn NaMa.bn NaRa.bn NaBa.bn NaSa.bn NaSaTta.bn PhaTta.bn PhaRa.bn PhaLa.bn BaJa.bn BaJha.bn BaDda.bn BaDdha.bn BaDa.bn BaDaRa.bn BaDha.bn BaBa.bn BaBha.bn BaRa.bn BaLa.bn BhaRa.bn BhaLa.bn MaTa.bn MaDa.bn MaNa.bn MaPa.bn MaPaRa.bn MaPha.bn MaPhaRa.bn MaBa.bn MaBaRa.bn MaBha.bn MaBhaRa.bn MaMa.bn MaRa.bn MaLa.bn YaRa.bn LaKa.bn LaGa.bn LaGaSignU.bn LaGha.bn LaTta.bn LaTtaRa.bn LaDda.bn LaDdaRa.bn LaDdha.bn LaDa.bn LaDha.bn LaPa.bn LaPha.bn LaPhaRa.bn LaBa.bn LaMa.bn LaRa.bn LaLa.bn ShaCa.bn ShaCha.bn ShaTa.bn ShaNa.bn ShaMa.bn ShaBa.bn ShaRa.bn ShaRaSignIi.bn ShaLa.bn SsaKa.bn SsaKaRa.bn SsaTta.bn SsaTtaRa.bn SsaTtha.bn SsaPa.bn SsaPaRa.bn SsaPha.bn SsaRa.bn SsaBa.bn SsaMa.bn SaKa.bn SaKaRa.bn SaKha.bn SaTta.bn SaTtaRa.bn SaTa.bn SaTaSignU.bn SaTaRa.bn SaTaBa.bn SaTha.bn SaNa.bn SaPa.bn SaPaRa.bn SaPaLa.bn SaPha.bn SaBa.bn SaMa.bn SaRa.bn SaLa.bn HaSignU.bn HaSignRu.bn HaNna.bn HaNa.bn HaBa.bn HaMa.bn HaRa.bn HaLa.bn RraGa.bn RraRa.bn RhaRa.bn YyaRa.bn WaRa.as KaHasant.bn KhaHasant.bn GaHasant.bn GhaHasant.bn CaHasant.bn ChaHasant.bn JaHasant.bn JhaHasant.bn TtaHasant.bn TthaHasant.bn DdaHasant.bn DdhaHasant.bn TaHasant.bn ThaHasant.bn DaHasant.bn NaHasant.bn PaHasant.bn PhaHasant.bn BaHasant.bn BhaHasant.bn MaHasant.bn YaHasant.bn RaHasant.bn LaHasant.bn ShaHasant.bn SsaHasant.bn SaHasant.bn HaHasant.bn RraHasant.bn RhaHasant.bn YyaHasant.bn KaSsaHasant.bn WaHasant.as RaHasant.as KaHalf.bn KhaHalf.bn GaHalf.bn GhaHalf.bn NgaHalf.bn CaHalf.bn ChaHalf.bn JaHalf.bn JhaHalf.bn TtaHalf.bn TthaHalf.bn DdaHalf.bn DdhaHalf.bn TaHalf.bn DaHalf.bn NaHalf.bn PhaHalf.bn BaHalf.bn BhaHalf.bn MaHalf.bn YaHalf.bn LaHalf.bn ShaHalf.bn SsaHalf.bn HaHalf.bn RraHalf.bn RhaHalf.bn YyaHalf.bn WaHalf.as KaSsaHalf.bn Rra_for_ukar.bn Rha_for_ukar.bn TtaSignI.bn TthaSignI.bn TtaSignIReph.bn TthaSignIReph.bn TthaSignIi.bn TthaRaSignIi.bn NaTthaSignIi.bn SsaTthaSignIi.bn TthaSignIiReph.bn SignI_Tta_Ttha1.bn SignI_Tta_Ttha2.bn SignI_reph.bn SignI_Tta_Ttha1_reph.bn SignI_Tta_Ttha2_reph.bn SignICandrabindu.bn SignICandrabindu_Tta_Ttha1.bn SignICandrabindu_Tta_Ttha2.bn Sha.bn SsaNna.bn CaBa.bn ChaRa.bn ChaBa.bn JaJa.bn JaJaBa.bn JaJha.bn JaNya.bn JaRa.bn JaBa.bn JhaRa.bn SignI.bn];
+
+@_Kha_left= [Kha.bn KhaRa.bn KhaBa.bn VowelRu.bn VowelRuu.bn];
+
+@_Ga_Nna_Pa_left= [Ga.bn Nna.bn Pa.bn GaNna.bn GaDa.bn GaDha.bn GaDhaBa.bn GaDhaRa.bn GaNa.bn GaMa.bn GaLa.bn GaBa.bn NnaTta.bn NnaTtaRa.bn NnaTtha.bn NnaTthaRa.bn NnaDdha.bn NnaDdhaRa.bn NnaNna.bn NnaNa.bn NnaMa.bn NnaRa.bn NnaBa.bn PaTta.bn PaNa.bn];
+
+@_others_left= [TaTha.bn];
+
+@_shiro_right= [SignAa.bn VowelA.bn VowelAa.bn VowelI.bn VowelIi.bn VowelU.bn VowelUu.bn Ka.bn Kha.bn Ga.bn Gha.bn Ca.bn Cha.bn Ja.bn Jha.bn Tta.bn Ttha.bn Dda.bn Ddha.bn Nna.bn Ta.bn Tha.bn Da.bn Dha.bn Na.bn Pa.bn Pha.bn Ba.bn Bha.bn Ma.bn Ya.bn Ra.bn La.bn Sha.bn Ssa.bn Sa.bn Ha.bn SignIi.bn SignE.bn SignAi.bn SignO.bn SignAu.bn SignAuMark.bn Rra.bn Rha.bn Yya.bn Ra.as Wa.as Yaphala.bn KaKa.bn KaTta.bn KaTtaRa.bn KaTa.bn KaTaRa.bn KaTaBa.bn KaNa.bn KaMa.bn KaRa.bn KaLa.bn KaBa.bn KaSsa.bn KaSsaNna.bn KaSsaMa.bn KaSsaRa.bn KaSsaBa.bn KaSa.bn KhaRa.bn KhaBa.bn GaGa.bn GaNna.bn GaDa.bn GaDha.bn GaDhaBa.bn GaDhaRa.bn GaNa.bn GaMa.bn GaRa.bn GaLa.bn GaBa.bn GhaNa.bn GhaRa.bn GhaBa.bn NgaKa.bn NgaKaRa.bn NgaKaSsa.bn NgaKaSsaRa.bn NgaKha.bn NgaGa.bn NgaGha.bn NgaGhaRa.bn NgaMa.bn CaCa.bn CaCha.bn CaChaRa.bn CaChaBa.bn CaNya.bn CaNa.bn CaRa.bn TtaTta.bn TtaTtaRa.bn TtaMa.bn TtaRa.bn TtaBa.bn TthaRa.bn DdaGa.bn DdaDda.bn DdaMa.bn DdaRa.bn DdaBa.bn DdhaRa.bn NnaTta.bn NnaTtaRa.bn NnaTtha.bn NnaTthaRa.bn NnaDdha.bn NnaDdhaRa.bn NnaNna.bn NnaNa.bn NnaMa.bn NnaRa.bn NnaBa.bn TaTa.bn TaTaRa.bn TaTaBa.bn TaTha.bn TaNa.bn TaMa.bn TaRa.bn TaLa.bn TaBa.bn ThaRa.bn ThaBa.bn DaGa.bn DaGha.bn DaDa.bn DaDaRa.bn DaDaBa.bn DaDha.bn DaDhaBa.bn DaNa.bn DaBha.bn DaBhaRa.bn DaMa.bn DaRa.bn DaBa.bn DhaNa.bn DhaMa.bn DhaRa.bn DhaBa.bn NaTta.bn NaTtaRa.bn NaTtha.bn NaDda.bn NaDdaRa.bn NaTa.bn NaTaSignU.bn NaTaRa.bn NaTaBa.bn NaTha.bn NaThaRa.bn NaDa.bn NaDaRa.bn NaDaBa.bn NaDha.bn NaDhaBa.bn NaDhaRa.bn NaNa.bn NaMa.bn NaRa.bn NaBa.bn NaSa.bn NaSaTta.bn PaTta.bn PaTa.bn PaTaSignU.bn PaTaRa.bn PaNa.bn PaPa.bn PaMa.bn PaRa.bn PaLa.bn PaSa.bn PhaTta.bn PhaRa.bn PhaLa.bn BaJa.bn BaJha.bn BaDda.bn BaDdha.bn BaDa.bn BaDaRa.bn BaDha.bn BaBa.bn BaBha.bn BaRa.bn BaLa.bn BhaRa.bn BhaLa.bn MaTa.bn MaDa.bn MaNa.bn MaPa.bn MaPaRa.bn MaPha.bn MaPhaRa.bn MaBa.bn MaBaRa.bn MaBha.bn MaBhaRa.bn MaMa.bn MaRa.bn MaLa.bn YaRa.bn LaKa.bn LaGa.bn LaGaSignU.bn LaGha.bn LaTta.bn LaTtaRa.bn LaDda.bn LaDdaRa.bn LaDdha.bn LaDa.bn LaDha.bn LaPa.bn LaPha.bn LaPhaRa.bn LaBa.bn LaMa.bn LaRa.bn LaLa.bn ShaCa.bn ShaCha.bn ShaTa.bn ShaNa.bn ShaMa.bn ShaBa.bn ShaRa.bn ShaRaSignIi.bn ShaLa.bn SsaKa.bn SsaKaRa.bn SsaTta.bn SsaTtaRa.bn SsaTtha.bn SsaPa.bn SsaPaRa.bn SsaPha.bn SsaRa.bn SsaBa.bn SsaMa.bn SaKa.bn SaKaRa.bn SaKha.bn SaTta.bn SaTtaRa.bn SaTa.bn SaTaSignU.bn SaTaRa.bn SaTaBa.bn SaTha.bn SaNa.bn SaPa.bn SaPaRa.bn SaPaLa.bn SaPha.bn SaBa.bn SaMa.bn SaRa.bn SaLa.bn HaSignU.bn HaSignRu.bn HaNna.bn HaNa.bn HaBa.bn HaMa.bn HaRa.bn HaLa.bn RraGa.bn RraRa.bn RhaRa.bn YyaRa.bn WaRa.as KaHasant.bn KhaHasant.bn GaHasant.bn GhaHasant.bn CaHasant.bn ChaHasant.bn JaHasant.bn JhaHasant.bn TtaHasant.bn TthaHasant.bn DdaHasant.bn DdhaHasant.bn NnaHasant.bn TaHasant.bn ThaHasant.bn DaHasant.bn DhaHasant.bn NaHasant.bn PaHasant.bn PhaHasant.bn BaHasant.bn BhaHasant.bn MaHasant.bn YaHasant.bn RaHasant.bn LaHasant.bn ShaHasant.bn SsaHasant.bn SaHasant.bn HaHasant.bn RraHasant.bn RhaHasant.bn YyaHasant.bn KaSsaHasant.bn WaHasant.as RaHasant.as KaHalf.bn KhaHalf.bn GaHalf.bn GhaHalf.bn NgaHalf.bn CaHalf.bn ChaHalf.bn JaHalf.bn JhaHalf.bn TtaHalf.bn TthaHalf.bn DdaHalf.bn DdhaHalf.bn NnaHalf.bn TaHalf.bn ThaHalf.bn DaHalf.bn DhaHalf.bn NaHalf.bn PaHalf.bn PhaHalf.bn BaHalf.bn BhaHalf.bn YaHalf.bn LaHalf.bn ShaHalf.bn SsaHalf.bn HaHalf.bn RraHalf.bn RhaHalf.bn YyaHalf.bn WaHalf.as KaSsaHalf.bn Rra_for_ukar.bn Rha_for_ukar.bn TtaSignI.bn TthaSignI.bn TtaSignIReph.bn TthaSignIReph.bn TthaSignIi.bn TthaRaSignIi.bn NnaTthaSignIi.bn NnaTthaRaSignIi.bn NaTthaSignIi.bn SsaTthaSignIi.bn TthaSignIiReph.bn SignIi_Tta1.bn SignIi_Tta2.bn SignIiReph.bn SignIi_Tta1_Reph.bn SignIi_Tta2_Reph.bn SignU.side.bn SignUu.side.bn CaBa.bn ChaRa.bn ChaBa.bn JaJa.bn JaJaBa.bn JaJha.bn JaNya.bn JaRa.bn JaBa.bn JhaRa.bn];
+
+@_space = [VowelA.bn VowelAa.bn VowelI.bn VowelIi.bn VowelU.bn VowelUu.bn Ka.bn Gha.bn Ca.bn Cha.bn Ja.bn Jha.bn Tta.bn Ttha.bn Dda.bn Ddha.bn Ta.bn Da.bn Na.bn Pha.bn Ba.bn Bha.bn Ma.bn Ya.bn Ra.bn La.bn Sha.bn Ssa.bn Sa.bn Ha.bn Nukta.bn Avagraha.bn SignAa.bn SignI.bn  SignE.bn SignAi.bn SignO.bn  SignAu.bn  SignAuMark.bn Rra.bn Rha.bn Yya.bn Ra.as Wa.as Yaphala.bn KaKa.bn KaTta.bn KaTtaRa.bn KaTa.bn KaTaRa.bn KaTaBa.bn KaNa.bn KaMa.bn KaRa.bn KaLa.bn KaBa.bn KaSsa.bn KaSsaNna.bn KaSsaMa.bn KaSsaRa.bn KaSsaBa.bn KaSa.bn GhaNa.bn GhaRa.bn GhaBa.bn NgaKa.bn NgaKaRa.bn NgaKaSsa.bn NgaKaSsaRa.bn NgaKha.bn NgaGa.bn NgaGha.bn NgaGhaRa.bn NgaMa.bn CaCa.bn CaCha.bn CaChaRa.bn CaChaBa.bn CaNya.bn CaNa.bn CaRa.bn CaBa.bn ChaRa.bn ChaBa.bn JaJa.bn JaJaBa.bn JaJha.bn JaNya.bn JaRa.bn JaBa.bn JhaRa.bn TtaTta.bn TtaTtaRa.bn TtaMa.bn TtaRa.bn TtaBa.bn TthaRa.bn DdaGa.bn DdaDda.bn DdaMa.bn DdaRa.bn DdaBa.bn DdhaRa.bn TaTa.bn TaTaRa.bn TaTaBa.bn TaNa.bn TaMa.bn TaRa.bn TaLa.bn TaBa.bn DaGa.bn DaGha.bn DaDa.bn DaDaRa.bn DaDaBa.bn DaDha.bn DaDhaBa.bn DaNa.bn DaBha.bn DaBhaRa.bn DaMa.bn DaRa.bn DaBa.bn NaTta.bn NaTtaRa.bn NaTtha.bn NaDda.bn NaDdaRa.bn NaTa.bn NaTaSignU.bn NaTaRa.bn NaTaBa.bn NaTha.bn NaThaRa.bn NaDa.bn NaDaRa.bn NaDaBa.bn NaDha.bn NaDhaBa.bn NaDhaRa.bn NaNa.bn NaMa.bn NaRa.bn NaBa.bn NaSa.bn NaSaTta.bn PaSa.bn PhaTta.bn PhaRa.bn PhaLa.bn BaJa.bn BaJha.bn BaDda.bn BaDdha.bn BaDa.bn BaDaRa.bn BaDha.bn BaBa.bn BaBha.bn BaRa.bn BaLa.bn BhaRa.bn BhaLa.bn MaTa.bn MaDa.bn MaNa.bn MaPa.bn MaPaRa.bn MaPha.bn MaPhaRa.bn MaBa.bn MaBaRa.bn MaBha.bn MaBhaRa.bn MaMa.bn MaRa.bn MaLa.bn YaRa.bn LaKa.bn LaGa.bn LaGaSignU.bn LaGha.bn LaTta.bn LaTtaRa.bn LaDda.bn LaDdaRa.bn LaDdha.bn LaDa.bn LaDha.bn LaPa.bn LaPha.bn LaPhaRa.bn LaBa.bn LaMa.bn LaRa.bn LaLa.bn ShaSignU.bn  ShaCa.bn ShaCha.bn ShaTa.bn ShaNa.bn ShaMa.bn ShaBa.bn ShaRa.bn ShaRaSignIi.bn ShaLa.bn SsaKa.bn SsaKaRa.bn SsaTta.bn SsaTtaRa.bn SsaTtha.bn SsaNna.bn SsaPa.bn SsaPaRa.bn SsaPha.bn SsaRa.bn SsaBa.bn SsaMa.bn SaKa.bn SaKaRa.bn SaKha.bn SaTta.bn SaTtaRa.bn SaTa.bn SaTaSignU.bn SaTaRa.bn SaTaBa.bn SaTha.bn SaNa.bn SaPa.bn SaPaRa.bn SaPaLa.bn SaPha.bn SaBa.bn SaMa.bn SaRa.bn SaLa.bn HaSignU.bn HaSignRu.bn HaNna.bn HaNa.bn HaBa.bn HaMa.bn HaRa.bn HaLa.bn RraGa.bn RraRa.bn RhaRa.bn YyaRa.bn WaRa.as KaHasant.bn GhaHasant.bn CaHasant.bn ChaHasant.bn JaHasant.bn JhaHasant.bn TtaHasant.bn TthaHasant.bn DdaHasant.bn DdhaHasant.bn TaHasant.bn DaHasant.bn NaHasant.bn PhaHasant.bn BaHasant.bn BhaHasant.bn MaHasant.bn YaHasant.bn RaHasant.bn LaHasant.bn ShaHasant.bn SsaHasant.bn SaHasant.bn HaHasant.bn RraHasant.bn RhaHasant.bn YyaHasant.bn KaSsaHasant.bn WaHasant.as RaHasant.as KaHalf.bn GhaHalf.bn NgaHalf.bn CaHalf.bn ChaHalf.bn JaHalf.bn JhaHalf.bn TtaHalf.bn TthaHalf.bn DdaHalf.bn DdhaHalf.bn TaHalf.bn ThaHalf.bn DaHalf.bn NaHalf.bn PhaHalf.bn BaHalf.bn BhaHalf.bn MaHalf.bn YaHalf.bn LaHalf.bn ShaHalf.bn SsaHalf.bn SaHalf.bn HaHalf.bn RraHalf.bn RhaHalf.bn YyaHalf.bn WaHalf.as KaSsaHalf.bn Rra_for_ukar.bn Rha_for_ukar.bn TtaSignI.bn TthaSignI.bn TtaSignIReph.bn TthaSignIReph.bn TthaSignIi.bn TthaRaSignIi.bn NaTthaSignIi.bn SsaTthaSignIi.bn  SignI_Tta_Ttha1.bn SignI_Tta_Ttha2.bn SignI_reph.bn  SignI_Tta_Ttha2_reph.bn SignICandrabindu.bn SignICandrabindu_Tta_Ttha1.bn SignICandrabindu_Tta_Ttha2.bn];
+
+
+
+#----------------------------------
+# Bengali Groups GSUB
+#----------------------------------
+
+@RAKAR_U_UU=[Ra.bn Ra.as JaRa.bn SaRa.bn ShaRa.bn BhaRa.bn BaRa.bn PaRa.bn DhaRa.bn DaRa.bn ThaRa.bn TaRa.bn GaRa.bn NaDaRa.bn MaPaRa.bn DaDaRa.bn BaDaRa.bn SaPaRa.bn GaLa.bn PaLa.bn BaLa.bn ShaLa.bn SaLa.bn SaPaLa.bn SsaPaRa.bn WaRa.as];
+@TTA_TTHA_I_1=[KaTta.bn TtaTta.bn TtaTtaRa.bn TtaRa.bn TtaBa.bn SsaTta.bn SsaTtaRa.bn SsaTtha.bn KaTtaRa.bn];
+@TTA_TTHA_I_2=[TtaMa.bn NnaTta.bn NnaTtaRa.bn NnaTtha.bn NnaTthaRa.bn NaTta.bn NaTtaRa.bn NaTtha.bn PaTta.bn PhaTta.bn LaTta.bn LaTtaRa.bn SsaTtha.bn SaTta.bn SaTtaRa.bn KaTtaRa.bn];
+@TTA_1=[Tta.bn KaTta.bn TtaTta.bn TtaTtaRa.bn TtaRa.bn TtaBa.bn KaTtaRa.bn SsaTta.bn SsaTtaRa.bn];
+@TTA_2=[NnaTta.bn NnaTtaRa.bn NaTta.bn NaTtaRa.bn NaSaTta.bn PaTta.bn PhaTta.bn LaTta.bn LaTtaRa.bn SaTta.bn SaTtaRa.bn];
+@TTHA=[Ttha.bn TthaRa.bn NnaTtha.bn NnaTthaRa.bn NaTtha.bn SsaTtha.bn];
+@BELOWBASE_alt=[Ja.bn Da.bn GaDa.bn NgaGa.bn JaJa.bn DaDa.bn NaDa.bn BaJa.bn BaDa.bn MaDa.bn LaDa.bn];
+@BELOWBASE_1=[KaLa.bn TaLa.bn BhaLa.bn MaLa.bn HaLa.bn TtaTta.bn];
+@All_I=[Ka.bn Kha.bn Ga.bn Gha.bn Nga.bn Ca.bn Cha.bn Ja.bn Jha.bn Nya.bn Dda.bn Ddha.bn Nna.bn Ta.bn Tha.bn Da.bn Dha.bn Na.bn Pa.bn Pha.bn Ba.bn Bha.bn Ma.bn Ya.bn Ra.bn La.bn Sha.bn Ssa.bn Sa.bn Ha.bn Rra.bn Rha.bn Yya.bn Ra.as Wa.as KaKa.bn KaTa.bn KaTaRa.bn KaTaBa.bn KaNa.bn KaMa.bn KaRa.bn KaLa.bn KaBa.bn KaSsa.bn KaSsaNna.bn KaSsaMa.bn KaSsaRa.bn KaSsaBa.bn KaSa.bn KhaRa.bn KhaBa.bn GaGa.bn GaNna.bn GaDa.bn GaDha.bn GaDhaBa.bn GaDhaRa.bn GaNa.bn GaMa.bn GaRa.bn GaLa.bn GaBa.bn GhaNa.bn GhaRa.bn GhaBa.bn NgaKa.bn NgaKaRa.bn NgaKaSsa.bn NgaKaSsaRa.bn NgaKha.bn NgaGa.bn NgaGha.bn NgaGhaRa.bn NgaMa.bn NgaRa.bn CaCa.bn CaCha.bn CaChaRa.bn CaChaBa.bn CaNya.bn CaNa.bn CaRa.bn CaBa.bn ChaRa.bn ChaBa.bn JaJa.bn JaJaBa.bn JaJha.bn JaNya.bn JaRa.bn JaBa.bn JhaRa.bn NyaCa.bn NyaCaBa.bn NyaCha.bn NyaJa.bn NyaJha.bn DdaGa.bn DdaDda.bn DdaMa.bn DdaRa.bn DdaBa.bn DdhaRa.bn NnaDda.bn NnaDdaRa.bn NnaDdha.bn NnaDdhaRa.bn NnaNna.bn NnaNa.bn NnaMa.bn NnaRa.bn NnaBa.bn TaTa.bn TaTaRa.bn TaTaBa.bn TaTha.bn TaNa.bn TaMa.bn TaRa.bn TaLa.bn TaBa.bn ThaRa.bn ThaBa.bn DaGa.bn DaGha.bn DaDa.bn DaDaRa.bn DaDaBa.bn DaDha.bn DaDhaBa.bn DaNa.bn DaBha.bn DaBhaRa.bn DaMa.bn DaRa.bn DaBa.bn DhaNa.bn DhaMa.bn DhaRa.bn DhaBa.bn NaDda.bn NaDdaRa.bn NaTa.bn NaTaRa.bn NaTaBa.bn NaTha.bn NaThaRa.bn NaDa.bn NaDaRa.bn NaDaBa.bn NaDha.bn NaDhaBa.bn NaDhaRa.bn NaNa.bn NaMa.bn NaRa.bn NaBa.bn NaSa.bn PaTa.bn PaTaRa.bn PaNa.bn PaPa.bn PaMa.bn PaRa.bn PaLa.bn PaSa.bn PhaRa.bn PhaLa.bn BaJa.bn BaJha.bn BaDda.bn BaDdha.bn BaDa.bn BaDaRa.bn BaDha.bn BaBa.bn BaBha.bn BaRa.bn BaLa.bn BhaRa.bn BhaLa.bn MaTa.bn MaDa.bn MaNa.bn MaPa.bn MaPaRa.bn MaPha.bn MaPhaRa.bn MaBa.bn MaBaRa.bn MaBha.bn MaBhaRa.bn MaMa.bn MaRa.bn MaLa.bn YaRa.bn LaKa.bn LaGa.bn LaGha.bn LaDda.bn LaDdaRa.bn LaDdha.bn LaDa.bn LaDha.bn LaPa.bn LaPha.bn LaPhaRa.bn LaBa.bn LaMa.bn LaRa.bn LaLa.bn ShaCa.bn ShaCha.bn ShaTa.bn ShaNa.bn ShaMa.bn ShaBa.bn ShaRa.bn ShaLa.bn SsaKa.bn SsaKaRa.bn SsaNna.bn SsaPa.bn SsaPaRa.bn SsaPha.bn SsaRa.bn SsaBa.bn SsaMa.bn SaKa.bn SaKaRa.bn SaKha.bn SaTa.bn SaTaRa.bn SaTaBa.bn SaTha.bn SaNa.bn SaPa.bn SaPaRa.bn SaPaLa.bn SaPha.bn SaBa.bn SaMa.bn SaRa.bn SaLa.bn HaNna.bn HaNa.bn HaBa.bn HaMa.bn HaRa.bn HaLa.bn RraGa.bn RraRa.bn RhaRa.bn YyaRa.bn WaRa.as TthaRa.bn];
+@CANDRABINDU_ALT_1=[VowelI.bn VowelIi.bn VowelU.bn VowelUu.bn VowelAi.bn VowelAu.bn Ttha.bn SignAuMark.bn SignIi.bn TtaSignI.bn TthaSignI.bn TtaSignIReph.bn TthaSignIReph.bn SignI_reph.bn SignI_Tta_Ttha1_reph.bn SignI_Tta_Ttha2_reph.bn abvs_null.bn];
+
+#----------------------------------
+# Bengali Groups GPOS
+#----------------------------------
+
+markClass [Reph.bn] <anchor 0 0> @AboveBaseMark;
+markClass [Candrabindu.bn Candrabindu_alt.bn] <anchor 0 0>  @AboveBaseMark2;
+markClass [SignU.bn SignUu.bn SignRu.bn SignRuu.bn Hasant.bn SignLru.bn SignLruu.bn SignU1.bn SignUu1.bn SignRu1.bn] <anchor 0 0>  @BelowBaseMark;
+markClass [SignU_alt.bn SignUu_alt.bn SignRu_alt.bn Hasant.bn SignLru.bn SignLruu.bn]  <anchor 0 0> @BelowBaseMark2;
+
+
+
+

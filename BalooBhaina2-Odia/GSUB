@@ -1,0 +1,805 @@
+
+
+languagesystem DFLT dflt;
+languagesystem latn dflt;
+languagesystem latn NLD;
+languagesystem latn AZE;
+languagesystem latn TRK;
+languagesystem latn MOL;
+languagesystem latn ROM;
+languagesystem latn CAT;
+languagesystem latn TAT;
+languagesystem latn CRT;
+languagesystem latn KAZ;
+languagesystem ory2 dflt;
+languagesystem orya dflt; 
+
+
+
+#--------------------------------------------------------------------
+
+#---------- L A T I N ----------#
+
+#--------------------------------------------------------------------
+
+feature aalt { # Access All Alternates
+feature locl;
+feature subs;
+feature sinf;
+feature sups;
+feature numr;
+feature dnom;
+feature frac;
+feature ordn;
+feature tnum;
+#feature onum;
+} aalt;
+
+#--------------------------------------------------------------------
+
+feature frac { # Fractions
+
+lookup FractionBar {
+        ignore sub slash @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures @figures @figures @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures @figures @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures @figures @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures slash;
+        ignore sub slash @figures @figures slash';
+        ignore sub slash' @figures @figures slash;
+        ignore sub slash @figures slash';
+        ignore sub slash' @figures slash;
+        ignore sub slash slash';
+        ignore sub slash' slash;
+        sub @figures slash' @figures by fraction;
+    } FractionBar;
+    
+    lookup Numerator1 {
+        sub @figures' fraction by @figures_numerator;
+    } Numerator1;
+
+    lookup Numerator2 {
+        sub @figures' @figures_numerator fraction by @figures_numerator;
+    } Numerator2;
+
+    lookup Numerator3 {
+        sub @figures' @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator3;
+
+    lookup Numerator4 {
+        sub @figures' @figures_numerator @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator4;
+
+    lookup Numerator5 {
+        sub @figures' @figures_numerator @figures_numerator @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator5;
+
+    lookup Numerator6 {
+        sub @figures' @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator6;
+
+    lookup Numerator7 {
+        sub @figures' @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator7;
+
+    lookup Numerator8 {
+        sub @figures' @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator8;
+
+    lookup Numerator9 {
+        sub @figures' @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator9;
+
+    lookup Numerator10 {
+        sub @figures' @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator10;
+
+    lookup Denominator {
+        sub [fraction @figures_denominator] @figures' by @figures_denominator;
+    } Denominator;
+
+    sub @figures space' @figures_numerator by uni2009;
+
+} frac;
+
+
+#--------------------------------------------------------------------
+
+feature tnum { # Tabular Figures
+    sub @figures by @figures_tabular;
+} tnum;
+
+#--------------------------------------------------------------------
+
+feature numr { # Numerators
+    sub @figures by @figures_numerator;
+} numr;
+
+#--------------------------------------------------------------------
+
+feature dnom { # Denominators
+    sub @figures by @figures_denominator;
+} dnom;
+
+#--------------------------------------------------------------------
+
+feature sups { # Superscript
+    sub @for_subscript_superscript by @figures_superscript;
+    sub n by n.superior;
+} sups;
+
+#--------------------------------------------------------------------
+
+feature subs { # Subscript
+    sub @for_subscript_superscript by @figures_subscript;
+} subs;
+
+#--------------------------------------------------------------------
+
+feature sinf { # Scientific Inferior
+    sub @for_subscript_superscript by @figures_subscript;
+} sinf;
+
+#--------------------------------------------------------------------
+
+feature ordn { # Ordinals
+  sub @figures [A a]' by ordfeminine;
+  sub @figures [O o]' by ordmasculine;
+  sub N o period by uni2116;
+} ordn;
+
+#--------------------------------------------------------------------
+
+feature liga {
+  sub f f i by f_f_i;
+  sub f f l by f_f_l;
+  sub f f by f_f;
+  sub f i by fi;
+  sub f l by fl;
+} liga;
+
+
+#--------------------------------------------------------------------
+
+
+feature locl {
+script latn;
+
+language NLD;
+  sub iacute j by iacute_j.loclNLD;
+  sub Iacute J by Iacute_J.loclNLD;
+
+language CAT;
+  sub l periodcentered' l by periodcentered.loclCAT;
+  sub L periodcentered' L by periodcentered.loclCAT.case;
+
+language TRK;
+  lookup IDOT {
+      sub i' by i.loclTRK;
+      } IDOT;
+
+language AZE;
+  lookup IDOT;
+language CRT;
+    lookup IDOT;
+language KAZ;
+    lookup IDOT;
+language TAT;
+    lookup IDOT;
+
+language ROM;
+    lookup CEDILLA {
+      sub scedilla by scommaaccent;
+      sub Scedilla by Scommaaccent;
+    sub uni0162 by uni021A;
+    sub uni0163 by uni021B;
+    } CEDILLA;
+language MOL;
+  lookup CEDILLA;
+
+} locl; 
+
+#--------------------------------------------------------------------
+
+
+
+
+#--------------------------------------------------------------------
+
+#---------- O R I Y A ----------#
+
+#--------------------------------------------------------------------
+
+
+
+
+@TOP_MARKS =[MatraU.or MatraUu.or MatraVocalicR.or MatraVocalicRr.or MatraVocalicL.or MatraVocalicLl.or MatraU_alt.or MatraUu_alt.or MatraVocalicR_alt.or MatraU_alt1.or MatraUu_alt1.or MatraVocalicR_alt1.or MatraU_alt2.or MatraUu_alt2.or MatraVocalicR_alt2.or MatraU_alt3.or MatraUu_alt3.or MatraVocalicR_alt3.or Virama.or Virama_alt.or Nukta.or RaSmall.or RaSmall2.or KaSmall.or];
+
+
+
+
+#---------------------------------------------
+
+
+feature akhn { # Akhanda
+
+   ignore sub Ja.or' Virama.or Nya.or Nukta.or;
+   sub Ja.or' Virama.or' Nya.or' by JaNya.or;
+
+
+lookup akhn3 {
+lookupflag MarkAttachmentType @TOP_MARKS;
+  sub Ja.or Virama.or Ja.or Virama.or Va.or by JaJaBa.or;
+  sub Da.or Virama.or Dha.or Virama.or Va.or by DaDhaBa.or;
+  sub Na.or Virama.or Ta.or Virama.or Va.or by NaTaBa.or;
+  sub Na.or Virama.or Da.or Virama.or Va.or by NaDaBa.or;
+  sub Na.or Virama.or Dha.or Virama.or Va.or by NaDhaBa.or;
+  sub Ta.or Virama.or Ta.or Virama.or Va.or by TaTaBa.or;
+
+  sub Ja.or Virama.or Ja.or Virama.or Ba.or by JaJaBa.or;
+  sub Da.or Virama.or Dha.or Virama.or Ba.or by DaDhaBa.or;
+  sub Na.or Virama.or Ta.or Virama.or Ba.or by NaTaBa.or;
+  sub Na.or Virama.or Da.or Virama.or Ba.or by NaDaBa.or;
+  sub Na.or Virama.or Dha.or Virama.or Ba.or by NaDhaBa.or;
+  sub Ta.or Virama.or Ta.or Virama.or Ba.or by TaTaBa.or;
+
+  sub Ja.or Virama.or Ja.or Virama.or Wa.or by JaJaBa.or;
+  sub Da.or Virama.or Dha.or Virama.or Wa.or by DaDhaBa.or;
+  sub Na.or Virama.or Ta.or Virama.or Wa.or by NaTaBa.or;
+  sub Na.or Virama.or Da.or Virama.or Wa.or by NaDaBa.or;
+  sub Na.or Virama.or Dha.or Virama.or Wa.or by NaDhaBa.or;
+  sub Ta.or Virama.or Ta.or Virama.or Wa.or by TaTaBa.or;
+} akhn3;
+
+
+
+lookup akhn2 {
+lookupflag MarkAttachmentType @TOP_MARKS;
+  sub Ka.or Virama.or Ssa.or Virama.or Nna.or by KaSsaNna.or; 
+  sub Ka.or Virama.or Ssa.or Virama.or Ma.or by KaSsaMa.or;
+  sub Nga.or Virama.or Ka.or Virama.or Ta.or by NgaKaTa.or;
+  sub Ta.or Virama.or Sa.or Virama.or Na.or by TaSaNa.or;
+  sub Ta.or Virama.or Ka.or Virama.or Ssa.or by TaKaSsa.or;
+} akhn2;
+
+
+lookup akhn1 {
+lookupflag MarkAttachmentType @TOP_MARKS;
+  sub Ka.or Virama.or Ta.or Virama.or Ra.or by KaTaRa.or; 
+  sub Nna.or Virama.or Dda.or Virama.or Ra.or by NnaDdaRa.or;
+  sub Ka.or Virama.or Ssa.or Virama.or Ra.or by KaSsaRa.or;
+  sub Ta.or Virama.or Ta.or Virama.or Ra.or by TaTaRa.or;
+  sub Na.or Virama.or Da.or Virama.or Ra.or by NaDaRa.or;
+  sub Na.or Virama.or Dha.or Virama.or Ra.or by NaDhaRa.or;
+  sub Ma.or Virama.or Pa.or Virama.or Ra.or by MaPaRa.or;
+  sub Ma.or Virama.or Bha.or Virama.or Ra.or by MaBhaRa.or;
+  sub Ssa.or Virama.or Ka.or Virama.or Ra.or by SsaKaRa.or;
+  sub Na.or Virama.or Ta.or Virama.or Ra.or by NaTaRa.or;
+  sub Sa.or Virama.or Ta.or Virama.or Ra.or by SaTaRa.or;
+  sub Sa.or Virama.or Tta.or Virama.or Ra.or by SaTtaRa.or;
+  sub Ssa.or Virama.or Tta.or Virama.or Ra.or by SsaTtaRa.or;
+  sub Sha.or Virama.or Tta.or Virama.or Ra.or by ShaTtaRa.or;
+  sub Sa.or Virama.or Ka.or Virama.or Ra.or by SaKaRa.or;
+}akhn1;
+
+} akhn;
+
+
+#---------------------------------------------
+
+
+feature nukt { # Nukta consonants
+
+  sub Dda.or Nukta.or by Rra.or;
+  sub Ddha.or Nukta.or by Rha.or;
+
+} nukt;
+
+
+#---------------------------------------------
+
+feature rphf { # Reph forms
+
+  sub Ra.or Virama.or by Reph.or;
+
+} rphf;
+
+
+#---------------------------------------------
+
+feature pres {
+
+
+script orya;
+  sub  Ka.or Virama.or by KaSmall.or;
+  sub  Kha.or Virama.or by KhaSmall.or;
+  sub  Ga.or Virama.or by GaSmall.or;
+  sub  Gha.or Virama.or by GhaSmall.or;
+  sub  Nga.or Virama.or by NgaSmall.or;
+  sub  Ca.or Virama.or by CaSmall.or;
+  sub  Cha.or Virama.or by ChaSmall.or;
+  sub  Ja.or Virama.or by JaSmall.or;
+  sub  Jha.or Virama.or by JhaSmall.or;
+  sub  Tta.or Virama.or by TtaSmall.or;
+  sub  Ttha.or Virama.or by TthaSmall.or;
+  sub  Dda.or Virama.or by DdaSmall.or;
+  sub  Ddha.or Virama.or by DdhaSmall.or;
+  sub  Nna.or Virama.or by NnaSmall.or;
+  sub  Ta.or Virama.or by TaSmall.or;
+  sub  Tha.or Virama.or by ThaSmall.or;
+  sub  Da.or Virama.or by DaSmall.or;
+  sub  Dha.or Virama.or by DhaSmall.or;
+  sub  Na.or Virama.or by NaSmall.or;
+  sub  Pa.or Virama.or by PaSmall.or;
+  sub  Pha.or Virama.or by PhaSmall.or;
+  sub  Ba.or Virama.or by BaSmall.or;
+  sub  Bha.or Virama.or by BhaSmall.or;
+  sub  Ma.or Virama.or by MaSmall.or;
+  sub  Ya.or Virama.or by YaSmall.or;
+  #sub  Yya.or Virama.or by YyaSmall.or;
+  sub  Ra.or Virama.or by RaSmall.or;
+  sub  La.or Virama.or by LaSmall.or;
+  sub  Lla.or Virama.or by LlaSmall.or;
+  sub  Va.or Virama.or by VaSmall.or;
+  sub  Wa.or Virama.or by BaSmall.or;
+  sub  Sha.or Virama.or by ShaSmall.or;
+  sub  Ssa.or Virama.or by SsaSmall.or;
+  sub  Sa.or Virama.or by SaSmall.or;
+  sub  Ha.or Virama.or by HaSmall.or;
+  sub  Ka.or Virama.or Ssa.or Virama.or by KaSsaSmall.or;
+
+script ory2;
+  sub Virama.or Ka.or by KaSmall.or;
+  sub Virama.or Kha.or by KhaSmall.or;
+  sub Virama.or Ga.or by GaSmall.or;
+  sub Virama.or Gha.or by GhaSmall.or;
+  sub Virama.or Nga.or by NgaSmall.or;
+  sub Virama.or Ca.or by CaSmall.or;
+  sub Virama.or Cha.or by ChaSmall.or;
+  sub Virama.or Ja.or by JaSmall.or;
+  sub Virama.or Jha.or by JhaSmall.or;
+  sub Virama.or Tta.or by TtaSmall.or;
+  sub Virama.or Ttha.or by TthaSmall.or;
+  sub Virama.or Dda.or by DdaSmall.or;
+  sub Virama.or Ddha.or by DdhaSmall.or;
+  sub Virama.or Nna.or by NnaSmall.or;
+  sub Virama.or Ta.or by TaSmall.or;
+  sub Virama.or Tha.or by ThaSmall.or;
+  sub Virama.or Da.or by DaSmall.or;
+  sub Virama.or Dha.or by DhaSmall.or;
+  sub Virama.or Na.or by NaSmall.or;
+  sub Virama.or Pa.or by PaSmall.or;
+  sub Virama.or Pha.or by PhaSmall.or;
+  sub Virama.or Ba.or by BaSmall.or;
+  sub Virama.or Bha.or by BhaSmall.or;
+  sub Virama.or Ma.or by MaSmall.or;
+  sub Virama.or Ya.or by YaSmall.or;
+  #sub Virama.or Yya.or by YyaSmall.or;
+  sub Virama.or Ra.or by RaSmall.or;
+  sub Virama.or La.or by LaSmall.or;
+  sub Virama.or Lla.or by LlaSmall.or;
+  sub Virama.or Va.or by VaSmall.or;
+  sub Virama.or Wa.or by BaSmall.or;
+  sub Virama.or Sha.or by ShaSmall.or;
+  sub Virama.or Ssa.or by SsaSmall.or;
+  sub Virama.or Sa.or by SaSmall.or;
+  sub Virama.or Ha.or by HaSmall.or;
+  sub Virama.or Ka.or Virama.or Ssa.or by KaSsaSmall.or;
+
+
+lookup pres2 {
+lookupflag UseMarkFilteringSet @TOP_MARKS;
+  sub JaJa.or VaSmall.or by JaJaBa.or;
+  sub DaDha.or VaSmall.or by DaDhaBa.or;
+  sub NaTa.or VaSmall.or by NaTaBa.or;
+  sub NaDa.or VaSmall.or by NaDaBa.or;
+  sub NaDha.or VaSmall.or by NaDhaBa.or;
+  sub JaJa.or BaSmall.or by JaJaBa.or;
+  sub DaDha.or BaSmall.or by DaDhaBa.or;
+  sub NaTa.or BaSmall.or by NaTaBa.or;
+  sub NaDa.or BaSmall.or by NaDaBa.or;
+  sub NaDha.or BaSmall.or by NaDhaBa.or;
+} pres2;
+
+lookup pres1 {
+lookupflag UseMarkFilteringSet @TOP_MARKS;
+  sub KaSsa.or NnaSmall.or by KaSsaNna.or;
+  sub KaSsa.or MaSmall.or by KaSsaMa.or;
+  sub NgaKa.or TaSmall.or by NgaKaTa.or;
+  sub TaSa.or NaSmall.or by TaSaNa.or;
+  sub TaKa.or SsaSmall.or by TaKaSsa.or;
+} pres1;
+
+lookupflag UseMarkFilteringSet @TOP_MARKS;
+  sub Ka.or RaSmall.or by KaRa.or;
+  sub Ka.or KaSmall.or by KaKa.or;
+  sub Ka.or TaSmall.or by KaTa.or;
+  sub Ka.or CaSmall.or by KaCa.or;
+  sub Ka.or VaSmall.or by KaBa.or;
+  sub Ka.or BaSmall.or by KaBa.or;
+  sub Ka.or LlaSmall.or by KaLla.or;
+  sub Ka.or SsaSmall.or by KaSsa.or;
+  sub Ka.or SaSmall.or by KaSa.or;
+  sub Kha.or RaSmall.or by KhaRa.or;
+  sub Kha.or LlaSmall.or by KhaLla.or;
+  sub Ga.or RaSmall.or by GaRa.or;
+  sub Ga.or DaSmall.or by GaDa.or;
+  sub Ga.or DhaSmall.or by GaDha.or;
+  sub Ga.or NaSmall.or by GaNa.or;
+  sub Ga.or LlaSmall.or by GaLla.or;
+  sub Gha.or RaSmall.or by GhaRa.or;
+  sub Gha.or NaSmall.or by GhaNa.or;
+  sub Nga.or RaSmall.or by NgaRa.or;
+  sub Nga.or KaSsaSmall.or by NgaKaSsa.or;
+  sub Nga.or KaSmall.or by NgaKa.or;
+  sub Nga.or KhaSmall.or by NgaKha.or;
+  sub Nga.or GaSmall.or by NgaGa.or;
+  sub Nga.or GhaSmall.or by NgaGha.or; 
+  sub Ca.or RaSmall.or by CaRa.or;
+  sub Ca.or CaSmall.or by CaCa.or;
+  sub Ca.or ChaSmall.or by CaCha.or;
+  sub Cha.or RaSmall.or by ChaRa.or;
+  sub Ja.or RaSmall.or by JaRa.or;
+  sub Ja.or JaSmall.or by JaJa.or;
+  sub Ja.or JhaSmall.or by JaJha.or;
+  sub Ja.or VaSmall.or by JaBa.or;
+  sub Ja.or BaSmall.or by JaBa.or;
+  sub Jha.or RaSmall.or by JhaRa.or;
+  sub Nya.or RaSmall.or by NyaRa.or;
+  sub Nya.or CaSmall.or by NyaCa.or;
+  sub Nya.or ChaSmall.or by NyaCha.or;
+  sub Nya.or JaSmall.or by NyaJa.or;
+  sub Nya.or JhaSmall.or by NyaJha.or;
+  sub Tta.or RaSmall.or by TtaRa.or;
+  sub Tta.or TtaSmall.or by TtaTta.or;
+  sub Ttha.or RaSmall.or by TthaRa.or;
+  sub Dda.or RaSmall.or by DdaRa.or;
+  sub Dda.or GaSmall.or by DdaGa.or;
+  sub Dda.or DdaSmall.or by DdaDda.or;
+  sub Ddha.or RaSmall.or by DdhaRa.or;
+  sub Nna.or RaSmall.or by NnaRa.or;
+  sub Nna.or TtaSmall.or by NnaTta.or;
+  sub Nna.or TthaSmall.or by NnaTtha.or;
+  sub Nna.or DdaSmall.or by NnaDda.or;
+  sub Nna.or DdhaSmall.or by NnaDdha.or;
+  sub Nna.or NnaSmall.or by NnaNna.or;
+  sub Ta.or RaSmall.or by TaRa.or;
+  sub Ta.or KaSmall.or by TaKa.or;
+  sub Ta.or TaSmall.or by TaTa.or;
+  sub Ta.or ThaSmall.or by TaTha.or;
+  sub Ta.or NaSmall.or by TaNa.or;
+  sub Ta.or PaSmall.or by TaPa.or;
+  sub Ta.or VaSmall.or by TaBa.or;
+  sub Ta.or BaSmall.or by TaBa.or;
+  sub Ta.or MaSmall.or by TaMa.or;
+  sub Ta.or SaSmall.or by TaSa.or;
+  sub Tha.or RaSmall.or by ThaRa.or;
+  sub Da.or RaSmall.or by DaRa.or;
+  sub Da.or YaSmall.or by DaYa.or;
+  sub Da.or GaSmall.or by DaGa.or;
+  sub Da.or GhaSmall.or by DaGha.or;
+  sub Da.or DaSmall.or by DaDa.or;
+  sub Da.or DhaSmall.or by DaDha.or;
+  sub Da.or VaSmall.or by DaBa.or;
+  sub Da.or BaSmall.or by DaBa.or;
+  sub Da.or BhaSmall.or by DaBha.or;
+  sub Dha.or RaSmall.or by DhaRa.or;
+  sub Dha.or VaSmall.or by DhaBa.or;
+  sub Dha.or BaSmall.or by DhaBa.or;
+  sub Dha.or YyaSmall.or by DhaYya.or;
+  sub Na.or RaSmall.or by NaRa.or;
+  sub Na.or TaSmall.or by NaTa.or;
+  sub Na.or ThaSmall.or by NaTha.or;
+  sub Na.or SaSmall.or by NaSa.or;
+  sub Na.or DaSmall.or by NaDa.or;
+  sub Na.or DhaSmall.or by NaDha.or;
+  sub Na.or NaSmall.or by NaNa.or;
+  sub Pa.or RaSmall.or by PaRa.or;
+  sub Pa.or TaSmall.or by PaTa.or;
+  sub Pa.or PaSmall.or by PaPa.or;
+  sub Pa.or LlaSmall.or by PaLla.or;
+  sub Pa.or SaSmall.or by PaSa.or;
+  sub Pha.or RaSmall.or by PhaRa.or;
+  sub Ba.or RaSmall.or by BaRa.or;
+  sub Ba.or JaSmall.or by BaJa.or;
+  sub Ba.or DaSmall.or by BaDa.or;
+  sub Ba.or DhaSmall.or by BaDha.or;
+  sub Ba.or BaSmall.or by BaBa.or;
+  sub Bha.or RaSmall.or by BhaRa.or;
+  sub Ma.or RaSmall.or by MaRa.or;
+  sub Ma.or PaSmall.or by MaPa.or;
+  sub Ma.or PhaSmall.or by MaPha.or;
+  sub Ma.or BaSmall.or by MaBa.or;
+  sub Ma.or BhaSmall.or by MaBha.or;
+  sub Ma.or MaSmall.or by MaMa.or;
+  sub Ma.or LlaSmall.or by MaLla.or;
+  sub Ya.or RaSmall.or by YaRa.or;
+  sub Ra.or RaSmall.or by RaRa.or;
+  sub Lla.or RaSmall.or by LlaRa.or;
+  sub Lla.or KaSmall.or by LlaKa.or;
+  sub Lla.or LlaSmall.or by LlaLla.or;
+  sub Lla.or BhaSmall.or by LlaBha.or;
+  sub Lla.or PaSmall.or by LlaPa.or;
+  sub Lla.or PhaSmall.or by LlaPha.or;
+  sub La.or RaSmall.or by LaRa.or;
+  sub La.or KaSmall.or by LaKa.or;
+  sub La.or LaSmall.or by LaLa.or;
+  sub La.or GaSmall.or by LaGa.or;
+  sub Va.or RaSmall.or by VaRa.or;
+  sub Sha.or RaSmall.or by ShaRa.or;
+  sub Sha.or CaSmall.or by ShaCa.or;
+  sub Sha.or ChaSmall.or by ShaCha.or;
+  sub Sha.or VaSmall.or by ShaBa.or;
+  sub Sha.or BaSmall.or by ShaBa.or;
+  sub Sha.or LlaSmall.or by ShaLla.or;
+  sub Ssa.or RaSmall.or by SsaRa.or;
+  sub Ssa.or KaSmall.or by SsaKa.or;
+  sub Ssa.or TtaSmall.or by SsaTta.or;
+  sub Ssa.or TthaSmall.or by SsaTtha.or;
+  sub Ssa.or NnaSmall.or by SsaNna.or;
+  sub Ssa.or PaSmall.or by SsaPa.or;
+  sub Ssa.or PhaSmall.or by SsaPha.or;
+  sub Sa.or RaSmall.or by SaRa.or;
+  sub Sa.or KaSmall.or by SaKa.or;
+  sub Sa.or KhaSmall.or by SaKha.or;
+  sub Sa.or TaSmall.or by SaTa.or;
+  sub Sa.or ThaSmall.or by SaTha.or;
+  sub Sa.or TtaSmall.or by SaTta.or;
+  sub Sa.or NaSmall.or by SaNa.or;
+  sub Sa.or PaSmall.or by SaPa.or;
+  sub Sa.or PhaSmall.or by SaPha.or;
+  sub Sa.or MaSmall.or by SaMa.or;
+  sub Sa.or LaSmall.or by SaLa.or;
+  sub Sa.or LlaSmall.or by SaLla.or;
+  sub Sa.or VaSmall.or by SaBa.or;
+  sub Sa.or BaSmall.or by SaBa.or;
+  sub Ha.or RaSmall.or by HaRa.or;
+  sub Ha.or NaSmall.or by HaNa.or;
+  sub Ha.or MaSmall.or by HaMa.or;
+  sub Ha.or LaSmall.or by HaLa.or;
+  sub Rra.or RaSmall.or by RraRa.or;
+  sub Rha.or RaSmall.or by RhaRa.or;
+  sub Yya.or RaSmall.or by YyaRa.or;
+  sub Ka.or TtaSmall.or by KaTta.or;
+  sub Ka.or MaSmall.or by KaMa.or;
+  sub Ga.or LaSmall.or by GaLa.or;
+  sub Na.or VaSmall.or by NaBa.or;
+  sub Na.or BaSmall.or by NaBa.or;
+  sub Ba.or LlaSmall.or by BaLla.or;
+  sub Ba.or LaSmall.or by BaLa.or;
+  sub Sha.or LaSmall.or by ShaLa.or;
+  sub Sha.or NaSmall.or by ShaNa.or;
+  sub Sha.or TtaSmall.or by ShaTta.or;
+
+}pres;
+
+
+#------------------------------------------------
+
+
+feature pstf{
+
+script ory2;
+  sub Virama.or Yya.or by YyaSmall.or;
+  sub Virama.or Ya.or by YaSmall.or;
+script orya;
+  sub Yya.or Virama.or by YyaSmall.or;
+  sub Ya.or Virama.or by YaSmall.or;
+
+}pstf;
+
+
+#------------------------------------------------
+
+
+feature abvs{
+
+lookup abvs1{
+  sub MatraI.or Reph.or Candrabindu.or by MatraIRephCandrabindu.or;
+  sub MatraI.or Reph.or by MatraIReph.or;
+  sub MatraI.or Candrabindu.or by MatraICandrabindu.or;
+  sub LengthmarkAi.or Reph.or Candrabindu.or by LengthmarkAiRephCandrabindu.or;
+  sub LengthmarkAi.or Reph.or by LengthmarkAiReph.or;
+  sub Reph.or Candrabindu.or by RephCandrabindu.or;
+}abvs1;
+
+} abvs;
+
+
+#---------------------------------------------
+
+
+
+feature blwf{
+script orya;
+  sub  Ka.or Virama.or by KaSmall.or;
+  sub  Kha.or Virama.or by KhaSmall.or;
+  sub  Ga.or Virama.or by GaSmall.or;
+  sub  Gha.or Virama.or by GhaSmall.or;
+  sub  Nga.or Virama.or by NgaSmall.or;
+  sub  Ca.or Virama.or by CaSmall.or;
+  sub  Cha.or Virama.or by ChaSmall.or;
+  sub  Ja.or Virama.or by JaSmall.or;
+  sub  Jha.or Virama.or by JhaSmall.or;
+  sub  Tta.or Virama.or by TtaSmall.or;
+  sub  Ttha.or Virama.or by TthaSmall.or;
+  sub  Dda.or Virama.or by DdaSmall.or;
+  sub  Ddha.or Virama.or by DdhaSmall.or;
+  sub  Nna.or Virama.or by NnaSmall.or;
+  sub  Ta.or Virama.or by TaSmall.or;
+  sub  Tha.or Virama.or by ThaSmall.or;
+  sub  Da.or Virama.or by DaSmall.or;
+  sub  Dha.or Virama.or by DhaSmall.or;
+  sub  Na.or Virama.or by NaSmall.or;
+  sub  Pa.or Virama.or by PaSmall.or;
+  sub  Pha.or Virama.or by PhaSmall.or;
+  sub  Ba.or Virama.or by BaSmall.or;
+  sub  Bha.or Virama.or by BhaSmall.or;
+  sub  Ma.or Virama.or by MaSmall.or;
+  sub  Ya.or Virama.or by YaSmall.or;
+  #sub  Yya.or Virama.or by YyaSmall.or;
+  sub  Ra.or Virama.or by RaSmall.or;
+  sub  La.or Virama.or by LaSmall.or;
+  sub  Lla.or Virama.or by LlaSmall.or;
+  sub  Va.or Virama.or by VaSmall.or;
+  sub  Wa.or Virama.or by BaSmall.or;
+  sub  Sha.or Virama.or by ShaSmall.or;
+  sub  Ssa.or Virama.or by SsaSmall.or;
+  sub  Sa.or Virama.or by SaSmall.or;
+  sub  Ha.or Virama.or by HaSmall.or;
+  sub  Ka.or Virama.or Ssa.or Virama.or by KaSsaSmall.or;
+
+script ory2;
+  sub Virama.or Ka.or by KaSmall.or;
+  sub Virama.or Kha.or by KhaSmall.or;
+  sub Virama.or Ga.or by GaSmall.or;
+  sub Virama.or Gha.or by GhaSmall.or;
+  sub Virama.or Nga.or by NgaSmall.or;
+  sub Virama.or Ca.or by CaSmall.or;
+  sub Virama.or Cha.or by ChaSmall.or;
+  sub Virama.or Ja.or by JaSmall.or;
+  sub Virama.or Jha.or by JhaSmall.or;
+  sub Virama.or Tta.or by TtaSmall.or;
+  sub Virama.or Ttha.or by TthaSmall.or;
+  sub Virama.or Dda.or by DdaSmall.or;
+  sub Virama.or Ddha.or by DdhaSmall.or;
+  sub Virama.or Nna.or by NnaSmall.or;
+  sub Virama.or Ta.or by TaSmall.or;
+  sub Virama.or Tha.or by ThaSmall.or;
+  sub Virama.or Da.or by DaSmall.or;
+  sub Virama.or Dha.or by DhaSmall.or;
+  sub Virama.or Na.or by NaSmall.or;
+  sub Virama.or Pa.or by PaSmall.or;
+  sub Virama.or Pha.or by PhaSmall.or;
+  sub Virama.or Ba.or by BaSmall.or;
+  sub Virama.or Bha.or by BhaSmall.or;
+  sub Virama.or Ma.or by MaSmall.or;
+  sub Virama.or Ya.or by YaSmall.or;
+  #sub Virama.or Yya.or by YyaSmall.or;
+  sub Virama.or Ra.or by RaSmall.or;
+  sub Virama.or La.or by LaSmall.or;
+  sub Virama.or Lla.or by LlaSmall.or;
+  sub Virama.or Va.or by VaSmall.or;
+  sub Virama.or Wa.or by BaSmall.or;
+  sub Virama.or Sha.or by ShaSmall.or;
+  sub Virama.or Ssa.or by SsaSmall.or;
+  sub Virama.or Sa.or by SaSmall.or;
+  sub Virama.or Ha.or by HaSmall.or;
+  sub Virama.or Ka.or Virama.or Ssa.or by KaSsaSmall.or;
+
+} blwf;
+
+
+
+#---------------------------------------------
+
+
+feature blws {
+
+lookup blws5{
+lookupflag UseMarkFilteringSet @TOP_MARKS;
+  sub @all @small1' by @small2;
+  sub @all Virama.or' by Virama_alt.or;
+}blws5;
+
+lookup blws1{
+  sub @Ukaralt MatraU.or' by MatraU_alt.or;
+  sub @Ukaralt1 MatraU.or' by MatraU_alt1.or;
+  sub @Ukaralt2 MatraU.or' by MatraU_alt2.or;
+  sub @small2_alt MatraU.or' by MatraU_alt3.or;
+  sub @Ukaralt MatraUu.or' by MatraUu_alt.or;
+  sub @Ukaralt1 MatraUu.or' by MatraUu_alt1.or;
+  sub @Ukaralt2 MatraUu.or' by MatraUu_alt2.or;
+  sub @small2_alt MatraUu.or' by MatraUu_alt3.or;   
+  sub @Ukaralt MatraVocalicR.or' by MatraVocalicR_alt.or;   
+  sub @Ukaralt1 MatraVocalicR.or' by MatraVocalicR_alt1.or;
+  sub @Ukaralt2 MatraVocalicR.or' by MatraVocalicR_alt2.or;
+  sub @small2_alt MatraVocalicR.or' by MatraVocalicR_alt3.or;
+} blws1;
+
+}blws;
+
+
+#---------------------------------------------
+
+feature psts { #Post-Base Substitution
+
+lookup psts1{
+
+  sub Candrabindu.or  LengthmarkAu.or by LengthmarkAuCandrabindu.or;
+  sub Candrabindu.or  LengthmarkAi.or by LengthmarkAiCandrabindu.or;
+  sub LengthmarkAi.or Candrabindu.or  by LengthmarkAiCandrabindu.or;
+  sub RephCandrabindu.or LengthmarkAu.or by LengthmarkAuRephCandrabindu.or;
+  sub Reph.or LengthmarkAu.or by LengthmarkAuReph.or;
+  sub Reph.or Candrabindu.or  by RephCandrabindu.or;
+
+
+}psts1;
+
+lookup psts2{
+lookupflag IgnoreMarks;
+
+sub Dha.or YyaSmall.or by DhaYya.or;
+
+}psts2;
+
+} psts;
+
+
+#---------------------------------------------
+
+feature ss01 { # Stylistic Set 
+
+  sub @Numbers_Punctuation by @Numbers_Punctuation_alt;
+  sub uni20B9 by uni20B9_alt;
+
+} ss01;
+
+feature salt { # Stylistic Alternate
+
+  sub @Numbers_Punctuation by @Numbers_Punctuation_alt;
+  sub uni20B9 by uni20B9_alt;
+
+} salt;
+
+
+#---------------------------------------------
+#-- contextual alternates for latin & odia ---
+#---------------------------------------------
+
+
+feature calt { # Contextual Alternate
+
+
+  sub uni20B9' @Numbers_Punctuation by uni20B9_alt;
+  sub uni20B9' @Numbers_Punctuation_alt by uni20B9_alt;
+
+  } calt;
+
+
+ #---------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+

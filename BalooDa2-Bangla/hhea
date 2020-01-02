@@ -1,0 +1,5 @@
+table hhea {
+	Ascender 1095;
+	Descender -589;
+	LineGap 0;
+} hhea;

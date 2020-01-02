@@ -1,0 +1,391 @@
+languagesystem DFLT dflt;
+languagesystem latn dflt;
+languagesystem latn NLD;
+languagesystem latn AZE;
+languagesystem latn TRK;
+languagesystem latn MOL;
+languagesystem latn ROM;
+languagesystem latn CAT;
+languagesystem latn TAT;
+languagesystem latn CRT;
+languagesystem latn KAZ;
+languagesystem taml dflt;
+languagesystem taml TAM ;
+languagesystem tml2 dflt;
+languagesystem tml2 TAM ;
+
+
+
+#--------------------------------------------------------------------
+
+#---------- L A T I N ----------#
+
+#--------------------------------------------------------------------
+
+feature aalt { # Access All Alternates
+feature locl;
+feature subs;
+feature sinf;
+feature sups;
+feature numr;
+feature dnom;
+feature frac;
+feature ordn;
+feature tnum;
+#feature onum;
+} aalt;
+
+#--------------------------------------------------------------------
+
+feature frac { # Fractions
+
+lookup FractionBar {
+        ignore sub slash @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures @figures @figures @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures @figures @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures @figures @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures slash;
+        ignore sub slash @figures @figures slash';
+        ignore sub slash' @figures @figures slash;
+        ignore sub slash @figures slash';
+        ignore sub slash' @figures slash;
+        ignore sub slash slash';
+        ignore sub slash' slash;
+        sub @figures slash' @figures by fraction;
+    } FractionBar;
+    
+    lookup Numerator1 {
+        sub @figures' fraction by @figures_numerator;
+    } Numerator1;
+
+    lookup Numerator2 {
+        sub @figures' @figures_numerator fraction by @figures_numerator;
+    } Numerator2;
+
+    lookup Numerator3 {
+        sub @figures' @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator3;
+
+    lookup Numerator4 {
+        sub @figures' @figures_numerator @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator4;
+
+    lookup Numerator5 {
+        sub @figures' @figures_numerator @figures_numerator @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator5;
+
+    lookup Numerator6 {
+        sub @figures' @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator6;
+
+    lookup Numerator7 {
+        sub @figures' @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator7;
+
+    lookup Numerator8 {
+        sub @figures' @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator8;
+
+    lookup Numerator9 {
+        sub @figures' @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator9;
+
+    lookup Numerator10 {
+        sub @figures' @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator10;
+
+    lookup Denominator {
+        sub [fraction @figures_denominator] @figures' by @figures_denominator;
+    } Denominator;
+
+    sub @figures space' @figures_numerator by uni2009;
+
+} frac;
+
+
+#--------------------------------------------------------------------
+
+feature tnum { # Tabular Figures
+    sub @figures by @figures_tabular;
+} tnum;
+
+#--------------------------------------------------------------------
+
+feature numr { # Numerators
+    sub @figures by @figures_numerator;
+} numr;
+
+#--------------------------------------------------------------------
+
+feature dnom { # Denominators
+    sub @figures by @figures_denominator;
+} dnom;
+
+#--------------------------------------------------------------------
+
+feature sups { # Superscript
+    sub @for_subscript_superscript by @figures_superscript;
+    sub n by n.superior;
+} sups;
+
+#--------------------------------------------------------------------
+
+feature subs { # Subscript
+    sub @for_subscript_superscript by @figures_subscript;
+} subs;
+
+#--------------------------------------------------------------------
+
+feature sinf { # Scientific Inferior
+    sub @for_subscript_superscript by @figures_subscript;
+} sinf;
+
+#--------------------------------------------------------------------
+
+feature ordn { # Ordinals
+  sub @figures [A a]' by ordfeminine;
+  sub @figures [O o]' by ordmasculine;
+  sub N o period by uni2116;
+} ordn;
+
+#--------------------------------------------------------------------
+
+feature liga {
+  sub f f i by f_f_i;
+  sub f f l by f_f_l;
+  sub f f by f_f;
+  sub f i by fi;
+  sub f l by fl;
+} liga;
+
+
+#--------------------------------------------------------------------
+
+
+feature locl {
+script latn;
+
+language NLD;
+  sub iacute j by iacute_j.loclNLD;
+  sub Iacute J by Iacute_J.loclNLD;
+
+language CAT;
+  sub l periodcentered' l by periodcentered.loclCAT;
+  sub L periodcentered' L by periodcentered.loclCAT.case;
+
+language TRK;
+  lookup IDOT {
+      sub i' by i.loclTRK;
+      } IDOT;
+
+language AZE;
+  lookup IDOT;
+language CRT;
+    lookup IDOT;
+language KAZ;
+    lookup IDOT;
+language TAT;
+    lookup IDOT;
+
+language ROM;
+    lookup CEDILLA {
+      sub scedilla by scommaaccent;
+      sub Scedilla by Scommaaccent;
+    sub uni0162 by uni021A;
+    sub uni0163 by uni021B;
+    } CEDILLA;
+language MOL;
+  lookup CEDILLA;
+
+} locl;  
+
+
+
+#--------------------------------------------------------------------
+
+#---------- T A M I L ----------#
+
+#--------------------------------------------------------------------
+
+
+
+feature akhn { # akhand forms
+
+sub Ka.tm PulliDflt.tm Ssa.tm by Ksha.tm;
+sub Sha.tm PulliDflt.tm Ra.tm MatraIiDflt.tm by Shree.tm;
+sub Sa.tm PulliDflt.tm Ra.tm MatraIiDflt.tm by Shree.tm;
+sub ShaPulli.tm Ra.tm MatraIiDflt.tm by Shree.tm;
+sub SaPulli.tm Ra.tm MatraIiDflt.tm by Shree.tm;
+
+} akhn;
+
+
+#--------------------------------------------------------------------
+
+
+#Basic Necessary Features
+
+feature haln {
+
+sub Ka.tm PulliDflt.tm by KaPulli.tm;
+sub Nga.tm PulliDflt.tm by NgaPulli.tm;
+sub Ca.tm PulliDflt.tm by CaPulli.tm;
+sub Ja.tm PulliDflt.tm by JaPulli.tm;
+sub Nya.tm PulliDflt.tm by NyaPulli.tm;
+sub Tta.tm PulliDflt.tm by TtaPulli.tm;
+sub Nna.tm PulliDflt.tm by NnaPulli.tm;
+sub Ta.tm PulliDflt.tm by TaPulli.tm;
+sub Na.tm PulliDflt.tm by NaPulli.tm;
+sub Nnna.tm PulliDflt.tm by NnnaPulli.tm;
+sub Pa.tm PulliDflt.tm by PaPulli.tm;
+sub Ma.tm PulliDflt.tm by MaPulli.tm;
+sub Ya.tm PulliDflt.tm by YaPulli.tm;
+sub Ra.tm PulliDflt.tm by RaPulli.tm;
+sub Rra.tm PulliDflt.tm by RraPulli.tm;
+sub La.tm PulliDflt.tm by LaPulli.tm;
+sub Lla.tm PulliDflt.tm by LlaPulli.tm;
+sub Llla.tm PulliDflt.tm by LllaPulli.tm;
+sub Va.tm PulliDflt.tm by VaPulli.tm;
+sub Sha.tm PulliDflt.tm by ShaPulli.tm;
+sub Ssa.tm PulliDflt.tm by SsaPulli.tm;
+sub Sa.tm PulliDflt.tm by SaPulli.tm;
+sub Ha.tm PulliDflt.tm by HaPulli.tm;
+sub Ksha.tm PulliDflt.tm by KshaPulli.tm;
+
+} haln;
+
+#--------------------------------------------------------------------
+
+feature abvs {
+
+sub Ka.tm MatraIiDflt.tm by KaMatraIi.tm;
+sub Nga.tm MatraIiDflt.tm by NgaMatraIi.tm;
+sub Ca.tm MatraIiDflt.tm by CaMatraIi.tm;
+sub Ja.tm MatraIiDflt.tm by JaMatraIi.tm;
+sub Nya.tm MatraIiDflt.tm by NyaMatraIi.tm;
+sub Tta.tm MatraIiDflt.tm by TtaMatraIi.tm;
+sub Nna.tm MatraIiDflt.tm by NnaMatraIi.tm;
+sub Ta.tm MatraIiDflt.tm by TaMatraIi.tm;
+sub Na.tm MatraIiDflt.tm by NaMatraIi.tm;
+sub Nnna.tm MatraIiDflt.tm by NnnaMatraIi.tm;
+sub Pa.tm MatraIiDflt.tm by PaMatraIi.tm;
+sub Ma.tm MatraIiDflt.tm by MaMatraIi.tm;
+sub Ya.tm MatraIiDflt.tm by YaMatraIi.tm;
+sub Ra.tm MatraIiDflt.tm by RaMatraIi.tm;
+sub Rra.tm MatraIiDflt.tm by RraMatraIi.tm;
+sub La.tm MatraIiDflt.tm by LaMatraIi.tm;
+sub Lla.tm MatraIiDflt.tm by LlaMatraIi.tm;
+sub Llla.tm MatraIiDflt.tm by LllaMatraIi.tm;
+sub Va.tm MatraIiDflt.tm by VaMatraIi.tm;
+sub Sha.tm MatraIiDflt.tm by ShaMatraIi.tm;
+sub Ssa.tm MatraIiDflt.tm by SsaMatraIi.tm;
+sub Sa.tm MatraIiDflt.tm by SaMatraIi.tm;
+sub Ha.tm MatraIiDflt.tm by HaMatraIi.tm;
+sub Ksha.tm MatraIiDflt.tm by KshaMatraIi.tm;
+sub Sha.tm PulliDflt.tm Ra.tm MatraIiDflt.tm by Shree.tm;
+sub Sa.tm PulliDflt.tm Ra.tm MatraIiDflt.tm by Shree.tm;
+sub ShaPulli.tm Ra.tm MatraIiDflt.tm by Shree.tm;
+sub SaPulli.tm Ra.tm MatraIiDflt.tm by Shree.tm;
+
+
+} abvs;
+
+#--------------------------------------------------------------------
+
+feature psts {
+
+
+#MatraI
+sub Ka.tm MatraIDflt.tm by KaMatraI.tm;
+sub Nga.tm MatraIDflt.tm by NgaMatraI.tm;
+sub Ca.tm MatraIDflt.tm by CaMatraI.tm;
+sub Ja.tm MatraIDflt.tm by JaMatraI.tm;
+sub Nya.tm MatraIDflt.tm by NyaMatraI.tm;
+sub Tta.tm MatraIDflt.tm by TtaMatraI.tm;
+sub Nna.tm MatraIDflt.tm by NnaMatraI.tm;
+sub Ta.tm MatraIDflt.tm by TaMatraI.tm;
+sub Na.tm MatraIDflt.tm by NaMatraI.tm;
+sub Nnna.tm MatraIDflt.tm by NnnaMatraI.tm;
+sub Pa.tm MatraIDflt.tm by PaMatraI.tm;
+sub Ma.tm MatraIDflt.tm by MaMatraI.tm;
+sub Ya.tm MatraIDflt.tm by YaMatraI.tm;
+sub Ra.tm MatraIDflt.tm by RaMatraI.tm;
+sub Rra.tm MatraIDflt.tm by RraMatraI.tm;
+sub La.tm MatraIDflt.tm by LaMatraI.tm;
+sub Lla.tm MatraIDflt.tm by LlaMatraI.tm;
+sub Llla.tm MatraIDflt.tm by LllaMatraI.tm;
+sub Va.tm MatraIDflt.tm by VaMatraI.tm;
+sub Sha.tm MatraIDflt.tm by ShaMatraI.tm;
+sub Ssa.tm MatraIDflt.tm by SsaMatraI.tm;
+sub Sa.tm MatraIDflt.tm by SaMatraI.tm;
+sub Ha.tm MatraIDflt.tm by HaMatraI.tm;
+sub Ksha.tm MatraIDflt.tm by KshaMatraI.tm;
+
+#MatraU
+sub Ka.tm MatraUDflt.tm by KaMatraU.tm;
+sub Nga.tm MatraUDflt.tm by NgaMatraU.tm;
+sub Ca.tm MatraUDflt.tm by CaMatraU.tm;
+sub Ja.tm MatraUDflt.tm by JaMatraU.tm;
+sub Nya.tm MatraUDflt.tm by NyaMatraU.tm;
+sub Tta.tm MatraUDflt.tm by TtaMatraU.tm;
+sub Nna.tm MatraUDflt.tm by NnaMatraU.tm;
+sub Ta.tm MatraUDflt.tm by TaMatraU.tm;
+sub Na.tm MatraUDflt.tm by NaMatraU.tm;
+sub Nnna.tm MatraUDflt.tm by NnnaMatraU.tm;
+sub Pa.tm MatraUDflt.tm by PaMatraU.tm;
+sub Ma.tm MatraUDflt.tm by MaMatraU.tm;
+sub Ya.tm MatraUDflt.tm by YaMatraU.tm;
+sub Ra.tm MatraUDflt.tm by RaMatraU.tm;
+sub Rra.tm MatraUDflt.tm by RraMatraU.tm;
+sub La.tm MatraUDflt.tm by LaMatraU.tm;
+sub Lla.tm MatraUDflt.tm by LlaMatraU.tm;
+sub Llla.tm MatraUDflt.tm by LllaMatraU.tm;
+sub Va.tm MatraUDflt.tm by VaMatraU.tm;
+sub Sha.tm MatraUDflt.tm by ShaMatraU.tm;
+sub Ssa.tm MatraUDflt.tm by SsaMatraU.tm;
+sub Sa.tm MatraUDflt.tm by SaMatraU.tm;
+sub Ha.tm MatraUDflt.tm by HaMatraU.tm;
+sub Ksha.tm MatraUDflt.tm by KshaMatraU.tm;
+
+#MatraUu
+sub Ka.tm MatraUuDflt.tm by KaMatraUu.tm;
+sub Nga.tm MatraUuDflt.tm by NgaMatraUu.tm;
+sub Ca.tm MatraUuDflt.tm by CaMatraUu.tm;
+sub Ja.tm MatraUuDflt.tm by JaMatraUu.tm;
+sub Nya.tm MatraUuDflt.tm by NyaMatraUu.tm;
+sub Tta.tm MatraUuDflt.tm by TtaMatraUu.tm;
+sub Nna.tm MatraUuDflt.tm by NnaMatraUu.tm;
+sub Ta.tm MatraUuDflt.tm by TaMatraUu.tm;
+sub Na.tm MatraUuDflt.tm by NaMatraUu.tm;
+sub Nnna.tm MatraUuDflt.tm by NnnaMatraUu.tm;
+sub Pa.tm MatraUuDflt.tm by PaMatraUu.tm;
+sub Ma.tm MatraUuDflt.tm by MaMatraUu.tm;
+sub Ya.tm MatraUuDflt.tm by YaMatraUu.tm;
+sub Ra.tm MatraUuDflt.tm by RaMatraUu.tm;
+sub Rra.tm MatraUuDflt.tm by RraMatraUu.tm;
+sub La.tm MatraUuDflt.tm by LaMatraUu.tm;
+sub Lla.tm MatraUuDflt.tm by LlaMatraUu.tm;
+sub Llla.tm MatraUuDflt.tm by LllaMatraUu.tm;
+sub Va.tm MatraUuDflt.tm by VaMatraUu.tm;
+sub Sha.tm MatraUuDflt.tm by ShaMatraUu.tm;
+sub Ssa.tm MatraUuDflt.tm by SsaMatraUu.tm;
+sub Sa.tm MatraUuDflt.tm by SaMatraUu.tm;
+sub Ha.tm MatraUuDflt.tm by HaMatraUu.tm;
+sub Ksha.tm MatraUuDflt.tm by KshaMatraUu.tm;
+
+} psts;
+
+
+#--------------------------------------------------------------------
+

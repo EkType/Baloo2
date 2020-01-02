@@ -1,0 +1,951 @@
+
+languagesystem DFLT dflt;
+languagesystem latn dflt;
+languagesystem latn NLD;
+languagesystem latn AZE;
+languagesystem latn TRK;
+languagesystem latn MOL;
+languagesystem latn ROM;
+languagesystem latn CAT;
+languagesystem latn TAT;
+languagesystem latn CRT;
+languagesystem latn KAZ;
+languagesystem beng dflt;
+languagesystem bng2 dflt;
+
+
+
+#--------------------------------------------------------------------
+
+#---------- L A T I N ----------#
+
+#--------------------------------------------------------------------
+
+feature aalt { # Access All Alternates
+feature locl;
+feature subs;
+feature sinf;
+feature sups;
+feature numr;
+feature dnom;
+feature frac;
+feature ordn;
+feature tnum;
+#feature onum;
+} aalt;
+
+#--------------------------------------------------------------------
+
+feature frac { # Fractions
+
+lookup FractionBar {
+        ignore sub slash @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures @figures @figures @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures @figures @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures @figures @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures @figures slash;
+        ignore sub slash @figures @figures @figures slash';
+        ignore sub slash' @figures @figures @figures slash;
+        ignore sub slash @figures @figures slash';
+        ignore sub slash' @figures @figures slash;
+        ignore sub slash @figures slash';
+        ignore sub slash' @figures slash;
+        ignore sub slash slash';
+        ignore sub slash' slash;
+        sub @figures slash' @figures by fraction;
+    } FractionBar;
+    
+    lookup Numerator1 {
+        sub @figures' fraction by @figures_numerator;
+    } Numerator1;
+
+    lookup Numerator2 {
+        sub @figures' @figures_numerator fraction by @figures_numerator;
+    } Numerator2;
+
+    lookup Numerator3 {
+        sub @figures' @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator3;
+
+    lookup Numerator4 {
+        sub @figures' @figures_numerator @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator4;
+
+    lookup Numerator5 {
+        sub @figures' @figures_numerator @figures_numerator @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator5;
+
+    lookup Numerator6 {
+        sub @figures' @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator6;
+
+    lookup Numerator7 {
+        sub @figures' @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator7;
+
+    lookup Numerator8 {
+        sub @figures' @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator8;
+
+    lookup Numerator9 {
+        sub @figures' @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator9;
+
+    lookup Numerator10 {
+        sub @figures' @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator @figures_numerator fraction by @figures_numerator;
+    } Numerator10;
+
+    lookup Denominator {
+        sub [fraction @figures_denominator] @figures' by @figures_denominator;
+    } Denominator;
+
+    sub @figures space' @figures_numerator by uni2009;
+
+} frac;
+
+
+#--------------------------------------------------------------------
+
+feature tnum { # Tabular Figures
+    sub @figures by @figures_tabular;
+} tnum;
+
+#--------------------------------------------------------------------
+
+feature numr { # Numerators
+    sub @figures by @figures_numerator;
+} numr;
+
+#--------------------------------------------------------------------
+
+feature dnom { # Denominators
+    sub @figures by @figures_denominator;
+} dnom;
+
+#--------------------------------------------------------------------
+
+feature sups { # Superscript
+    sub @for_subscript_superscript by @figures_superscript;
+    sub n by n.superior;
+} sups;
+
+#--------------------------------------------------------------------
+
+feature subs { # Subscript
+    sub @for_subscript_superscript by @figures_subscript;
+} subs;
+
+#--------------------------------------------------------------------
+
+feature sinf { # Scientific Inferior
+    sub @for_subscript_superscript by @figures_subscript;
+} sinf;
+
+#--------------------------------------------------------------------
+
+feature ordn { # Ordinals
+  sub @figures [A a]' by ordfeminine;
+  sub @figures [O o]' by ordmasculine;
+  sub N o period by uni2116;
+} ordn;
+
+#--------------------------------------------------------------------
+
+feature liga {
+  sub f f i by f_f_i;
+  sub f f l by f_f_l;
+  sub f f by f_f;
+  sub f i by fi;
+  sub f l by fl;
+} liga;
+
+
+#--------------------------------------------------------------------
+
+
+feature locl {
+script latn;
+
+language NLD;
+  sub iacute j by iacute_j.loclNLD;
+  sub Iacute J by Iacute_J.loclNLD;
+
+language CAT;
+  sub l periodcentered' l by periodcentered.loclCAT;
+  sub L periodcentered' L by periodcentered.loclCAT.case;
+
+language TRK;
+  lookup IDOT {
+      sub i' by i.loclTRK;
+      } IDOT;
+
+language AZE;
+  lookup IDOT;
+language CRT;
+    lookup IDOT;
+language KAZ;
+    lookup IDOT;
+language TAT;
+    lookup IDOT;
+
+language ROM;
+    lookup CEDILLA {
+      sub scedilla by scommaaccent;
+      sub Scedilla by Scommaaccent;
+    sub uni0162 by uni021A;
+    sub uni0163 by uni021B;
+    } CEDILLA;
+language MOL;
+  lookup CEDILLA;
+
+} locl;  
+
+
+
+
+#--------------------------------------------------------------------
+
+
+#---------- B E N G A L I ----------#
+
+#--------------------------------------------------------------------
+
+
+
+# Initail forms
+feature init {
+script bng2;
+language dflt;
+lookup init1 {
+	sub [SignE.bn SignAi.bn] by [SignE.ini.bn SignAi.ini.bn];
+} init1;
+script beng;
+language dflt;
+lookup init1;
+} init;
+
+#.................................................................................................
+
+# Nukta
+feature nukt {
+script bng2;
+language dflt;
+lookup nukt1{
+	sub Dda.bn Nukta.bn by Rra.bn;
+	sub Ddha.bn Nukta.bn by Rha.bn;
+	sub Ya.bn Nukta.bn by Yya.bn;
+} nukt1;
+script beng;
+language dflt;
+lookup nukt1;
+} nukt;
+
+#.................................................................................................
+
+# Akhanda
+feature akhn {
+script bng2;
+language dflt;
+lookup akhn1{
+	sub Ka.bn Hasant.bn Ssa.bn by KaSsa.bn;
+	sub Ja.bn Hasant.bn Nya.bn by JaNya.bn;
+	sub Ta.bn Hasant.bn Ta.bn by TaTa.bn;
+	sub Ta.bn Hasant.bn Tha.bn by TaTha.bn; 
+	sub Ta.bn Hasant.bn Na.bn by TaNa.bn;
+	sub Ta.bn Hasant.bn Ma.bn by TaMa.bn;
+	sub Ta.bn Hasant.bn La.bn by TaLa.bn;
+} akhn1;
+script beng;
+language dflt;
+lookup akhn1;
+} akhn;
+
+#.................................................................................................
+
+# Reph
+feature rphf {
+script bng2;
+language dflt;
+lookup rphf1 {
+	sub Ra.bn Hasant.bn by Reph.bn;
+	sub Ra.as Hasant.bn by Reph.bn;
+} rphf1;
+script beng;
+language dflt;
+lookup rphf1;
+} rphf;
+
+#.................................................................................................
+
+# belowbase form of consonants Raphala Baphala
+feature blwf {
+script bng2;
+language dflt;
+lookup blwf1 {
+	sub Hasant.bn Ra.bn by Raphala.bn;
+	sub Hasant.bn Ba.bn by Baphala.bn;
+	sub Hasant.bn Ra.as by Raphala.bn;
+} blwf1;
+script beng;
+language dflt;
+lookup blwf2 {
+	sub Ra.bn Hasant.bn by Raphala.bn;
+	sub Ba.bn Hasant.bn by Baphala.bn;
+	sub Ra.as Hasant.bn by Raphala.bn;
+} blwf2;
+} blwf;
+
+#.................................................................................................
+
+# Post Base form Yaphala
+feature pstf {
+script bng2;
+language dflt;
+lookup pstf1 {
+	sub Hasant.bn Ya.bn by Yaphala.bn;
+} pstf1;
+script beng;
+language dflt;
+lookup pstf2 {
+	sub Ya.bn Hasant.bn by Yaphala.bn;
+} pstf2;
+} pstf;
+
+#.................................................................................................
+
+# Vattu
+feature vatu {
+script bng2;
+language dflt;
+lookup vatu1 {
+	sub Ka.bn Raphala.bn by KaRa.bn;
+	sub Kha.bn Raphala.bn by KhaRa.bn;
+	sub Ga.bn Raphala.bn by GaRa.bn;
+	sub Gha.bn Raphala.bn by GhaRa.bn;
+	sub Nga.bn Raphala.bn by NgaRa.bn;
+	sub Ca.bn Raphala.bn by CaRa.bn;
+	sub Cha.bn Raphala.bn by ChaRa.bn;
+	sub Ja.bn Raphala.bn by JaRa.bn;
+	sub Jha.bn Raphala.bn by JhaRa.bn;
+	sub Tta.bn Raphala.bn by TtaRa.bn;
+	sub Ttha.bn Raphala.bn by TthaRa.bn;
+	sub Dda.bn Raphala.bn by DdaRa.bn;
+	sub Ddha.bn Raphala.bn by DdhaRa.bn;
+	sub Nna.bn Raphala.bn by NnaRa.bn;
+	sub Ta.bn Raphala.bn by TaRa.bn;
+	sub Tha.bn Raphala.bn by ThaRa.bn;
+	sub Da.bn Raphala.bn by DaRa.bn;
+	sub Dha.bn Raphala.bn by DhaRa.bn;
+	sub Na.bn Raphala.bn by NaRa.bn;
+	sub Pa.bn Raphala.bn by PaRa.bn;
+	sub Pha.bn Raphala.bn by PhaRa.bn;
+	sub Ba.bn Raphala.bn by BaRa.bn;
+	sub Bha.bn Raphala.bn by BhaRa.bn;
+	sub Ma.bn Raphala.bn by MaRa.bn;
+	sub La.bn Raphala.bn by LaRa.bn;
+	sub Sha.bn Raphala.bn by ShaRa.bn;
+	sub Ssa.bn Raphala.bn by SsaRa.bn;
+	sub Sa.bn Raphala.bn by SaRa.bn;
+	sub Ha.bn Raphala.bn by HaRa.bn;
+	sub Rra.bn Raphala.bn by RraRa.bn;
+	sub Rha.bn Raphala.bn by RhaRa.bn;
+	sub Yya.bn Raphala.bn by YyaRa.bn;
+	sub Wa.as Raphala.bn by WaRa.as;
+	sub KaSsa.bn Raphala.bn by KaSsaRa.bn;
+	sub TaTa.bn Raphala.bn by TaTaRa.bn;
+} vatu1;
+script beng;
+language dflt;
+lookup vatu1;
+} vatu;
+
+#.................................................................................................
+
+# Half forms
+feature half {
+script bng2;
+language dflt;
+lookup half1 {
+	sub Ka.bn Hasant.bn by KaHalf.bn;
+	sub Kha.bn Hasant.bn by KhaHalf.bn;
+	sub Ga.bn Hasant.bn by GaHalf.bn;
+	sub Gha.bn Hasant.bn by GhaHalf.bn;
+	sub Nga.bn Hasant.bn by NgaHalf.bn;
+	sub Ca.bn Hasant.bn by CaHalf.bn;
+	sub Cha.bn Hasant.bn by ChaHalf.bn;
+	sub Ja.bn Hasant.bn by JaHalf.bn;
+	sub Jha.bn Hasant.bn by JhaHalf.bn;
+	sub Nya.bn Hasant.bn by NyaHalf.bn;
+	sub Tta.bn Hasant.bn by TtaHalf.bn;
+	sub Ttha.bn Hasant.bn by TthaHalf.bn;
+	sub Dda.bn Hasant.bn by DdaHalf.bn;
+	sub Ddha.bn Hasant.bn by DdhaHalf.bn;
+	sub Nna.bn Hasant.bn by NnaHalf.bn;
+	sub Ta.bn Hasant.bn by TaHalf.bn;
+	sub Tha.bn Hasant.bn by ThaHalf.bn;
+	sub Da.bn Hasant.bn by DaHalf.bn;
+	sub Dha.bn Hasant.bn by DhaHalf.bn;
+	sub Na.bn Hasant.bn by NaHalf.bn;
+	sub Pa.bn Hasant.bn by PaHalf.bn;
+	sub Pha.bn Hasant.bn by PhaHalf.bn;
+	sub Ba.bn Hasant.bn by BaHalf.bn;
+	sub Bha.bn Hasant.bn by BhaHalf.bn;
+	sub Ma.bn Hasant.bn by MaHalf.bn;
+	sub Ya.bn Hasant.bn by YaHalf.bn;
+	sub La.bn Hasant.bn by LaHalf.bn;
+	sub Sha.bn Hasant.bn by ShaHalf.bn;
+	sub Ssa.bn Hasant.bn by SsaHalf.bn;
+	sub Sa.bn Hasant.bn by SaHalf.bn;
+	sub Ha.bn Hasant.bn by HaHalf.bn;
+	sub Rra.bn Hasant.bn by RraHalf.bn;
+	sub Rha.bn Hasant.bn by RhaHalf.bn;
+	sub Yya.bn Hasant.bn by YyaHalf.bn;
+	sub Wa.as Hasant.bn by WaHalf.as;
+	sub KaSsa.bn Hasant.bn by KaSsaHalf.bn;
+	sub Ta.bn Hasant.bn ZWJ by KhandaTa.bn;
+} half1;
+script beng;
+language dflt;
+lookup half1;
+} half;
+
+#.................................................................................................
+
+# prebase substitution Conjuncts
+feature pres {
+script bng2;
+language dflt;
+
+lookup pres1{ #Conjuncts
+	sub KaHalf.bn TaRa.bn by KaTaRa.bn;
+	sub KaHalf.bn TtaRa.bn by KaTtaRa.bn;
+	sub KaHalf.bn Ta.bn Baphala.bn by KaTaBa.bn;
+	sub KaSsaHalf.bn Nna.bn by KaSsaNna.bn;
+	sub KaSsaHalf.bn Ma.bn by KaSsaMa.bn;
+	sub GaHalf.bn DhaRa.bn by GaDhaRa.bn;
+	sub GaHalf.bn Dha.bn Baphala.bn by GaDhaBa.bn;
+	sub NgaHalf.bn KaRa.bn by NgaKaRa.bn;
+	sub NgaHalf.bn GhaRa.bn by NgaGhaRa.bn;
+	sub NgaHalf.bn KaHalf.bn SsaRa.bn by NgaKaSsaRa.bn;
+	sub NgaHalf.bn KaHalf.bn Ssa.bn by NgaKaSsa.bn;
+	sub CaHalf.bn ChaRa.bn by CaChaRa.bn;
+	sub CaHalf.bn Cha.bn Baphala.bn by CaChaBa.bn;
+	sub JaHalf.bn Ja.bn Baphala.bn by JaJaBa.bn;
+	sub NyaHalf.bn Ca.bn Baphala.bn by NyaCaBa.bn;
+	sub TtaHalf.bn TtaRa.bn by TtaTtaRa.bn;
+	sub NnaHalf.bn TtaRa.bn by NnaTtaRa.bn;
+	sub NnaHalf.bn TthaRa.bn by NnaTthaRa.bn;
+	sub NnaHalf.bn DdaRa.bn by NnaDdaRa.bn;
+	sub NnaHalf.bn DdhaRa.bn by NnaDdhaRa.bn;
+	sub TaHalf.bn Ta.bn Baphala.bn by TaTaBa.bn;
+	sub DaHalf.bn DaRa.bn by DaDaRa.bn;
+	sub DaHalf.bn Da.bn Baphala.bn by DaDaBa.bn;
+	sub DaHalf.bn Dha.bn Baphala.bn by DaDhaBa.bn;
+	sub DaHalf.bn BhaRa.bn by DaBhaRa.bn;
+	sub NaHalf.bn TtaRa.bn by NaTtaRa.bn;
+	sub NaHalf.bn DdaRa.bn by NaDdaRa.bn;
+	sub NaHalf.bn TaRa.bn by NaTaRa.bn;
+	sub NaHalf.bn Ta.bn Baphala.bn by NaTaBa.bn;
+	sub NaHalf.bn ThaRa.bn by NaThaRa.bn;
+	sub NaHalf.bn DaRa.bn by NaDaRa.bn;
+	sub NaHalf.bn Da.bn Baphala.bn by NaDaBa.bn;
+	sub NaHalf.bn DhaRa.bn by NaDhaRa.bn;
+	sub NaHalf.bn Dha.bn Baphala.bn by NaDhaBa.bn;
+	sub NaHalf.bn SaTta.bn by NaSaTta.bn;
+	sub PaHalf.bn TaRa.bn by PaTaRa.bn;
+	sub BaHalf.bn DaRa.bn by BaDaRa.bn;
+	sub MaHalf.bn PaRa.bn by MaPaRa.bn;
+	sub MaHalf.bn PhaRa.bn by MaPhaRa.bn;
+	sub MaHalf.bn BhaRa.bn by MaBhaRa.bn;
+	sub LaHalf.bn TtaRa.bn by LaTtaRa.bn;
+	sub LaHalf.bn DdaRa.bn by LaDdaRa.bn;
+	sub LaHalf.bn PhaRa.bn by LaPhaRa.bn;
+	sub SsaHalf.bn KaRa.bn by SsaKaRa.bn;
+	sub SsaHalf.bn TtaRa.bn by SsaTtaRa.bn;
+	sub SsaHalf.bn PaRa.bn by SsaPaRa.bn;
+	sub SaHalf.bn KaRa.bn by SaKaRa.bn;
+	sub SaHalf.bn TtaRa.bn by SaTtaRa.bn;
+	sub SaHalf.bn TaRa.bn by SaTaRa.bn;
+	sub SaHalf.bn Ta.bn Baphala.bn by SaTaBa.bn;
+	sub SaHalf.bn PaRa.bn by SaPaRa.bn;
+	sub SaHalf.bn PaHalf.bn La.bn by SaPaLa.bn;
+
+	sub KaHalf.bn Ka.bn by KaKa.bn;
+	sub KaHalf.bn Tta.bn by KaTta.bn;
+	sub KaHalf.bn Ta.bn by KaTa.bn;
+	sub KaHalf.bn Na.bn by KaNa.bn;
+	sub KaHalf.bn Ma.bn by KaMa.bn;
+	sub KaHalf.bn La.bn by KaLa.bn;
+	sub KaHalf.bn Sa.bn by KaSa.bn;
+	sub GaHalf.bn Ga.bn by GaGa.bn;
+	sub GaHalf.bn Da.bn by GaDa.bn;
+	sub GaHalf.bn Nna.bn by GaNna.bn;
+	sub GaHalf.bn Dha.bn by GaDha.bn;
+	sub GaHalf.bn Na.bn by GaNa.bn;
+	sub GaHalf.bn Ma.bn by GaMa.bn;
+	sub GaHalf.bn La.bn by GaLa.bn;
+	sub GhaHalf.bn Na.bn by GhaNa.bn;
+	sub NgaHalf.bn Ka.bn by NgaKa.bn;
+	sub NgaHalf.bn Kha.bn by NgaKha.bn;
+	sub NgaHalf.bn Ga.bn by NgaGa.bn;
+	sub NgaHalf.bn Gha.bn by NgaGha.bn;
+	sub NgaHalf.bn Ma.bn by NgaMa.bn;
+	sub CaHalf.bn Ca.bn by CaCa.bn;
+	sub CaHalf.bn Cha.bn by CaCha.bn;
+	sub CaHalf.bn Nya.bn by CaNya.bn;
+	sub CaHalf.bn Na.bn by CaNa.bn;
+	sub JaHalf.bn Ja.bn by JaJa.bn;
+	sub JaHalf.bn Jha.bn by JaJha.bn;
+	sub NyaHalf.bn Ca.bn by NyaCa.bn;
+	sub NyaHalf.bn Cha.bn by NyaCha.bn;
+	sub NyaHalf.bn Ja.bn by NyaJa.bn;
+	sub NyaHalf.bn Jha.bn by NyaJha.bn;
+	sub TtaHalf.bn Tta.bn by TtaTta.bn;
+	sub TtaHalf.bn Ma.bn by TtaMa.bn;
+	sub DdaHalf.bn Ga.bn by DdaGa.bn;
+	sub DdaHalf.bn Dda.bn by DdaDda.bn;
+	sub DdaHalf.bn Ma.bn by DdaMa.bn;
+	sub NnaHalf.bn Tta.bn by NnaTta.bn;
+	sub NnaHalf.bn Ttha.bn by NnaTtha.bn;
+	sub NnaHalf.bn Dda.bn by NnaDda.bn;
+	sub NnaHalf.bn Ddha.bn by NnaDdha.bn;
+	sub NnaHalf.bn Nna.bn by NnaNna.bn;
+	sub NnaHalf.bn Ma.bn by NnaMa.bn;
+	sub DaHalf.bn Ga.bn by DaGa.bn;
+	sub DaHalf.bn Gha.bn by DaGha.bn;
+	sub DaHalf.bn Da.bn by DaDa.bn;
+	sub DaHalf.bn Dha.bn by DaDha.bn;
+	sub DaHalf.bn Na.bn by DaNa.bn;
+	sub DaHalf.bn Bha.bn by DaBha.bn;
+	sub DaHalf.bn Ma.bn by DaMa.bn;
+	sub DhaHalf.bn Na.bn by DhaNa.bn;
+	sub DhaHalf.bn Ma.bn by DhaMa.bn;
+	sub NaHalf.bn Tta.bn by NaTta.bn;
+	sub NaHalf.bn Ttha.bn by NaTtha.bn;
+	sub NaHalf.bn Dda.bn by NaDda.bn;
+	sub NaHalf.bn Ta.bn by NaTa.bn;
+	sub NaHalf.bn Tha.bn by NaTha.bn;
+	sub NaHalf.bn Da.bn by NaDa.bn;
+	sub NaHalf.bn Dha.bn by NaDha.bn;
+	sub NaHalf.bn Na.bn by NaNa.bn;
+	sub NaHalf.bn Ma.bn by NaMa.bn;
+	sub NaHalf.bn Sa.bn by NaSa.bn;
+	sub PaHalf.bn Tta.bn by PaTta.bn;
+	sub PaHalf.bn Ta.bn by PaTa.bn;
+	sub PaHalf.bn Na.bn by PaNa.bn;
+	sub PaHalf.bn Pa.bn by PaPa.bn;
+	sub PaHalf.bn Ma.bn by PaMa.bn;
+	sub PaHalf.bn La.bn by PaLa.bn;
+	sub PaHalf.bn Sa.bn by PaSa.bn;
+	sub PhaHalf.bn Tta.bn by PhaTta.bn;
+	sub PhaHalf.bn La.bn by PhaLa.bn;
+	sub BaHalf.bn Ja.bn by BaJa.bn;
+	sub BaHalf.bn Jha.bn by BaJha.bn;
+	sub BaHalf.bn Dda.bn by BaDda.bn;
+	sub BaHalf.bn Ddha.bn by BaDdha.bn;
+	sub BaHalf.bn Da.bn by BaDa.bn;
+	sub BaHalf.bn Dha.bn by BaDha.bn;
+	sub BaHalf.bn Bha.bn by BaBha.bn;
+	sub BaHalf.bn La.bn by BaLa.bn;
+	sub BhaHalf.bn La.bn by BhaLa.bn;
+	sub MaHalf.bn Ta.bn by MaTa.bn;
+	sub MaHalf.bn Da.bn by MaDa.bn;
+	sub MaHalf.bn Na.bn by MaNa.bn;
+	sub MaHalf.bn Pa.bn by MaPa.bn;
+	sub MaHalf.bn Pha.bn by MaPha.bn;
+	sub MaHalf.bn Bha.bn by MaBha.bn;
+	sub MaHalf.bn Ma.bn by MaMa.bn;
+	sub MaHalf.bn La.bn by MaLa.bn;
+	sub LaHalf.bn Ka.bn by LaKa.bn;
+	sub LaHalf.bn Ga.bn by LaGa.bn;
+	sub LaHalf.bn Gha.bn by LaGha.bn;
+	sub LaHalf.bn Tta.bn by LaTta.bn;
+	sub LaHalf.bn Dda.bn by LaDda.bn;
+	sub LaHalf.bn Ddha.bn by LaDdha.bn;
+	sub LaHalf.bn Da.bn by LaDa.bn;
+	sub LaHalf.bn Dha.bn by LaDha.bn;
+	sub LaHalf.bn Pa.bn by LaPa.bn;
+	sub LaHalf.bn Pha.bn by LaPha.bn;
+	sub LaHalf.bn Ma.bn by LaMa.bn;
+	sub LaHalf.bn La.bn by LaLa.bn;
+	sub ShaHalf.bn Ca.bn by ShaCa.bn;
+	sub ShaHalf.bn Cha.bn by ShaCha.bn;
+	sub ShaHalf.bn Ta.bn by ShaTa.bn;
+	sub ShaHalf.bn Na.bn by ShaNa.bn;
+	sub ShaHalf.bn Ma.bn by ShaMa.bn;
+	sub ShaHalf.bn La.bn by ShaLa.bn;
+	sub SsaHalf.bn Ka.bn by SsaKa.bn;
+	sub SsaHalf.bn Tta.bn by SsaTta.bn;
+	sub SsaHalf.bn Ttha.bn by SsaTtha.bn;
+	sub SsaHalf.bn Nna.bn by SsaNna.bn;
+	sub SsaHalf.bn Pa.bn by SsaPa.bn;
+	sub SsaHalf.bn Pha.bn by SsaPha.bn;
+	sub SsaHalf.bn Ma.bn by SsaMa.bn;
+	sub SaHalf.bn Ka.bn by SaKa.bn;
+	sub SaHalf.bn Kha.bn by SaKha.bn;
+	sub SaHalf.bn Tta.bn by SaTta.bn;
+	sub SaHalf.bn Ta.bn by SaTa.bn;
+	sub SaHalf.bn Tha.bn by SaTha.bn;
+	sub SaHalf.bn Na.bn by SaNa.bn;
+	sub SaHalf.bn Pa.bn by SaPa.bn;
+	sub SaHalf.bn Pha.bn by SaPha.bn;
+	sub SaHalf.bn Ma.bn by SaMa.bn;
+	sub SaHalf.bn La.bn by SaLa.bn;
+	sub HaHalf.bn Nna.bn by HaNna.bn;
+	sub HaHalf.bn Na.bn by HaNa.bn;
+	sub HaHalf.bn Ma.bn by HaMa.bn;
+	sub HaHalf.bn La.bn by HaLa.bn;
+	sub RraHalf.bn Ga.bn by RraGa.bn;
+	sub NnaHalf.bn Na.bn by NnaNa.bn;
+} pres1;
+
+lookup pres2{ #SignI for Tta and Ttha
+	sub SignI.bn Tta.bn by TtaSignI.bn;
+	sub SignI.bn Ttha.bn by TthaSignI.bn;
+} pres2;
+
+lookup pres3{ #SignI for Tta and Ttha conjuncts
+	sub SignI.bn' @TTA_TTHA_I_1 by SignI_Tta_Ttha1.bn;
+	sub SignI.bn' @TTA_TTHA_I_2 by SignI_Tta_Ttha2.bn;
+} pres3;
+
+lookup pres4 { #SignI+Reph part1
+    sub SignI.bn' @All_I Reph.bn by SignI_reph.bn;
+    sub SignI.bn' @All_I Candrabindu.bn by SignICandrabindu.bn;
+    sub SignI_Tta_Ttha1.bn' @TTA_TTHA_I_1 Reph.bn by SignI_Tta_Ttha1_reph.bn;
+    sub SignI_Tta_Ttha2.bn' @TTA_TTHA_I_2 Reph.bn by SignI_Tta_Ttha2_reph.bn;
+    sub SignI_Tta_Ttha1.bn' @TTA_TTHA_I_1 Candrabindu.bn by SignICandrabindu_Tta_Ttha1.bn;
+    sub SignI_Tta_Ttha2.bn' @TTA_TTHA_I_2 Candrabindu.bn by SignICandrabindu_Tta_Ttha2.bn;
+} pres4;
+
+lookup pres5 { #SignI+Reph part2
+    sub SignI_reph.bn @All_I Reph.bn' by abvs_null.bn;
+    sub SignI_Tta_Ttha1_reph.bn @TTA_TTHA_I_1 Reph.bn' by abvs_null.bn;
+    sub SignI_Tta_Ttha2_reph.bn @TTA_TTHA_I_2 Reph.bn' by abvs_null.bn;  
+    sub SignICandrabindu.bn @All_I Candrabindu.bn' by abvs_null.bn;
+    sub SignICandrabindu_Tta_Ttha1.bn @TTA_TTHA_I_1 Candrabindu.bn' by abvs_null.bn;
+    sub SignICandrabindu_Tta_Ttha2.bn @TTA_TTHA_I_2 Candrabindu.bn' by abvs_null.bn;   
+} pres5;
+
+script beng;
+language dflt;
+lookup pres1;
+lookup pres2;
+lookup pres3;
+lookup pres4;
+lookup pres5;
+} pres;
+
+#.................................................................................................
+
+# Conjuncts same as above
+feature cjct {
+script bng2;
+language dflt;
+lookup pres1;
+script beng;
+language dflt;
+lookup pres1;
+} cjct;
+
+#.................................................................................................
+
+# Above base substitution
+feature abvs {
+script bng2;
+language dflt;
+
+lookup abvs2{ #SignI+Reph for Tta Ttha and SignIi+Reph for Ttha
+	sub TtaSignI.bn Reph.bn by TtaSignIReph.bn;
+	sub TthaSignI.bn Reph.bn by TthaSignIReph.bn;
+} abvs2;
+
+lookup abvs1a { #Alternate chandrabindu for abovebase matras
+    sub @CANDRABINDU_ALT_1 Candrabindu.bn' by Candrabindu_alt.bn;
+    sub @TTA_1 Candrabindu.bn' by Candrabindu_alt.bn;
+    sub @TTA_2 Candrabindu.bn' by Candrabindu_alt.bn;
+    sub @TTHA Candrabindu.bn' by Candrabindu_alt.bn;
+} abvs1a;
+
+lookup abvs1b { #Alternate chandrabindu for abovebase matras
+    sub @TTA_1 [SignAa.bn SignU.bn SignUu.bn SignUu.bn SignRu.bn SignRuu.bn SignLru.bn SignLruu.bn Yaphala.bn] Candrabindu.bn' by Candrabindu_alt.bn;
+    sub @TTA_2 [SignAa.bn SignU.bn SignUu.bn SignUu.bn SignRu.bn SignRuu.bn SignLru.bn SignLruu.bn Yaphala.bn] Candrabindu.bn' by Candrabindu_alt.bn;
+    sub @TTHA [SignAa.bn SignU.bn SignUu.bn SignUu.bn SignRu.bn SignRuu.bn SignLru.bn SignLruu.bn Yaphala.bn] Candrabindu.bn' by Candrabindu_alt.bn;
+} abvs1b;
+
+lookup abvs3{ #SignIi+Reph Reph+Candrabindu SignAuMark+Reph+Candrabindu
+	sub Reph.bn SignIi.bn by SignIiReph.bn;
+	sub Reph.bn SignIi_Tta1.bn by SignIi_Tta1_Reph.bn;
+	sub Reph.bn SignIi_Tta2.bn by SignIi_Tta2_Reph.bn;
+	sub Reph.bn Candrabindu.bn by RephCandrabindu.bn;
+	sub Reph.bn SignAuMark.bn by SignAuMark_Reph.bn;
+} abvs3; 
+
+
+script beng;
+language dflt;
+lookup abvs2;
+lookup abvs1a;
+lookup abvs1b;
+lookup abvs3;
+} abvs;
+
+
+#.................................................................................................
+
+# Below Base Substitution Raphala Baphala Ukars
+feature blws {
+script bng2;
+language dflt;
+lookup vatu1;
+lookup blws1{
+	sub KaSsa.bn Baphala.bn by KaSsaBa.bn;
+	sub TaTa.bn Baphala.bn by TaTaBa.bn;
+	sub Ma.bn Baphala.bn Raphala.bn by MaBaRa.bn;
+	sub Ka.bn Baphala.bn by KaBa.bn;
+	sub Kha.bn Baphala.bn by KhaBa.bn;
+	sub Ga.bn Baphala.bn by GaBa.bn;
+	sub Gha.bn Baphala.bn by GhaBa.bn;
+	sub Ca.bn Baphala.bn by CaBa.bn;
+	sub Cha.bn Baphala.bn by ChaBa.bn;
+	sub Ja.bn Baphala.bn by JaBa.bn;
+	sub Tta.bn Baphala.bn by TtaBa.bn;
+	sub Dda.bn Baphala.bn by DdaBa.bn;
+	sub Nna.bn Baphala.bn by NnaBa.bn;
+	sub Ta.bn Baphala.bn by TaBa.bn;
+	sub Tha.bn Baphala.bn by ThaBa.bn;
+	sub Da.bn Baphala.bn by DaBa.bn;
+	sub Dha.bn Baphala.bn by DhaBa.bn;
+	sub Na.bn Baphala.bn by NaBa.bn;
+	sub Ba.bn Baphala.bn by BaBa.bn;
+	sub Ma.bn Baphala.bn by MaBa.bn;
+	sub La.bn Baphala.bn by LaBa.bn;
+	sub Sha.bn Baphala.bn by ShaBa.bn;
+	sub Ssa.bn Baphala.bn by SsaBa.bn;
+	sub Sa.bn Baphala.bn by SaBa.bn;
+	sub Ha.bn Baphala.bn by HaBa.bn;
+} blws1;
+lookup blws2 {
+	sub Ga.bn SignU.bn by GaSignU.bn;
+	sub Sha.bn SignU.bn by ShaSignU.bn;
+	sub Ha.bn SignU.bn by HaSignU.bn;
+	sub Ha.bn SignRu.bn by HaSignRu.bn;
+	sub NaTa.bn SignU.bn by NaTaSignU.bn;
+	sub PaTa.bn SignU.bn by PaTaSignU.bn;
+	sub SaTa.bn SignU.bn by SaTaSignU.bn;
+	sub LaGa.bn SignU.bn by LaGaSignU.bn;
+} blws2;
+lookup blws3 {
+	sub @RAKAR_U_UU SignU.bn' by SignU.side.bn;
+	sub @RAKAR_U_UU SignUu.bn' by SignUu.side.bn;
+	sub Rra.bn' [SignUu.bn SignU.bn SignRu.bn] by Rra_for_ukar.bn;
+	sub Rha.bn' [SignUu.bn SignU.bn SignRu.bn] by Rha_for_ukar.bn;
+	sub @BELOWBASE_alt SignU.bn' by SignU_alt.bn;
+	sub @BELOWBASE_alt SignUu.bn' by SignUu_alt.bn;
+	sub @BELOWBASE_alt SignRu.bn' by SignRu_alt.bn;
+	sub @BELOWBASE_1 SignU.bn' by SignU1.bn;
+	sub @BELOWBASE_1 SignUu.bn' by SignUu1.bn;
+	sub @BELOWBASE_1 SignRu.bn' by SignRu1.bn;
+} blws3;
+script beng;
+language dflt;
+lookup vatu1;
+lookup blws1;
+lookup blws2;
+lookup blws3;
+} blws;
+
+
+#.................................................................................................
+
+
+# Additional Lookups for Reordering Reph Candrabindu
+
+lookup Reorder_Candrabindu1a {
+     sub SignAa.bn by Candrabindu.bn;
+     sub Candrabindu.bn by SignAa.bn;
+ } Reorder_Candrabindu1a;
+
+lookup Reorder_Candrabindu1b {
+     sub SignAa.bn by Candrabindu_alt.bn;
+     sub Candrabindu_alt.bn by SignAa.bn;
+ } Reorder_Candrabindu1b;
+
+lookup Reorder_Candrabindu2a {
+     sub Yaphala.bn by Candrabindu.bn;
+     sub Candrabindu.bn by Yaphala.bn;
+ } Reorder_Candrabindu2a;
+
+lookup Reorder_Candrabindu2b {
+     sub Yaphala.bn by Candrabindu_alt.bn;
+     sub Candrabindu_alt.bn by Yaphala.bn;
+ } Reorder_Candrabindu2b;
+
+ lookup Reorder_Reph1 {
+     sub SignU.side.bn by Reph.bn;
+     sub Reph.bn by SignU.side.bn;
+ } Reorder_Reph1;
+
+ lookup Reorder_Reph2 {
+     sub SignUu.side.bn by Reph.bn;
+     sub Reph.bn by SignUu.side.bn;
+ } Reorder_Reph2;
+
+ lookup Reorder_Candrabindu3 {
+     sub SignU.side.bn by Candrabindu.bn;
+     sub Candrabindu.bn by SignU.side.bn;
+ } Reorder_Candrabindu3;
+
+ lookup Reorder_Candrabindu4 {
+     sub SignUu.side.bn by Candrabindu.bn;
+     sub Candrabindu.bn by SignUu.side.bn;
+ } Reorder_Candrabindu4;
+
+
+#.................................................................................................
+
+# post base substitution
+feature psts {
+script bng2;
+language dflt;
+
+lookup psts1 {
+	sub ShaRa.bn SignIi.bn by ShaRaSignIi.bn;
+} psts1;
+
+lookup psts2 {
+	sub @TTA_1 SignIi.bn' by SignIi_Tta1.bn;
+	sub @TTA_2 SignIi.bn' by SignIi_Tta2.bn;
+} psts2;
+
+lookup psts3 {
+	sub @TTA_1 SignIiReph.bn' by SignIi_Tta1_Reph.bn;
+	sub @TTA_2 SignIiReph.bn' by SignIi_Tta2_Reph.bn;
+} psts3;
+
+lookup psts4 {
+	sub @TTA_1 SignAuMark_Reph.bn' by SignAuMark_Tta_Reph.bn;
+	sub @TTA_2 SignAuMark_Reph.bn' by SignAuMark_Tta_Reph.bn;
+} psts4;
+
+lookup psts5{
+	sub Ttha.bn SignIi.bn by TthaSignIi.bn;
+	sub TthaRa.bn SignIi.bn by TthaRaSignIi.bn;
+	sub NnaTtha.bn SignIi.bn by NnaTthaSignIi.bn;
+	sub NnaTthaRa.bn SignIi.bn by NnaTthaRaSignIi.bn;
+	sub NaTtha.bn SignIi.bn by NaTthaSignIi.bn;
+	sub SsaTtha.bn SignIi.bn by SsaTthaSignIi.bn;
+	sub Ttha.bn SignIiReph.bn by TthaSignIiReph.bn;
+} psts5;
+
+lookup psts6a {
+	sub SignAa.bn' lookup Reorder_Candrabindu1a
+	Candrabindu.bn' lookup Reorder_Candrabindu1a ;
+} psts6a;
+
+lookup psts6b {
+	sub SignAa.bn' lookup Reorder_Candrabindu1b
+	Candrabindu_alt.bn' lookup Reorder_Candrabindu1b ;
+} psts6b;
+
+lookup psts7a {
+	sub Yaphala.bn' lookup Reorder_Candrabindu2a 
+	Candrabindu.bn' lookup Reorder_Candrabindu2a ;
+} psts7a;
+
+lookup psts7b {
+	sub Yaphala.bn' lookup Reorder_Candrabindu2b 
+	Candrabindu_alt.bn' lookup Reorder_Candrabindu2b ;
+} psts7b;
+
+lookup psts8 {
+	sub SignU.side.bn' lookup Reorder_Reph1 
+	Reph.bn' lookup Reorder_Reph1 ;
+	sub SignUu.side.bn' lookup Reorder_Reph2 
+	Reph.bn' lookup Reorder_Reph2 ;
+} psts8;
+
+lookup psts9 {
+	sub SignU.side.bn' lookup Reorder_Candrabindu3 
+	Candrabindu.bn' lookup Reorder_Candrabindu3 ;
+	sub SignUu.side.bn' lookup Reorder_Candrabindu4 
+	Candrabindu.bn' lookup Reorder_Candrabindu4 ;
+} psts9;
+
+script beng;
+language dflt;
+lookup psts1;
+lookup psts2;
+lookup psts3;
+lookup psts4;
+lookup psts5;
+lookup psts6a;
+lookup psts6b;
+lookup psts7a;
+lookup psts7b;
+lookup psts8;
+lookup psts9;
+} psts;
+
+#.................................................................................................
+
+# halant forms
+feature haln {
+script bng2;
+language dflt;
+lookup haln1 {
+	sub Ka.bn Hasant.bn by KaHasant.bn;
+	sub Kha.bn Hasant.bn by KhaHasant.bn;
+	sub Ga.bn Hasant.bn by GaHasant.bn;
+	sub Gha.bn Hasant.bn by GhaHasant.bn;
+	sub Nga.bn Hasant.bn by NgaHasant.bn;
+	sub Ca.bn Hasant.bn by CaHasant.bn;
+	sub Cha.bn Hasant.bn by ChaHasant.bn;
+	sub Ja.bn Hasant.bn by JaHasant.bn;
+	sub Jha.bn Hasant.bn by JhaHasant.bn;
+	sub Nya.bn Hasant.bn by NyaHasant.bn;
+	sub Tta.bn Hasant.bn by TtaHasant.bn;
+	sub Ttha.bn Hasant.bn by TthaHasant.bn;
+	sub Dda.bn Hasant.bn by DdaHasant.bn;
+	sub Ddha.bn Hasant.bn by DdhaHasant.bn;
+	sub Nna.bn Hasant.bn by NnaHasant.bn;
+	sub Ta.bn Hasant.bn by TaHasant.bn;
+	sub Tha.bn Hasant.bn by ThaHasant.bn;
+	sub Da.bn Hasant.bn by DaHasant.bn;
+	sub Dha.bn Hasant.bn by DhaHasant.bn;
+	sub Na.bn Hasant.bn by NaHasant.bn;
+	sub Pa.bn Hasant.bn by PaHasant.bn;
+	sub Pha.bn Hasant.bn by PhaHasant.bn;
+	sub Ba.bn Hasant.bn by BaHasant.bn;
+	sub Bha.bn Hasant.bn by BhaHasant.bn;
+	sub Ma.bn Hasant.bn by MaHasant.bn;
+	sub Ya.bn Hasant.bn by YaHasant.bn;
+	sub Ra.bn Hasant.bn by RaHasant.bn;
+	sub La.bn Hasant.bn by LaHasant.bn;
+	sub Sha.bn Hasant.bn by ShaHasant.bn;
+	sub Ssa.bn Hasant.bn by SsaHasant.bn;
+	sub Sa.bn Hasant.bn by SaHasant.bn;
+	sub Ha.bn Hasant.bn by HaHasant.bn;
+	sub Rra.bn Hasant.bn by RraHasant.bn;
+	sub Rha.bn Hasant.bn by RhaHasant.bn;
+	sub Yya.bn Hasant.bn by YyaHasant.bn;
+	sub Ra.as Hasant.bn by RaHasant.as;
+	sub Wa.as Hasant.bn by WaHasant.as;
+	sub KaSsa.bn Hasant.bn by KaSsaHasant.bn;
+} haln1;
+script beng;
+language dflt;
+lookup haln1;
+} haln;
+
+
+
