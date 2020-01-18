@@ -1,6 +1,6 @@
 
-	nameid 0   "Copyright (c) 2019, Ek Type. All rights reserved.";
-	nameid 0 3 "Copyright (c) 2019, Ek Type. All rights reserved.";	
+	nameid 0   "Copyright 2019 The Baloo 2 Project Authors (https://github.com/EkType/Baloo2)";
+	nameid 0 3 "Copyright 2019 The Baloo 2 Project Authors (https://github.com/EkType/Baloo2)";	
 
 	nameid 8   "Ek Type";
 	nameid 8 3 "Ek Type";

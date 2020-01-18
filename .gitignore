@@ -9,6 +9,7 @@
 *.pfm
 *.bak
 *.fpr
+**/.DS_Store
 #OTF/TTF Folder
 OTF/
 TTF/

@@ -32,7 +32,6 @@ feature dnom;
 feature frac;
 feature ordn;
 feature tnum;
-#feature onum;
 } aalt;
 
 #--------------------------------------------------------------------
@@ -660,7 +659,7 @@ lookup presHalf {
 } presHalf;
 
 
-lookup MatraI { # Replace Ikar matra for conjuncts
+lookup MatraI useExtension{ # Replace Ikar matra for conjuncts
 
 
 	sub MatraI.gj' @matraI1 by MatraI1.gj;
@@ -1153,7 +1152,7 @@ lookup abvs1 {
 
 } abvs1;
 
-lookup MatraIBindu { # Replace IkarBindu matra for conjuncts
+lookup MatraIBindu useExtension{ # Replace IkarBindu matra for conjuncts
 
 	sub MatraI.gj' @matraIdefault Bindu.gj by MatraIDefaultBindu.gj;
 	sub MatraI1.gj' @matraI1 Bindu.gj by MatraI1Bindu.gj;
@@ -1512,7 +1511,7 @@ lookup MatraIBindu { # Replace IkarBindu matra for conjuncts
 
 } MatraIBindu;
 
-lookup MatraIBinduVattu { # Replace IkarBindu matra for conjuncts
+lookup MatraIBinduVattu useExtension{ # Replace IkarBindu matra for conjuncts
 
 	sub MatraI.gj' @matraIdefault [Vattu.gj Vattu1.gj] Bindu.gj by MatraIDefaultBindu.gj;
 	sub MatraI1.gj' @matraI1 [Vattu.gj Vattu1.gj] Bindu.gj by MatraI1Bindu.gj;

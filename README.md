@@ -1,5 +1,5 @@
 # Baloo 2
-![Baloo 2](Promotion/Baloo_header.png)
+![Baloo](http://rawgit.com/girish-dalvi/Baloo2/master/Promotion/Baloo_header.png "Baloo 2")
 
 A perfect blend of pointy paws in a coat of fur, Baloo is an affable display typeface by Ek Type. This heavy spurless design has already garnered praise for its distinctive jovial nature and its multi script design.
 
