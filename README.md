@@ -3,22 +3,21 @@
 
 A perfect blend of pointy paws in a coat of fur, Baloo is an affable display typeface by Ek Type. This heavy spurless design has already garnered praise for its distinctive jovial nature and its multi script design.
 
-Baloo 2 is an extension of the earlier Baloo project. The new Baloo 2 includes **FIVE weights** ranging from the light footed Regular to the affable ExtraBold. The lighter weights retain Baloo's characteristic bounce, but they do so slightly, infusing life into each word. This allows the new family to freely fraternise with texts of all sizes and temperaments — be it short bursts or copious reams, demanding headlines or whispering bylines. Carefree yet confident, sprightly yet versatile, the renewed family of Baloo promises to bring warmth to every project.
+Baloo 2 is an extension of the earlier Baloo project. The new Baloo 2 includes additional glyphs, engineering improvements, and has been extended to FIVE weights, ranging from the light footed Regular to the affable ExtraBold. The lighter weights retain Baloo’s characteristic bounce, but they do so slightly, infusing life into each word. This allows the new family to freely fraternise with texts of all sizes and temperaments — be it short bursts or copious reams, demanding headlines or whispering bylines. Carefree yet confident, sprightly yet versatile, the renewed family of Baloo promises to bring warmth to every project.
 
-The Baloo 2 project develops nine separate fonts with unique local names for each of the nine Indic Scripts. Each font supports one Indic script plus Latin, Latin Extended, and Vietnamese.
+The Baloo 2 project consists of nine font families with unique local names for each of the nine Indic scripts. Each family supports one Indic script plus Latin, Latin Extended, and Vietnamese.
 
 - Baloo 2 for Devanagari
-- Baloo 2 Bhai for Gujarati
-- Baloo 2 Bhaina for Odia
-- Baloo 2 Chettan for Malayalam
-- Baloo 2 Da for Bengali
-- Baloo 2 Paaji for Gurmukhi
-- Baloo 2 Tamma for Kannada
-- Baloo 2 Tammudu for Telugu
-- Baloo 2 Thambi for Tamil
+- Baloo Bhai 2 for Gujarati
+- Baloo Bhaina 2 for Odia
+- Baloo Chettan 2 for Malayalam
+- Baloo Da 2 for Bengali
+- Baloo Paaji 2 for Gurmukhi
+- Baloo Tamma 2 for Kannada
+- Baloo Tammudu 2 for Telugu
+- Baloo Thambi 2 for Tamil
 
-It took a team of committed type designers to rear Baloo and raise it to be the typeface we love. The Gurmukhi is designed by Shuchita Grover; Bangla by Noopur Datye and Sulekha Rajkumar; Oriya by Yesha Goshar, Manish Minz, and Shuchita Grover; Gujarati by Noopur Datye and Supriya Tembe; Kannada by Divya Kowshik and Shuchita Grover; Telugu by Maithili Shingre and Omkar Shende; Malayalam by Maithili Shingre and Unnati Kotecha; and Tamil by Aadarsh Rajan.
-Baloo Devanagari and Latin are collaboratively designed by Ek Type. Font engineering and type design assistance by Girish Dalvi.
+It took a team of committed type designers to rear Baloo and raise it to be the typeface we love. The Gurmukhi is designed by Shuchita Grover; Bangla by Noopur Datye and Sulekha Rajkumar; Odia by Yesha Goshar, Manish Minz, and Shuchita Grover; Gujarati by Noopur Datye and Supriya Tembe; Kannada by Divya Kowshik and Shuchita Grover; Telugu by Maithili Shingre and Omkar Shende; Malayalam by Maithili Shingre and Unnati Kotecha; and Tamil by Aadarsh Rajan. Baloo Devanagari and Latin are collaboratively designed by Ek Type. Font engineering and type design assistance by Girish Dalvi.
 
 ### License
 
